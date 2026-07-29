@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> login in form for the projectwork </title>
+    <!-- linking to css -->
+    <!-- CSS File -->
+    <link rel="stylesheet" href="form.css">
+
+    <!-- Boxicons CDN -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+       <!-- creating a container using div class -->
+
+    <div class="container">
+        <!-- especially for login form -->
+
+        <!-- Login Form -->
+        <div class="form-box login">
+            <form action="#">
+                <h2>Login</h2>
+
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class="bx bxs-user"></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" placeholder=" Enter your valid Password" required>
+                    <i class="bx bxs-lock-alt"></i>
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+
+                <div class="logreg-link">
+                    <!-- signup option for new users -->
+                    <p>
+                        Don't have an account?
+                        <a href="#" class="register-link">Signup</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Register Form -->
+        <div class="form-box register">
+            <form action="#">
+                <h2>Register</h2>
+
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class="bx bxs-user"></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required>
+                    <i class="bx bxs-envelope"></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class="bx bxs-lock-alt"></i>
+                </div>
+
+                <button type="submit" class="btn">Register</button>
+
+                <div class="logreg-link">
+                    <p>
+                        Already have an account?
+                        <a href="#" class="login-link">Sign In</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Login Info -->
+        <div class="info-text login">
+            <h2>WELCOME BACK!</h2>
+            <p>Enter your credentials to access your account.</p>
+        </div>
+
+        <!-- Register Info -->
+        <div class="info-text register">
+            <h2>WELCOME!</h2>
+            <p>Enhance your days to achieve your success.</p>
+        </div>
+
+        <!-- Animated Background -->
+        <div class="bg-animate"></div>
+        <div class="bg-animate2"></div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="form.js"></script>
+
+</body>
+</html>
