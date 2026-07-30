@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LifeSync Dashboard</title>
+
+
+    <!-- CSS file -->
+    <link rel="stylesheet" href="css/dashboard.css">
+
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" 
+    rel="stylesheet">
+
+
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+</head>
+
+
+<body>
+
+
+    <!-- Animated Background Shapes -->
+
+    <div class="background-shape shape-one"></div>
+    <div class="background-shape shape-two"></div>
+    <div class="background-shape shape-three"></div>
+
+
+
+    <!-- Top Header -->
+
+    <header class="top-header">
+
+        <h1>
+            LifeSync Dashboard
+        </h1>
+
+
+        <div class="profile">
+
+            <span>
+                Welcome, User 👋
+            </span>
+
+        </div>
+
+
+    </header>
+
+
+
+
+
+
+    <!-- Main Dashboard Layout -->
+
+    <div class="dashboard-container">
+
+
+
+        <!-- Sidebar Navigation -->
+
+
+        <aside class="sidebar">
+
+
+            <h2>
+                Menu
+            </h2>
+
+
+            <button class="menu-btn" id="achievementBtn">
+                🏆 Achievements
+            </button>
+
+
+            <button class="menu-btn" id="notesBtn">
+                📝 Notes
+            </button>
+
+
+            <button class="menu-btn" id="targetBtn">
+                🎯 Targets
+            </button>
+
+
+
+            <button class="menu-btn">
+                💰 Money
+            </button>
+
+
+
+            <button class="menu-btn">
+                ⚙ Settings
+            </button>
+
+
+        </aside>
+
+
+
+
+
+
+        <!-- Dashboard Content -->
+
+
+        <main class="content">
+
+
+
+
+
+            <!-- Achievement Section -->
+
+
+            <section class="dashboard-card" id="achievementSection">
+
+
+                <h2>
+                    🏆 My Achievements
+                </h2>
+
+
+                <p>
+                    Track your personal achievements and success.
+                </p>
+
+
+
+                <div class="input-area">
+
+
+                    <input 
+                    type="text"
+                    id="achievementInput"
+                    placeholder="Enter new achievement">
+
+
+                    <button id="addAchievement">
+                        Add
+                    </button>
+
+
+                </div>
+
+
+
+                <ul id="achievementList">
+
+                    <!-- Achievements will appear here -->
+
+                </ul>
+
+
+            </section>
+
+
+
+
+
+
+
+
+            <!-- Notes Section -->
+
+
+            <section class="dashboard-card" id="notesSection">
+
+
+                <h2>
+                    📝 My Notes
+                </h2>
+
+
+                <p>
+                    Write important daily notes.
+                </p>
+
+
+
+                <textarea 
+                id="noteInput"
+                placeholder="Write your note here...">
+                </textarea>
+
+
+
+
+                <button id="saveNote">
+                    Save Note
+                </button>
+
+
+
+
+                <div id="notesList">
+
+                    <!-- Notes appear here -->
+
+                </div>
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+
+            <!-- Target Section -->
+
+
+            <section class="dashboard-card" id="targetSection">
+
+
+                <h2>
+                    🎯 My Targets
+                </h2>
+
+
+                <p>
+                    Set goals and monitor your progress.
+                </p>
+
+
+
+                <div class="input-area">
+
+
+                    <input 
+                    type="text"
+                    id="targetInput"
+                    placeholder="Enter your target">
+
+
+
+                    <button id="addTarget">
+                        Add Target
+                    </button>
+
+
+
+                </div>
+
+
+
+
+
+                <div class="progress-box">
+
+
+                    <h3>
+                        Progress
+                    </h3>
+
+
+                    <div class="progress-bar">
+
+
+                        <div class="progress">
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <div id="targetList">
+
+                    <!-- Targets appear here -->
+
+                </div>
+
+
+
+            </section>
+
+
+
+
+
+
+        </main>
+
+
+
+    </div>
+
+
+
+
+
+    <!-- JavaScript File -->
+
+    <script src="js/dashboard.js"></script>
+
+
+
+</body>
+
+
+</html>
