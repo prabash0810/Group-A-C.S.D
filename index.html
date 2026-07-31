@@ -1,0 +1,54 @@
+<!-- University Form -->
+<div class="form-box">
+
+    <h2><i class="fa-solid fa-graduation-cap"></i> Add University Class</h2>
+
+    <form id="uniForm">
+
+        <div class="input-group">
+            <label>Module Name</label>
+            <input type="text" id="moduleName" placeholder="e.g. Client Side Development" required>
+        </div>
+
+        <div class="input-group">
+            <label>Lecturer</label>
+            <input type="text" id="lecturer" placeholder="e.g. Dr. Smith">
+        </div>
+
+        <div class="input-group">
+            <label>Day</label>
+            <select id="uniDay" required>
+                <option value="">Select Day</option>
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+                <option>Saturday</option>
+                <option>Sunday</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>Start Time</label>
+            <input type="time" id="uniStart" required>
+        </div>
+
+        <div class="input-group">
+            <label>End Time</label>
+            <input type="time" id="uniEnd" required>
+        </div>
+
+        <div class="input-group">
+            <label>Room Number</label>
+            <input type="text" id="room" placeholder="e.g. B201">
+        </div>
+
+        <button type="submit" class="btn">
+            <i class="fa-solid fa-plus"></i>
+            Add Class
+        </button>
+
+    </form>
+
+</div>
