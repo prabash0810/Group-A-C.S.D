@@ -1,54 +1,167 @@
-<!-- University Form -->
-<div class="form-box">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DayWise - Work & Uni</title>
 
-    <h2><i class="fa-solid fa-graduation-cap"></i> Add University Class</h2>
+    <link rel="stylesheet" href="css/work.css">
 
-    <form id="uniForm">
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-        <div class="input-group">
-            <label>Module Name</label>
-            <input type="text" id="moduleName" placeholder="e.g. Client Side Development" required>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+<header class="topbar">
+    <h1>DayWise</h1>
+
+    <nav>
+        <a href="#">Dashboard</a>
+        <a href="#">Planning</a>
+        <a href="#" class="active">Work & Uni</a>
+        <a href="#">Income</a>
+        <a href="#">Events</a>
+        <a href="#">Settings</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <h2>Work & University Planner</h2>
+        <p>Stay organised with your classes, work shifts and reminders.</p>
+    </section>
+
+    <section class="summary">
+        <div class="card">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h3>University</h3>
+            <p id="uniCount">0 Classes</p>
         </div>
 
-        <div class="input-group">
-            <label>Lecturer</label>
-            <input type="text" id="lecturer" placeholder="e.g. Dr. Smith">
+        <div class="card">
+            <i class="fa-solid fa-briefcase"></i>
+            <h3>Work</h3>
+            <p id="workCount">0 Shifts</p>
         </div>
 
-        <div class="input-group">
-            <label>Day</label>
-            <select id="uniDay" required>
-                <option value="">Select Day</option>
-                <option>Monday</option>
-                <option>Tuesday</option>
-                <option>Wednesday</option>
-                <option>Thursday</option>
-                <option>Friday</option>
-                <option>Saturday</option>
-                <option>Sunday</option>
-            </select>
+        <div class="card">
+            <i class="fa-solid fa-clock"></i>
+            <h3>Hours</h3>
+            <p id="hours">0 hrs</p>
         </div>
 
-        <div class="input-group">
-            <label>Start Time</label>
-            <input type="time" id="uniStart" required>
+        <div class="card">
+            <i class="fa-solid fa-bell"></i>
+            <h3>Reminders</h3>
+            <p id="reminder">None</p>
+        </div>
+    </section>
+
+    <section class="forms">
+
+        <div class="form-box">
+            <h2>Add University Class</h2>
+
+            <form id="uniForm">
+
+                <input type="text"
+                    placeholder="Module Name">
+
+                <select>
+                    <option>Select Day</option>
+                    <option>Monday</option>
+                    <option>Tuesday</option>
+                    <option>Wednesday</option>
+                    <option>Thursday</option>
+                    <option>Friday</option>
+                </select>
+
+                <input type="time">
+
+                <button>Add Class</button>
+
+            </form>
         </div>
 
-        <div class="input-group">
-            <label>End Time</label>
-            <input type="time" id="uniEnd" required>
+        <div class="form-box">
+            <h2>Add Work Shift</h2>
+
+            <form id="workForm">
+
+                <input type="text"
+                    placeholder="Company">
+
+                <input type="date">
+
+                <input type="time">
+
+                <input type="number"
+                    placeholder="Hours">
+
+                <button>Add Shift</button>
+
+            </form>
         </div>
 
-        <div class="input-group">
-            <label>Room Number</label>
-            <input type="text" id="room" placeholder="e.g. B201">
+    </section>
+
+    <section class="lists">
+
+        <div class="table-box">
+
+            <h2>University Schedule</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Module</th>
+                        <th>Day</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+
+                <tbody id="uniTable">
+
+                </tbody>
+
+            </table>
+
         </div>
 
-        <button type="submit" class="btn">
-            <i class="fa-solid fa-plus"></i>
-            Add Class
-        </button>
+        <div class="table-box">
 
-    </form>
+            <h2>Work Schedule</h2>
 
-</div>
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Date</th>
+                        <th>Hours</th>
+                    </tr>
+                </thead>
+
+                <tbody id="workTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="js/work.js"></script>
+
+</body>
+</html>
