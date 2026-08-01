@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- ==========================================
+         Basic Page Information
+    =========================================== -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LifeSync Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+         Navigation Bar
+    =========================================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                <h2>LifeSync</h2>
+
+            </div>
+
+            <ul class="nav-links">
+
+                <li><a href="index.html">Dashboard</a></li>
+
+                <li><a href="events.html">Events</a></li>
+
+                <li><a href="achievements.html">Achievements</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- ==========================================
+         Hero Section
+    =========================================== -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <h1>
+                    Organise Your Events &
+                    Celebrate Every Achievement
+                </h1>
+
+                <p>
+
+                    Manage upcoming events, record your achievements,
+                    and keep track of your progress all in one place.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             Main Cards
+        =========================================== -->
+
+        <section class="cards-container">
+
+            <!-- Events Card -->
+
+            <a href="events.html" class="dashboard-card">
+
+                <div class="icon">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                </div>
+
+                <h2>Events</h2>
+
+                <p>
+
+                    Create, edit, search, filter and manage
+                    all your upcoming events.
+
+                </p>
+
+                <button>
+
+                    Open Events
+
+                </button>
+
+            </a>
+
+            <!-- Achievements Card -->
+
+            <a href="achievements.html" class="dashboard-card">
+
+                <div class="icon">
+
+                    <i class="fa-solid fa-trophy"></i>
+
+                </div>
+
+                <h2>Achievements</h2>
+
+                <p>
+
+                    Save your achievements,
+                    certificates,
+                    awards and completed goals.
+
+                </p>
+
+                <button>
+
+                    Open Achievements
+
+                </button>
+
+            </a>
+
+        </section>
+
+        <!-- ==========================================
+             Quick Statistics
+             Values will be updated using JavaScript
+        =========================================== -->
+
+        <section class="statistics">
+
+            <h2>Quick Overview</h2>
+
+            <div class="stats-grid">
+
+                <div class="stat-box">
+
+                    <h3 id="totalEvents">
+
+                        0
+
+                    </h3>
+
+                    <p>Total Events</p>
+
+                </div>
+
+                <div class="stat-box">
+
+                    <h3 id="completedEvents">
+
+                        0
+
+                    </h3>
+
+                    <p>Completed Events</p>
+
+                </div>
+
+                <div class="stat-box">
+
+                    <h3 id="totalAchievements">
+
+                        0
+
+                    </h3>
+
+                    <p>Achievements</p>
+
+                </div>
+
+                <div class="stat-box">
+
+                    <h3 id="completionRate">
+
+                        0%
+
+                    </h3>
+
+                    <p>Completion Rate</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ==========================================
+         Footer
+    =========================================== -->
+
+    <footer>
+
+        <p>
+
+            © 2026 LifeSync | Events & Achievements Module
+
+        </p>
+
+    </footer>
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
