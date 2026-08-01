@@ -55,53 +55,117 @@
         </div>
     </section>
 
-    <section class="forms">
+    <<section class="forms">
 
-        <div class="form-box">
-            <h2>Add University Class</h2>
+    <!-- University Form -->
+    <div class="form-box">
 
-            <form id="uniForm">
+        <h2><i class="fa-solid fa-graduation-cap"></i> Add University Class</h2>
 
-                <input type="text"
-                    placeholder="Module Name">
+        <form id="uniForm">
 
-                <select>
-                    <option>Select Day</option>
+            <div class="input-group">
+                <label>Module Name</label>
+                <input type="text" id="moduleName" placeholder="e.g. Client Side Development" required>
+            </div>
+
+            <div class="input-group">
+                <label>Lecturer</label>
+                <input type="text" id="lecturer" placeholder="e.g. Dr. Smith">
+            </div>
+
+            <div class="input-group">
+                <label>Day</label>
+                <select id="uniDay" required>
+                    <option value="">Select Day</option>
                     <option>Monday</option>
                     <option>Tuesday</option>
                     <option>Wednesday</option>
                     <option>Thursday</option>
                     <option>Friday</option>
+                    <option>Saturday</option>
+                    <option>Sunday</option>
                 </select>
+            </div>
 
-                <input type="time">
+            <div class="input-group">
+                <label>Start Time</label>
+                <input type="time" id="uniStart" required>
+            </div>
 
-                <button>Add Class</button>
+            <div class="input-group">
+                <label>End Time</label>
+                <input type="time" id="uniEnd" required>
+            </div>
 
-            </form>
-        </div>
+            <div class="input-group">
+                <label>Room Number</label>
+                <input type="text" id="room" placeholder="e.g. B201">
+            </div>
 
-        <div class="form-box">
-            <h2>Add Work Shift</h2>
+            <button type="submit" class="btn">
+                <i class="fa-solid fa-plus"></i> Add Class
+            </button>
 
-            <form id="workForm">
+        </form>
 
-                <input type="text"
-                    placeholder="Company">
+    </div>
 
-                <input type="date">
+    <!-- Work Form -->
+    <div class="form-box">
 
-                <input type="time">
+        <h2><i class="fa-solid fa-briefcase"></i> Add Work Shift</h2>
 
-                <input type="number"
-                    placeholder="Hours">
+        <form id="workForm">
 
-                <button>Add Shift</button>
+            <div class="input-group">
+                <label>Company Name</label>
+                <input type="text" id="company" placeholder="e.g. Tesco" required>
+            </div>
 
-            </form>
-        </div>
+            <div class="input-group">
+                <label>Job Role</label>
+                <input type="text" id="jobRole" placeholder="e.g. Customer Assistant">
+            </div>
 
-    </section>
+            <div class="input-group">
+                <label>Work Day</label>
+                <select id="workDay" required>
+                    <option value="">Select Day</option>
+                    <option>Monday</option>
+                    <option>Tuesday</option>
+                    <option>Wednesday</option>
+                    <option>Thursday</option>
+                    <option>Friday</option>
+                    <option>Saturday</option>
+                    <option>Sunday</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Start Time</label>
+                <input type="time" id="workStart" required>
+            </div>
+
+            <div class="input-group">
+                <label>End Time</label>
+                <input type="time" id="workEnd" required>
+            </div>
+
+            <div class="input-group">
+                <label>Location</label>
+                <input type="text" id="location" placeholder="e.g. London">
+            </div>
+
+            <button type="submit" class="btn">
+                <i class="fa-solid fa-plus"></i> Add Shift
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
 
     <section class="lists">
 
