@@ -98,66 +98,124 @@ body{
 }
 
 
-/* HEADER */
+/* ==================================
+   PART 2.3
+   HEADER DESIGN UPGRADE
+================================== */
 
+/* Header Layout */
 .header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:30px;
-
+display:flex;
+justify-content:space-between;
+ align-items:center;
+    /* New spacing */
+    padding-bottom:25px;
+    /* Divider line */
+    border-bottom:1px solid rgba(255,255,255,0.25);
+    margin-bottom:35px;
 }
 
-
+/* Logo Title */
 .logo h1{
-
-    font-size:35px;
-
+    font-size:42px;
+    font-weight:800;
+    letter-spacing:1px;
+    /* Gradient text */
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #67e8f9
+    );
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+    transition:0.3s;
 }
 
+/* Logo Hover */
+.logo h1:hover{
+    transform:scale(1.05);
+}
 
+/* Subtitle */
 .logo p{
-
-    color:#cbd5e1;
-
-    margin-top:5px;
-
+    color:#dbeafe;
+    margin-top:8px;
+    font-size:16px;
+    letter-spacing:0.5px;
 }
 
-
+/* Date Box */
 .date-box{
-
+    /* Glass card */
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    padding:18px 25px;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,0.25);
     text-align:right;
-
+    transition:0.3s ease;
 }
 
+/* Date Card Hover Effect */
+.date-box:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
 
+/* Date Text */
 .date-box p{
+    margin:6px;
+    font-size:15px;
+    color:#e0f2fe;
+}
 
-    margin:5px;
-
+/* Clock Highlight */
+#clock{
+    font-size:20px;
+    font-weight:bold;
+    color:#67e8f9;
 }
 
 
-/* WELCOME */
+/* ==================================
+   PART 2.4
+   WELCOME SECTION UPGRADE
+================================== */
 
 .welcome{
-
-    margin-bottom:30px;
-
+    margin:40px 0;
+    animation:welcomeAppear 1s ease;
 }
 
-
+/* Welcome Heading */
 .welcome h2{
+    font-size:36px;
+    font-weight:800;
+    margin-bottom:12px;
+    letter-spacing:0.5px;
+    color:white;
+}
 
-    font-size:28px;
+/* Welcome Description */
+.welcome p{
+    font-size:18px;
+    color:#dbeafe;
+    max-width:650px;
+    line-height:1.6;
+}
 
-    margin-bottom:10px;
-
+/* New Welcome Animation */
+@keyframes welcomeAppear{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 
@@ -165,7 +223,7 @@ body{
 
 .task-section{
 
-    margin-top:20px;
+    margin-bottom:35px;
 
 }
 
@@ -222,7 +280,7 @@ body{
 
 .progress-section{
 
-    margin-top:40px;
+    margin-bottom:35px;
 
 }
 
@@ -260,10 +318,7 @@ body{
 /* FOOTER */
 
 footer{
-
-    margin-top:40px;
-
-    text-align:center;
+ text-align:center;
 
     color:#94a3b8;
 
