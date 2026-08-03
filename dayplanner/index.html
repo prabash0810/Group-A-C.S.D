@@ -53,27 +53,190 @@
             </h2>
 
 
-            <div class="task-input">
-
-                <input 
-                type="text" 
-                placeholder="Enter your task..."
-                id="taskInput">
+            <!-- ==========================
+     PART 3.1
+     ADVANCED TASK FORM
+========================== -->
 
 
-                <button id="addTask">
-                    Add Task
-                </button>
+<div class="task-form">
 
-            </div>
+
+
+    <!-- Task Name -->
+
+    <input 
+    type="text"
+    id="taskTitle"
+    placeholder="Enter task name...">
+
+
+
+
+
+
+    <!-- Subject Selection -->
+
+    <select id="subject">
+
+
+        <option value="">
+            Select Subject
+        </option>
+
+
+        <option value="Computer Science">
+            💻 Computer Science
+        </option>
+
+
+        <option value="Mathematics">
+            📐 Mathematics
+        </option>
+
+
+        <option value="English">
+            📖 English
+        </option>
+
+
+        <option value="Chemistry">
+            🧪 Chemistry
+        </option>
+
+
+    </select>
+
+
+
+
+
+
+
+    <!-- Priority -->
+
+
+    <select id="priority">
+
+
+        <option value="">
+            Select Priority
+        </option>
+
+
+        <option value="High">
+            🔴 High
+        </option>
+
+
+        <option value="Medium">
+            🟡 Medium
+        </option>
+
+
+        <option value="Low">
+            🟢 Low
+        </option>
+
+
+    </select>
+
+
+
+
+
+
+
+
+    <!-- Time Block -->
+
+
+    <input
+
+    type="time"
+
+    id="startTime">
+
+
+
+    <input
+
+    type="time"
+
+    id="endTime">
+
+
+
+
+
+
+
+    <!-- Deadline -->
+
+
+    <input
+
+    type="date"
+
+    id="deadline">
+
+
+
+
+
+
+
+    <button id="addTask">
+
+
+        ➕ Add Task
+
+
+    </button>
+
+
+
+
+</div>
 
 
             <!-- Task List -->
-            <div class="task-list" id="taskList">
+            <!-- Active Tasks -->
 
-                <!-- Tasks will appear here -->
+<div class="task-list" id="taskList">
 
-            </div>
+
+</div>
+
+
+
+
+
+<!-- ==========================
+     TASK HISTORY SECTION
+========================== -->
+
+
+<div class="history-section">
+
+
+    <h2>
+        📚 Task History
+    </h2>
+
+
+
+    <div class="history-list" id="historyList">
+
+
+        <!-- Completed tasks appear here -->
+
+
+    </div>
+
+
+
+</div>
 
 
         </section>

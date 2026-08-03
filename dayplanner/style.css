@@ -1410,3 +1410,407 @@ p{
 
 
 }
+.completed{
+
+
+    opacity:0.7;
+
+
+
+    text-decoration:
+
+    line-through;
+
+
+
+}
+
+
+
+
+
+.completed .status{
+
+
+    color:#22c55e;
+
+
+
+    font-weight:bold;
+
+
+
+}
+
+
+
+
+
+.pending .status{
+
+
+    color:#f59e0b;
+
+
+
+    font-weight:bold;
+
+
+
+}
+/* ==================================
+   TASK HISTORY DESIGN
+================================== */
+
+
+
+.history-section{
+
+
+    margin-top:35px;
+
+
+
+    background:
+
+    rgba(255,255,255,0.10);
+
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+
+    padding:30px;
+
+
+
+    border-radius:25px;
+
+
+
+    border:
+
+    1px solid rgba(255,255,255,0.2);
+
+
+
+    animation:
+
+    cardAppear 0.8s ease;
+
+
+}
+
+
+
+
+
+.history-section h2{
+
+
+    font-size:28px;
+
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+
+.history-list{
+
+
+    display:flex;
+
+
+
+    flex-direction:column;
+
+
+
+    gap:15px;
+
+
+}
+
+
+
+
+
+.history-card{
+
+
+    background:
+
+    rgba(255,255,255,0.15);
+
+
+
+    padding:18px;
+
+
+
+    border-radius:15px;
+
+
+
+    display:flex;
+
+
+
+    justify-content:space-between;
+
+
+
+    align-items:center;
+
+
+
+    transition:0.3s;
+
+
+}
+
+
+
+
+
+
+
+.history-card:hover{
+
+
+    transform:
+
+    translateX(8px);
+
+
+
+}
+/* ==================================
+   PART 3.1
+   ADVANCED TASK FORM DESIGN
+================================== */
+
+
+
+.task-form{
+
+
+    display:grid;
+
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+
+    gap:15px;
+
+
+
+    margin-top:25px;
+
+
+
+}
+
+
+
+
+
+
+.task-form input,
+.task-form select{
+
+
+    padding:15px;
+
+
+
+    border:none;
+
+
+
+    outline:none;
+
+
+
+    border-radius:15px;
+
+
+
+    font-size:15px;
+
+
+
+    background:
+
+    rgba(255,255,255,0.9);
+
+
+
+    color:#111827;
+
+
+
+    transition:0.3s;
+
+
+
+}
+
+
+
+
+
+
+.task-form input:focus,
+.task-form select:focus{
+
+
+    transform:
+
+    scale(1.03);
+
+
+
+    box-shadow:
+
+    0 0 15px
+
+    rgba(99,102,241,0.5);
+
+
+
+}
+
+
+
+
+
+
+
+.task-form button{
+
+
+    grid-column:
+
+    span 2;
+
+
+
+    padding:16px;
+
+
+
+    border:none;
+
+
+
+    border-radius:15px;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+    135deg,
+
+    #6366f1,
+
+    #8b5cf6
+
+    );
+
+
+
+    color:white;
+
+
+
+    font-size:17px;
+
+
+
+    font-weight:bold;
+
+
+
+    cursor:pointer;
+
+
+
+    transition:0.3s;
+
+
+
+}
+
+
+
+
+
+
+.task-form button:hover{
+
+
+    transform:
+
+    translateY(-5px);
+
+
+
+    box-shadow:
+
+
+    0 15px 30px
+
+    rgba(139,92,246,0.5);
+
+
+
+}
+@media(max-width:700px){
+
+
+
+    .task-form{
+
+
+        grid-template-columns:
+
+        1fr;
+
+
+    }
+
+
+
+
+
+    .task-form button{
+
+
+        grid-column:
+
+        span 1;
+
+
+    }
+
+
+
+}
