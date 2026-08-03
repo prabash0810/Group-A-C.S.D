@@ -1,4 +1,9 @@
- 
+ html{
+
+    scroll-behavior:smooth;
+
+}
+
 *{
     margin:0;
     padding:0;
@@ -79,6 +84,9 @@ body{
     padding:40px;
  
     transition:0.4s ease;
+    animation:
+
+    pageAppear 1s ease forwards;
  
 }
  
@@ -741,30 +749,273 @@ footer{
  
 /* RESPONSIVE DESIGN */
  
-@media(max-width:700px){
- 
+/* ==================================
+   PART 2.10
+   RESPONSIVE DESIGN
+================================== */
+
+
+
+/* Tablet Devices */
+
+@media(max-width:900px){
+
+
+
     .planner-container{
-        width:95%;
-        padding:20px;
+
+
+        width:92%;
+
+
+        padding:30px;
+
+
     }
- 
-    .header{
-        flex-direction:column;
-        gap:20px;
+
+
+
+
+    .logo h1{
+
+
+        font-size:36px;
+
+
     }
- 
-    .date-box{
-        text-align:center;
+
+
+
+
+    .welcome h2{
+
+
+        font-size:30px;
+
+
     }
- 
-    .task-input{
-        flex-direction:column;
-    }
- 
+
+
 }
 
 
 
+
+
+
+
+
+
+/* Mobile Devices */
+
+
+@media(max-width:700px){
+
+
+
+    body{
+
+
+        padding:20px;
+
+
+    }
+
+
+
+
+
+    .planner-container{
+
+
+        width:100%;
+
+
+
+        padding:20px;
+
+
+
+        border-radius:20px;
+
+
+    }
+
+
+
+
+
+
+
+    /* Header becomes vertical */
+
+
+    .header{
+
+
+        flex-direction:column;
+
+
+
+        align-items:center;
+
+
+
+        text-align:center;
+
+
+
+        gap:25px;
+
+
+
+    }
+
+
+
+
+
+
+
+    .logo h1{
+
+
+        font-size:32px;
+
+
+    }
+
+
+
+
+
+
+
+    .logo p{
+
+
+        font-size:14px;
+
+
+    }
+
+
+
+
+
+
+
+    /* Date card */
+
+
+    .date-box{
+
+
+        width:100%;
+
+
+
+        text-align:center;
+
+
+
+        padding:15px;
+
+
+    }
+
+
+
+
+
+
+
+
+    /* Welcome */
+
+
+    .welcome h2{
+
+
+        font-size:26px;
+
+
+    }
+
+
+
+
+
+    .welcome p{
+
+
+        font-size:15px;
+
+
+    }
+
+
+
+
+
+
+
+    /* Task Input */
+
+
+    .task-input{
+
+
+        flex-direction:column;
+
+
+
+        gap:12px;
+
+
+    }
+
+
+
+
+
+
+    .task-input input{
+
+
+        width:100%;
+
+
+
+    }
+
+
+
+
+
+
+    .task-input button{
+
+
+        width:100%;
+
+
+
+        padding:15px;
+
+
+    }
+  /* Progress */
+    .progress-section,
+    .task-section{
+
+
+        padding:20px;
+
+
+    }
+
+}
 
 .background-shapes{
 
@@ -980,6 +1231,182 @@ footer{
 
 
     }
+
+
+}
+/* ==================================
+
+   PAGE ENTRANCE ANIMATION*/
+
+
+
+@keyframes pageAppear{
+
+
+    from{
+
+
+        opacity:0;
+
+
+
+        transform:
+
+        translateY(50px)
+        scale(0.95);
+
+
+
+    }
+
+
+
+
+    to{
+
+
+        opacity:1;
+
+
+
+        transform:
+
+        translateY(0)
+        scale(1);
+
+
+
+    }
+
+
+
+}
+/* =====
+   CUSTOM SCROLLBAR*/
+
+
+
+::-webkit-scrollbar{
+
+
+    width:10px;
+
+
+}
+
+
+
+
+
+::-webkit-scrollbar-track{
+
+
+    background:
+
+    rgba(255,255,255,0.1);
+
+
+
+}
+
+
+
+
+
+
+
+::-webkit-scrollbar-thumb{
+
+
+    background:
+
+
+    linear-gradient(
+        #6366f1,
+        #14b8a6
+    );
+
+
+
+    border-radius:20px;
+
+
+
+}
+
+
+
+
+
+::-webkit-scrollbar-thumb:hover{
+
+
+    background:
+
+
+    linear-gradient(
+        #8b5cf6,
+        #06b6d4
+    );
+
+
+}
+
+
+
+::selection{
+
+
+    background:#6366f1;
+
+
+
+    color:white;
+
+
+
+}
+
+
+
+
+
+
+
+button,
+input{
+
+
+    transition:
+
+
+    all 0.3s ease;
+
+
+}
+
+
+
+
+
+
+button{
+
+
+    user-select:none;
+
+
+}
+
+
+
+
+
+
+p{
+
+
+    line-height:1.6;
 
 
 }
