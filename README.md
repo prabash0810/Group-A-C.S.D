@@ -1,39 +1,71 @@
-## Website Navigation Diagram
+# System Architecture
 
 ```mermaid
 graph TD
 
-    A[🏠 DayWise Home] --> B[📊 Dashboard]
+    %% User Access
+    A[🌍 User] --> B[🏠 DayWise Website]
 
-    B --> C[📝 Daily Planner]
-    B --> D[🎓 Work & Uni]
-    B --> E[💰 Income]
-    B --> F[🏆 Achievement]
-    B --> G[📅 Events]
+    %% Authentication
+    B --> C{Login / Sign Up}
 
-    C --> C1[Add Daily Tasks]
-    C --> C2[Edit Tasks]
-    C --> C3[Mark Completed]
+    C -->|New User| D[Create Account]
+    C -->|Existing User| E[Login]
 
-    D --> D1[Add University Class]
-    D --> D2[Add Work Shift]
-    D --> D3[View Weekly Schedule]
+    D --> F[📊 Dashboard]
+    E --> F
 
-    E --> E1[Record Income]
-    E --> E2[View Income History]
-    E --> E3[Calculate Total Earnings]
+    %% Main Modules
+    F --> G[📝 Daily Planner]
+    F --> H[🎓 Work & Uni]
+    F --> I[💰 Income]
+    F --> J[🏆 Achievements]
+    F --> K[📅 Events]
 
-    F --> F1[Track Goals]
-    F --> F2[View Completed Achievements]
-    F --> F3[Progress Overview]
+    %% Daily Planner
+    G --> G1[Add Task]
+    G --> G2[Edit Task]
+    G --> G3[Delete Task]
+    G --> G4[Mark as Completed]
 
-    G --> G1[Add Event]
-    G --> G2[Edit Event]
-    G --> G3[Upcoming Events]
+    %% Work & Uni
+    H --> H1[Add University Class]
+    H --> H2[Add Work Shift]
+    H --> H3[View Weekly Schedule]
+    H --> H4[Set Reminders]
 
-    C3 --> H[(Local Storage)]
-    D3 --> H
-    E3 --> H
-    F3 --> H
-    G3 --> H
+    %% Income
+    I --> I1[Add Income]
+    I --> I2[View Income History]
+    I --> I3[Calculate Total Earnings]
+
+    %% Achievements
+    J --> J1[Create Goals]
+    J --> J2[Track Progress]
+    J --> J3[View Achievements]
+
+    %% Events
+    K --> K1[Add Event]
+    K --> K2[Edit Event]
+    K --> K3[Delete Event]
+    K --> K4[Upcoming Events]
+
+    %% Current Storage
+    G --> L[(Browser Local Storage)]
+    H --> L
+    I --> L
+    J --> L
+    K --> L
+
+    %% Load Saved Data
+    L --> M[Load Saved Data on Startup]
+
+    %% Future Upgrade
+    L -. Future Upgrade .-> N[(Cloud Database)]
+
+    %% Cloud Features
+    N --> O[User Accounts]
+    N --> P[Cross-device Sync]
+    N --> Q[Automatic Backup]
+    N --> R[Global Access]
 ```
