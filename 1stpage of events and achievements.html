@@ -1,227 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <!----Basic Page Information-->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>LifeSync events and achievements</title>
+    <title>LifeSync - Events & Achievements</title>
     <link rel="stylesheet" href="1stpage of events and achievements.css">
 
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
 </head>
-
 <body>
-
-    <!-- Navigation Bar -->
-
     <header>
-
         <nav class="navbar">
-
             <div class="logo">
-
                 <i class="fa-solid fa-calendar-check"></i>
-
                 <h2>LifeSync</h2>
-
             </div>
-
             <ul class="nav-links">
-
-                <li><a href="dashboard.html.html">Dashboard</a></li>
-
-                <li><a href="2nd%20events.html">Events</a></li>
-
-                <li><a href="2nd%20achievements.html">Achievements</a></li>
-
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="#events-section">Events</a></li>
+                <li><a href="#achievements-section">Achievements</a></li>
             </ul>
-
         </nav>
-
     </header>
 
-    <!-- Hero Section -->
-
     <main>
-
         <section class="hero">
-
             <div class="hero-text">
-
-                <h1>
-                    Organise Your Events &
-                    Celebrate Every Achievement
-                </h1>
-
-                <p>
-
-                    Manage upcoming events, record your achievements,
-                    and keep track of your progress all in one place.
-
-                </p>
-
+                <h1>Plan Events and Celebrate Achievements in One Place</h1>
+                <p>Track your upcoming events, log your milestones, and keep everything organised from a single dashboard.</p>
             </div>
-
         </section>
-
-        <!-- Main Cards -->
-
-        <section class="cards-container">
-
-            <!-- Events Card -->
-
-            <a href="2nd%20events.html" class="dashboard-card">
-
-                <div class="icon">
-
-                    <i class="fa-solid fa-calendar-days"></i>
-
-                </div>
-
-                <h2>Events</h2>
-
-                <p>
-
-                    Create, edit, search, filter and manage
-                    all your upcoming events.
-
-                </p>
-
-                <button class="card-btn">
-
-                    Open Events
-
-                </button>
-
-            </a>
-
-            <!-- Achievements Card -->
-
-            <a href="2nd%20achievements.html" class="dashboard-card">
-
-                <div class="icon">
-
-                    <i class="fa-solid fa-trophy"></i>
-
-                </div>
-
-                <h2>Achievements</h2>
-
-                <p>
-
-                    Save your achievements,
-                    certificates,
-                    awards and completed goals.
-
-                </p>
-
-                <button class="card-btn">
-
-                    Open Achievements
-
-                </button>
-
-            </a>
-
-        </section>
-
-        <!-- ==========================================
-             Quick Statistics
-             Values will be updated using JavaScript
-        =========================================== -->
 
         <section class="statistics">
-
             <h2>Quick Overview</h2>
-
             <div class="stats-grid">
-
                 <div class="stat-box">
-
-                    <h3 id="totalEvents">
-
-                        0
-
-                    </h3>
-
+                    <h3 id="totalEvents">0</h3>
                     <p>Total Events</p>
-
                 </div>
-
                 <div class="stat-box">
-
-                    <h3 id="completedEvents">
-
-                        0
-
-                    </h3>
-
+                    <h3 id="completedEvents">0</h3>
                     <p>Completed Events</p>
-
                 </div>
-
                 <div class="stat-box">
-
-                    <h3 id="totalAchievements">
-
-                        0
-
-                    </h3>
-
+                    <h3 id="totalAchievements">0</h3>
                     <p>Achievements</p>
-
                 </div>
-
                 <div class="stat-box">
-
-                    <h3 id="completionRate">
-
-                        0%
-
-                    </h3>
-
+                    <h3 id="completionRate">0%</h3>
                     <p>Completion Rate</p>
-
                 </div>
-
             </div>
-
         </section>
 
+        <section class="combined-layout">
+            <div class="panel" id="events-section">
+                <div class="panel-header">
+                    <h2><i class="fa-solid fa-calendar-days"></i> Events</h2>
+                    <p>Keep your upcoming plans in one place.</p>
+                </div>
+
+                <form class="panel-form" onsubmit="event.preventDefault(); addEvent();">
+                    <input type="text" id="eventName" placeholder="Event name" required>
+                    <input type="date" id="eventDate" required>
+                    <button type="submit" class="submit-btn">Add Event</button>
+                </form>
+
+                <div id="eventList" class="item-list"></div>
+            </div>
+
+            <div class="panel" id="achievements-section">
+                <div class="panel-header">
+                    <h2><i class="fa-solid fa-trophy"></i> Achievements</h2>
+                    <p>Record your wins and important milestones.</p>
+                </div>
+
+                <form class="panel-form" onsubmit="event.preventDefault(); addAchievement();">
+                    <input type="text" id="achievementTitle" placeholder="Achievement title" required>
+                    <input type="text" id="achievementDescription" placeholder="Short description" required>
+                    <button type="submit" class="submit-btn">Add Achievement</button>
+                </form>
+
+                <div id="achievementList" class="item-list"></div>
+            </div>
+        </section>
     </main>
 
-    <!-- ==========================================
-         Footer
-    =========================================== -->
-
     <footer>
-
-        <p>
-
-            © 2026 LifeSync | Events & Achievements Module
-
-        </p>
-
+        <p>© 2026 LifeSync | Events & Achievements Module</p>
     </footer>
 
-    <!-- JavaScript -->
-
     <script src="events and achievements.js"></script>
-
 </body>
-
 </html>
