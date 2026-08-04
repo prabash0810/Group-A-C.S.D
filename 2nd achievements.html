@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        LifeSync - Achievements
+    </title>
+
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="achievements.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation Bar -->
+
+    <nav>
+
+        <h1>
+            LifeSync
+        </h1>
+
+
+        <div>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+
+            <a href="events.html">
+                Events
+            </a>
+
+
+            <a href="achievements.html">
+                Achievements
+            </a>
+
+        </div>
+
+
+    </nav>
+
+
+
+
+    <!-- Main Content -->
+
+    <main>
+
+
+        <h2>
+            Your Achievements 🏆
+        </h2>
+
+
+        <p>
+            Save your certificates, awards and personal goals.
+        </p>
+
+
+
+        <!-- Add Achievement Form -->
+
+
+        <section class="achievement-form">
+
+
+            <input 
+            type="text"
+            id="achievementTitle"
+            placeholder="Achievement title">
+
+
+
+            <input 
+            type="text"
+            id="achievementDescription"
+            placeholder="Description">
+
+
+
+            <button onclick="addAchievement()">
+
+                Add Achievement
+
+            </button>
+
+
+
+        </section>
+
+
+
+
+
+        <!-- Achievement List -->
+
+
+        <section>
+
+
+            <h3>
+                My Achievements
+            </h3>
+
+
+            <div id="achievementList"></div>
+
+
+        </section>
+
+
+
+    </main>
+
+
+
+
+
+<script>
+
+
+// Load achievements when page opens
+
+document.addEventListener(
+"DOMContentLoaded",
+displayAchievements
+);
+
+
+
+
+
+// Add Achievement Function
+
+
+function addAchievement(){
+
+
+    let title =
+    document.getElementById(
+        "achievementTitle"
+    ).value;
+
+
+
+    let description =
+    document.getElementById(
+        "achievementDescription"
+    ).value;
+
+
+
+
+    if(title === "" || description === ""){
+
+
+        alert(
+        "Please enter achievement details"
+        );
+
+        return;
+
+    }
+
+
+
+
+    let achievements =
+    JSON.parse(
+        localStorage.getItem("achievements")
+    ) || [];
+
+
+
+
+
+    let newAchievement = {
+
+
+        id: Date.now(),
+
+
+        title:title,
+
+
+        description:description,
+
+
+        completed:false
+
+    };
+
+
+
+
+
+    achievements.push(newAchievement);
+
+
+
+
+
+    localStorage.setItem(
+
+        "achievements",
+
+        JSON.stringify(achievements)
+
+    );
+
+
+
+
+
+    alert(
+    "Achievement Added Successfully!"
+    );
+
+
+
+
+    document.getElementById(
+        "achievementTitle"
+    ).value="";
+
+
+
+    document.getElementById(
+        "achievementDescription"
+    ).value="";
+
+
+
+    displayAchievements();
+
+
+
+}
+
+
+
+
+
+
+
+// Display achievements
+
+
+function displayAchievements(){
+
+
+
+let achievements =
+
+JSON.parse(
+localStorage.getItem("achievements")
+) || [];
+
+
+
+
+let list =
+
+document.getElementById(
+"achievementList"
+);
+
+
+
+
+list.innerHTML="";
+
+
+
+
+
+if(achievements.length === 0){
+
+
+    list.innerHTML =
+    "<p>No achievements added yet.</p>";
+
+
+    return;
+
+}
+
+
+
+
+
+achievements.forEach(item => {
+
+
+
+let card = document.createElement("div");
+
+
+
+card.className =
+"achievement-card";
+
+
+
+
+
+card.innerHTML = `
+
+
+
+<h4>
+${item.title}
+</h4>
+
+
+
+<p>
+${item.description}
+</p>
+
+
+
+<p>
+Status:
+${item.completed ?
+"Completed ✅":
+"Pending ⏳"}
+</p>
+
+
+
+
+<button onclick="completeAchievement(${item.id})">
+
+Complete
+
+</button>
+
+
+
+
+<button onclick="deleteAchievement(${item.id})">
+
+Delete
+
+</button>
+
+
+
+`;
+
+
+
+
+
+list.appendChild(card);
+
+
+
+});
+
+
+
+}
+
+
+
+
+
+
+
+// Complete Achievement
+
+
+function completeAchievement(id){
+
+
+
+let achievements =
+
+JSON.parse(
+localStorage.getItem("achievements")
+);
+
+
+
+
+achievements =
+achievements.map(item=>{
+
+
+if(item.id === id){
+
+item.completed=true;
+
+}
+
+
+return item;
+
+
+});
+
+
+
+
+
+localStorage.setItem(
+
+"achievements",
+
+JSON.stringify(achievements)
+
+);
+
+
+
+
+displayAchievements();
+
+
+
+}
+
+
+
+
+
+
+
+
+// Delete Achievement
+
+
+function deleteAchievement(id){
+
+
+
+let achievements =
+
+JSON.parse(
+localStorage.getItem("achievements")
+);
+
+
+
+
+
+achievements =
+
+achievements.filter(
+item=>item.id !== id
+);
+
+
+
+
+
+localStorage.setItem(
+
+"achievements",
+
+JSON.stringify(achievements)
+
+);
+
+
+
+
+
+displayAchievements();
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

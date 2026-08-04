@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LifeSync - Events</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="events.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <h1>LifeSync</h1>
+
+        <a href="dashboard.html">Dashboard</a>
+        <a href="events.html">Events</a>
+        <a href="achievements.html">Achievements</a>
+    </nav>
+
+
+    <!-- Main Container -->
+    <main>
+
+        <h2>Your Events</h2>
+        <p>Organise your upcoming events and never miss important moments.</p>
+
+
+        <!-- Add Event Form -->
+        <section class="event-form">
+
+            <input 
+            type="text" 
+            id="eventName"
+            placeholder="Enter event name">
+
+
+            <input 
+            type="date" 
+            id="eventDate">
+
+
+            <button onclick="addEvent()">
+                Add Event
+            </button>
+
+        </section>
+
+
+
+        <!-- Event List -->
+        <section>
+
+            <h3>Upcoming Events</h3>
+
+            <div id="eventList"></div>
+
+        </section>
+
+
+    </main>
+
+
+
+<script>
+
+
+// Load events when page opens
+
+document.addEventListener(
+"DOMContentLoaded",
+displayEvents
+);
+
+
+
+// Add new event
+
+function addEvent(){
+
+    let name =
+    document.getElementById("eventName").value;
+
+
+    let date =
+    document.getElementById("eventDate").value;
+
+
+
+    if(name === "" || date === ""){
+        alert("Please enter event details");
+        return;
+    }
+
+
+
+    let events =
+    JSON.parse(localStorage.getItem("events")) || [];
+
+
+
+    let newEvent = {
+
+        id: Date.now(),
+
+        name:name,
+
+        date:date,
+
+        completed:false
+    };
+
+
+
+    events.push(newEvent);
+
+
+
+    localStorage.setItem(
+        "events",
+        JSON.stringify(events)
+    );
+
+
+
+    alert("Event Added Successfully!");
+
+
+
+    document.getElementById("eventName").value="";
+    document.getElementById("eventDate").value="";
+
+
+    displayEvents();
+
+}
+
+
+
+
+// Display Events
+
+function displayEvents(){
+
+
+let events =
+JSON.parse(localStorage.getItem("events")) || [];
+
+
+
+let list =
+document.getElementById("eventList");
+
+
+
+list.innerHTML="";
+
+
+
+if(events.length===0){
+
+list.innerHTML=
+"<p>No events added yet.</p>";
+
+return;
+
+}
+
+
+
+events.forEach(event=>{
+
+
+let card=document.createElement("div");
+
+
+card.className="event-card";
+
+
+
+card.innerHTML=`
+
+<h4>${event.name}</h4>
+
+<p>Date:
+${event.date}
+</p>
+
+
+<p>
+Status:
+${event.completed ? 
+"Completed ✅" :
+"Pending ⏳"}
+</p>
+
+
+<button onclick="completeEvent(${event.id})">
+
+Complete
+
+</button>
+
+
+<button onclick="deleteEvent(${event.id})">
+
+Delete
+
+</button>
+
+`;
+
+
+
+list.appendChild(card);
+
+
+});
+
+
+}
+
+
+
+
+
+// Complete Event
+
+function completeEvent(id){
+
+
+let events =
+JSON.parse(localStorage.getItem("events"));
+
+
+
+events =
+events.map(event=>{
+
+
+if(event.id===id){
+
+event.completed=true;
+
+}
+
+
+return event;
+
+
+});
+
+
+
+localStorage.setItem(
+"events",
+JSON.stringify(events)
+);
+
+
+
+displayEvents();
+
+}
+
+
+
+
+
+// Delete Event
+
+function deleteEvent(id){
+
+
+let events =
+JSON.parse(localStorage.getItem("events"));
+
+
+
+events =
+events.filter(event=>event.id!==id);
+
+
+
+localStorage.setItem(
+"events",
+JSON.stringify(events)
+);
+
+
+
+displayEvents();
+
+
+}
+
+
+</script>
+
+
+</body>
+</html>
