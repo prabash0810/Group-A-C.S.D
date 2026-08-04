@@ -1562,3 +1562,277 @@ body {
 
 
 }
+/*
+    Commit 18
+    Events & Achievements Preview Design
+
+    Features:
+    - Modern event cards
+    - Achievement styling
+    - Certificate section
+    - Hover animations
+*/
+
+
+/*
+    Section Header
+*/
+
+.section-header {
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+.section-header h2 {
+
+
+    font-size:28px;
+
+
+    color:
+
+    var(--navy);
+
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+.section-header p {
+
+
+    color:
+
+    var(--text-light);
+
+
+}
+
+
+
+
+
+/*
+    Events Container
+*/
+
+.events-container {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    gap:20px;
+
+
+}
+
+
+
+
+
+/*
+    Event Preview Card
+*/
+
+.event-preview-card {
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:15px;
+
+
+    padding:25px;
+
+
+    border-radius:25px;
+
+
+    background:
+
+
+    rgba(255,255,255,0.80);
+
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+
+    transition:
+
+    0.3s ease;
+
+
+}
+
+
+
+
+
+/*
+    Card Hover
+*/
+
+.event-preview-card:hover {
+
+
+    transform:
+
+    translateY(-8px);
+
+
+}
+
+
+
+
+
+/*
+    Event Icon
+*/
+
+.event-icon {
+
+
+    width:70px;
+
+
+    height:70px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    border-radius:20px;
+
+
+    font-size:35px;
+
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #9333EA,
+        #EC4899
+    );
+
+
+}
+
+
+
+
+
+/*
+    Event Details
+*/
+
+.event-details h3 {
+
+
+    color:
+
+    var(--navy);
+
+
+    font-size:20px;
+
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+
+
+.event-details p {
+
+
+    color:
+
+    var(--text-light);
+
+
+    font-size:14px;
+
+
+    line-height:1.5;
+
+
+}
+
+
+
+
+
+.event-details span {
+
+
+    display:inline-block;
+
+
+    margin-top:15px;
+
+
+    padding:8px 15px;
+
+
+    border-radius:20px;
+
+
+    background:
+
+
+    #E0F2FE;
+
+
+    color:
+
+    var(--blue);
+
+
+    font-size:13px;
+
+
+    cursor:pointer;
+
+
+}
