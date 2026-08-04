@@ -782,3 +782,286 @@ body {
 
 
 }
+
+/*
+    Commit 15
+    Quick Actions Design
+
+    Features:
+    - Modern action cards
+    - Glass effect
+    - Hover animation
+    - Feature colours
+*/
+
+
+/*
+    Quick Action Section
+*/
+
+.quick-actions {
+
+
+    margin-bottom:40px;
+
+
+}
+
+
+
+
+
+.quick-actions h2 {
+
+
+    font-size:26px;
+
+
+    color:
+
+    var(--navy);
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+/*
+    Action Cards Container
+*/
+
+.action-container {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(4,1fr);
+
+
+    gap:20px;
+
+
+}
+
+
+
+
+
+/*
+    Individual Action Card
+*/
+
+.action-card {
+
+
+    border:none;
+
+
+    padding:25px 15px;
+
+
+    border-radius:22px;
+
+
+    background:
+
+
+    rgba(255,255,255,0.75);
+
+
+    backdrop-filter:
+
+    blur(12px);
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+    cursor:pointer;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    align-items:center;
+
+
+    gap:12px;
+
+
+    font-size:16px;
+
+
+    color:
+
+    var(--text-dark);
+
+
+    transition:
+
+    0.3s ease;
+
+
+}
+
+
+
+
+
+/*
+    Hover Animation
+*/
+
+.action-card:hover {
+
+
+    transform:
+
+    translateY(-8px);
+
+
+    box-shadow:
+
+    0 15px 35px rgba(15,23,42,0.15);
+
+
+}
+
+
+
+
+
+/*
+    Action Icons
+*/
+
+.action-icon {
+
+
+    width:65px;
+
+
+    height:65px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    border-radius:18px;
+
+
+    font-size:32px;
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #2563EB,
+        #0D9488
+    );
+
+
+}
+
+
+
+
+
+/*
+    Different Action Themes
+*/
+
+
+.action-card:nth-child(1)
+.action-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #2563EB,
+        #38BDF8
+    );
+
+
+}
+
+
+
+
+
+.action-card:nth-child(2)
+.action-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #16A34A,
+        #22C55E
+    );
+
+
+}
+
+
+
+
+
+.action-card:nth-child(3)
+.action-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #F59E0B,
+        #F97316
+    );
+
+
+}
+
+
+
+
+
+.action-card:nth-child(4)
+.action-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #9333EA,
+        #EC4899
+    );
+
+
+}
