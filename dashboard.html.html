@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic page information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- DayWise Dashboard Title -->
+    <title>DayWise | Dashboard</title>
+
+    <!-- Dashboard Styling -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <!-- Main Dashboard Container -->
+    <div class="dashboard-container">
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>DayWise</h2>
+                <p>Smart Life Management</p>
+            </div>
+
+            <nav>
+                <a href="dashboard.html" class="active">
+                    🏠 Dashboard
+                </a>
+
+                <a href="events.html">
+                    📅 Events
+                </a>
+
+                <a href="achievements.html">
+                    🏆 Achievements
+                </a>
+
+                <a href="#">
+                    💰 Finance
+                </a>
+
+                <a href="#">
+                    ⚙ Settings
+                </a>
+            </nav>
+
+        </aside>
+
+
+        <!-- Main Dashboard Content -->
+        <main class="dashboard-content">
+
+
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+
+                <div>
+                    <h1>
+                        Welcome back to DayWise 👋
+                    </h1>
+
+                    <p>
+                        Organise your day, track your goals,
+                        and improve your productivity.
+                    </p>
+                </div>
+
+
+                <!-- Current Date -->
+                <div class="date-box">
+                    <h3 id="currentDate">
+                        Loading date...
+                    </h3>
+                </div>
+
+            </section>
+
+
+
+            <!-- Dashboard Cards -->
+            <section class="dashboard-cards">
+
+
+                <div class="card">
+                    <h3>Weekly Progress</h3>
+
+                    <div class="progress-circle">
+                        <span>0%</span>
+                    </div>
+
+                    <p>
+                        Compared with last week
+                    </p>
+                </div>
+
+
+
+                <div class="card">
+
+                    <h3>Tasks Completed</h3>
+
+                    <h2>
+                        0 / 0
+                    </h2>
+
+                    <p>
+                        Keep completing your goals
+                    </p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <h3>Events</h3>
+
+                    <h2>
+                        0
+                    </h2>
+
+                    <p>
+                        Upcoming events
+                    </p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <h3>Achievements</h3>
+
+                    <h2>
+                        0
+                    </h2>
+
+                    <p>
+                        Personal achievements
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- Dashboard JavaScript -->
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
