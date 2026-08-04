@@ -146,3 +146,188 @@ body {
     padding: 40px;
 
 }
+
+/*
+    Commit 12
+    DayWise Sidebar Design
+
+    Features:
+    - Navy glass sidebar
+    - Logo styling
+    - Navigation animation
+    - Active menu highlight
+*/
+
+
+/*
+    Sidebar Layout
+*/
+
+.sidebar {
+
+    width: 280px;
+
+    padding: 30px 20px;
+
+    background:
+
+    linear-gradient(
+        160deg,
+        rgba(15,23,42,0.95),
+        rgba(30,64,175,0.90)
+    );
+
+
+    color: white;
+
+    min-height: 100vh;
+
+    position: sticky;
+
+    top: 0;
+
+
+    box-shadow:
+    10px 0 30px rgba(15,23,42,0.15);
+
+}
+
+
+
+
+
+/*
+    DayWise Logo Area
+*/
+
+.logo {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+}
+
+
+
+.logo h1 {
+
+    font-size: 32px;
+
+    letter-spacing: 1px;
+
+    color: #38BDF8;
+
+}
+
+
+
+.logo p {
+
+    margin-top: 8px;
+
+    font-size: 14px;
+
+    color: #CBD5E1;
+
+}
+
+
+
+
+
+/*
+    Navigation Menu
+*/
+
+.navigation {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+
+
+
+/*
+    Navigation Links
+*/
+
+.navigation a {
+
+    text-decoration: none;
+
+    color: #E2E8F0;
+
+
+    padding: 14px 18px;
+
+
+    border-radius: 14px;
+
+
+    font-size: 15px;
+
+
+    transition:
+    0.3s ease;
+
+}
+
+
+
+
+
+/*
+    Hover Animation
+*/
+
+.navigation a:hover {
+
+    background:
+
+    rgba(255,255,255,0.12);
+
+
+    transform:
+
+    translateX(8px);
+
+
+    color: white;
+
+}
+
+
+
+
+
+/*
+    Active Dashboard Button
+*/
+
+.navigation a.active {
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #2563EB,
+        #0D9488
+    );
+
+
+    color:white;
+
+
+    box-shadow:
+
+    0 8px 20px rgba(37,99,235,0.35);
+
+}
