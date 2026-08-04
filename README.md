@@ -33,12 +33,5 @@ graph TD
     K --> K2[Theme Preference]
     K --> K3[Language]
     K --> K4[Session Identifier]
-
-    %% Future Upgrade
-    J -. Future Upgrade .-> L[(☁️ Secure Cloud Database)]
-
-    L --> M[Encrypted User Data]
-    L --> N[Cross-device Access]
-    L --> O[Automatic Backup]
 ```
 
