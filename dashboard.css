@@ -1836,3 +1836,594 @@ body {
 
 
 }
+
+/*
+    Commit 19
+    Money Manager Finance Cards Design
+
+    Features:
+    - Finance dashboard cards
+    - Colour themes
+    - Glass UI
+    - Hover effects
+*/
+
+
+/*
+    Finance Preview Section
+*/
+
+.finance-preview {
+
+
+    margin-bottom:40px;
+
+
+}
+
+
+
+
+
+/*
+    Finance Cards Layout
+*/
+
+.finance-container {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(4,1fr);
+
+
+    gap:20px;
+
+
+}
+
+
+
+
+
+/*
+    Finance Card
+*/
+
+.finance-card {
+
+
+    padding:25px;
+
+
+    border-radius:25px;
+
+
+    background:
+
+
+    rgba(255,255,255,0.80);
+
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+
+    text-align:center;
+
+
+    transition:
+
+    0.3s ease;
+
+
+}
+
+
+
+
+
+/*
+    Hover Effect
+*/
+
+.finance-card:hover {
+
+
+    transform:
+
+    translateY(-8px);
+
+
+}
+
+
+
+
+
+/*
+    Finance Icon
+*/
+
+.finance-icon {
+
+
+    width:70px;
+
+
+    height:70px;
+
+
+    margin:auto;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    border-radius:20px;
+
+
+    font-size:35px;
+
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #16A34A,
+        #0D9488
+    );
+
+
+}
+
+
+
+
+
+/*
+    Finance Text
+*/
+
+.finance-card h3 {
+
+
+    margin-top:18px;
+
+
+    margin-bottom:10px;
+
+
+    color:
+
+    var(--navy);
+
+
+    font-size:18px;
+
+
+}
+
+
+
+
+
+.finance-card p {
+
+
+    color:
+
+    var(--text-light);
+
+
+    font-size:20px;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+
+
+/*
+    Individual Finance Colours
+*/
+
+
+.finance-card:nth-child(1)
+.finance-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #16A34A,
+        #22C55E
+    );
+
+
+}
+
+
+
+
+
+.finance-card:nth-child(2)
+.finance-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #EF4444,
+        #F97316
+    );
+
+
+}
+
+
+
+
+
+.finance-card:nth-child(3)
+.finance-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #2563EB,
+        #38BDF8
+    );
+
+
+}
+
+
+
+
+
+.finance-card:nth-child(4)
+.finance-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #9333EA,
+        #EC4899
+    );
+
+
+}
+
+/*
+    Commit 20
+    Goals & Targets Section Design
+
+    Features:
+    - Goal tracking cards
+    - Progress display
+    - Growth theme colours
+    - Glass UI
+*/
+
+
+/*
+    Goals Preview Section
+*/
+
+.goals-preview {
+
+
+    margin-bottom:40px;
+
+
+}
+
+
+
+
+
+/*
+    Goals Container
+*/
+
+.goals-container {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    gap:20px;
+
+
+}
+
+
+
+
+
+/*
+    Goal Card
+*/
+
+.goal-card {
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:18px;
+
+
+    padding:25px;
+
+
+    border-radius:25px;
+
+
+    background:
+
+
+    rgba(255,255,255,0.80);
+
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+
+    transition:
+
+    0.3s ease;
+
+
+}
+
+
+
+
+
+/*
+    Hover Animation
+*/
+
+.goal-card:hover {
+
+
+    transform:
+
+    translateY(-8px);
+
+
+}
+
+
+
+
+
+/*
+    Goal Icon
+*/
+
+.goal-icon {
+
+
+    width:70px;
+
+
+    height:70px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    border-radius:20px;
+
+
+    font-size:35px;
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #16A34A,
+        #0D9488
+    );
+
+
+}
+
+
+
+
+
+/*
+    Goal Details
+*/
+
+.goal-details h3 {
+
+
+    color:
+
+    var(--navy);
+
+
+    font-size:19px;
+
+
+    margin-bottom:8px;
+
+
+}
+
+
+
+
+
+.goal-details p {
+
+
+    color:
+
+    var(--text-light);
+
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+.goal-details span {
+
+
+    display:inline-block;
+
+
+    margin-top:12px;
+
+
+    padding:7px 14px;
+
+
+    border-radius:20px;
+
+
+    background:
+
+
+    #DCFCE7;
+
+
+    color:
+
+    #15803D;
+
+
+    font-size:13px;
+
+
+}
+
+
+
+
+
+/*
+    Different Goal Colours
+*/
+
+
+.goal-card:nth-child(1)
+.goal-icon {
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #2563EB,
+        #38BDF8
+    );
+
+
+}
+
+
+
+
+
+.goal-card:nth-child(2)
+.goal-icon {
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #9333EA,
+        #EC4899
+    );
+
+
+}
+
+
+
+
+
+.goal-card:nth-child(3)
+.goal-icon {
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #16A34A,
+        #22C55E
+    );
+
+
+}
