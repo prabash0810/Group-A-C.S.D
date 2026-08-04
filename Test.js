@@ -24,3 +24,22 @@ uniForm.addEventListener("submit", function(e){
     uniForm.reset();
 
 });
+function displayClasses(){
+
+    uniTable.innerHTML = "";
+
+    classes.forEach(function(item){
+
+        uniTable.innerHTML += `
+            <tr>
+                <td>${item.module}</td>
+                <td>${item.lecturer}</td>
+                <td>${item.day}</td>
+                <td>${item.start} - ${item.end}</td>
+                <td>${item.room}</td>
+            </tr>
+        `;
+
+    });
+
+}
