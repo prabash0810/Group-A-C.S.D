@@ -9,10 +9,9 @@ graph TD
     B --> D[Dashboard]
 
     D --> E[Daily Planner]
-    D --> F[Work and Uni]
+    D --> F[Work and study]
     D --> G[Income Tracker]
-    D --> H[Achievements]
-    D --> I[Events]
+    D --> H[Events and Achievements]
 
     %% Session Storage
     E --> J[Session Storage]
