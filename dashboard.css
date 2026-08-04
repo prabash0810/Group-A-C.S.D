@@ -1065,3 +1065,291 @@ body {
 
 
 }
+
+/*
+    Commit 16
+    Dashboard Overview Cards Design
+
+    Features:
+    - Glass cards
+    - Module colours
+    - Hover animation
+*/
+
+
+/*
+    Dashboard Cards Grid
+*/
+
+.dashboard-cards {
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+    gap:25px;
+
+    margin-bottom:40px;
+
+}
+
+
+
+
+
+/*
+    Main Dashboard Card
+*/
+
+.dashboard-card {
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:20px;
+
+
+    padding:30px;
+
+
+    border-radius:25px;
+
+
+    background:
+
+
+    rgba(255,255,255,0.80);
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+
+    border:
+
+    1px solid rgba(255,255,255,0.5);
+
+
+    transition:
+
+    0.3s ease;
+
+
+}
+
+
+
+
+
+/*
+    Card Hover Effect
+*/
+
+.dashboard-card:hover {
+
+
+    transform:
+
+    translateY(-8px);
+
+
+}
+
+
+
+
+
+/*
+    Card Icon
+*/
+
+.card-icon {
+
+
+    width:75px;
+
+
+    height:75px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    border-radius:22px;
+
+
+    font-size:38px;
+
+
+}
+
+
+
+
+
+/*
+    Card Content
+*/
+
+.card-content h3 {
+
+
+    color:
+
+    var(--navy);
+
+
+    font-size:22px;
+
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+
+
+.card-content p {
+
+
+    color:
+
+    var(--text-light);
+
+
+    font-size:14px;
+
+
+    line-height:1.5;
+
+
+}
+
+
+
+
+
+.card-content span {
+
+
+    display:inline-block;
+
+
+    margin-top:12px;
+
+
+    padding:6px 12px;
+
+
+    border-radius:20px;
+
+
+    background:
+
+
+    #E2E8F0;
+
+
+    font-size:13px;
+
+
+}
+
+
+
+
+
+/*
+    Module Colours
+*/
+
+
+.planner-card .card-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #2563EB,
+        #38BDF8
+    );
+
+
+}
+
+
+
+
+
+.work-card .card-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #16A34A,
+        #22C55E
+    );
+
+
+}
+
+
+
+
+
+.money-card .card-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #F59E0B,
+        #F97316
+    );
+
+
+}
+
+
+
+
+
+.event-card .card-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #9333EA,
+        #EC4899
+    );
+
+
+}
