@@ -2,197 +2,221 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Daywise - Daily Planner</title>
+<meta charset="UTF-8">
 
-    <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Daywise - Daily Planner</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <!-- Main Container -->
-    <div class="planner-container">
 
-        <!-- Header Section -->
-        <header class="header">
+<!-- Background Shapes -->
 
-            <div class="logo">
-                <h1>📅 Daywise</h1>
-                <p>Your Academic Daily Planner</p>
-            </div>
+<div class="background-shapes">
 
-            <div class="date-box">
-                <p id="date">Monday, 3 August 2026</p>
-                <p id="clock">12:00:00</p>
-            </div>
+    <span class="shape shape1"></span>
 
-        </header>
+    <span class="shape shape2"></span>
+
+    <span class="shape shape3"></span>
+
+</div>
 
 
-        <!-- Welcome Section -->
-        <section class="welcome">
-
-            <h2>
-                Welcome Back 👋
-            </h2>
-
-            <p>
-                Plan your day, complete your goals and stay productive.
-            </p>
-
-        </section>
 
 
-        <!-- Task Input Section -->
-        <section class="task-section">
 
-            <h2>
-                Today's Tasks
-            </h2>
+<!-- Main Container -->
+
+<div class="planner-container">
 
 
-            <!-- ==========================
-     PART 3.1
-     ADVANCED TASK FORM
-========================== -->
+
+<!-- Header -->
+
+<header class="header">
+
+
+<div class="logo">
+
+<h1>📅 Daywise</h1>
+
+<p>Your Academic Daily Planner</p>
+
+</div>
+
+
+
+
+<div class="date-box">
+
+<p id="date">
+Monday, 3 August 2026
+</p>
+
+
+<p id="clock">
+12:00:00
+</p>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+
+
+
+<!-- Welcome -->
+
+
+<section class="welcome">
+
+
+<h2>
+Welcome Back 👋
+</h2>
+
+
+
+<p>
+Plan your day, complete your goals and stay productive.
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Task Section -->
+
+
+<section class="task-section">
+
+
+<h2>
+Today's Tasks
+</h2>
+
+
+
+
+
+<!-- Advanced Task Form -->
 
 
 <div class="task-form">
+<input
 
+type="text"
 
+id="taskTitle"
 
-    <!-- Task Name -->
+placeholder="Enter task name...">
 
-    <input 
-    type="text"
-    id="taskTitle"
-    placeholder="Enter task name...">
+<select id="subject">
 
 
+<option value="">
+Select Subject
+</option>
 
 
 
+<option value="Computer Science">
+💻 Computer Science
+</option>
 
-    <!-- Subject Selection -->
 
-    <select id="subject">
 
+<option value="Mathematics">
+📐 Mathematics
+</option>
 
-        <option value="">
-            Select Subject
-        </option>
 
 
-        <option value="Computer Science">
-            💻 Computer Science
-        </option>
+<option value="English">
+📖 English
+</option>
 
 
-        <option value="Mathematics">
-            📐 Mathematics
-        </option>
 
+<option value="Chemistry">
+🧪 Chemistry
+</option>
 
-        <option value="English">
-            📖 English
-        </option>
 
+</select>
+<select id="priority">
 
-        <option value="Chemistry">
-            🧪 Chemistry
-        </option>
 
+<option value="">
+Select Priority
+</option>
 
-    </select>
 
+<option value="High">
+🔴 High
+</option>
 
 
+<option value="Medium">
+🟡 Medium
+</option>
 
 
+<option value="Low">
+🟢 Low
+</option>
 
 
-    <!-- Priority -->
+</select>
+<input
 
+type="time"
 
-    <select id="priority">
+id="startTime">
 
 
-        <option value="">
-            Select Priority
-        </option>
 
 
-        <option value="High">
-            🔴 High
-        </option>
 
 
-        <option value="Medium">
-            🟡 Medium
-        </option>
+<input
 
+type="time"
 
-        <option value="Low">
-            🟢 Low
-        </option>
+id="endTime">
 
+<input
 
-    </select>
+type="date"
 
+id="deadline">
 
+<button id="addTask">
 
+➕ Add Task
 
-
-
-
-
-    <!-- Time Block -->
-
-
-    <input
-
-    type="time"
-
-    id="startTime">
-
-
-
-    <input
-
-    type="time"
-
-    id="endTime">
-
-
-
-
-
-
-
-    <!-- Deadline -->
-
-
-    <input
-
-    type="date"
-
-    id="deadline">
-
-
-
-
-
-
-
-    <button id="addTask">
-
-
-        ➕ Add Task
-
-
-    </button>
+</button>
 
 
 
@@ -200,8 +224,16 @@
 </div>
 
 
-            <!-- Task List -->
-            <!-- Active Tasks -->
+
+
+
+
+
+
+
+
+<!-- Active Task Display -->
+
 
 <div class="task-list" id="taskList">
 
@@ -212,94 +244,121 @@
 
 
 
-<!-- ==========================
-     TASK HISTORY SECTION
-========================== -->
+
+
+
+
+<!-- History -->
 
 
 <div class="history-section">
 
 
-    <h2>
-        📚 Task History
-    </h2>
+<h2>
+📚 Task History
+</h2>
 
 
 
-    <div class="history-list" id="historyList">
+<div class="history-list" id="historyList">
 
-
-        <!-- Completed tasks appear here -->
-
-
-    </div>
+</div>
 
 
 
 </div>
 
 
-        </section>
+
+</section>
 
 
 
-        <!-- Progress Section -->
-        <section class="progress-section">
-
-            <h2>
-                Daily Progress
-            </h2>
-
-
-            <div class="progress-bar">
-
-                <div class="progress">
-
-                </div>
-
-            </div>
 
 
 
-            <p>
-                0% Completed
-            </p>
-
-
-        </section>
 
 
 
-        <!-- Footer -->
-        <footer>
-
-            <p>
-                © 2026 Daywise | Academic Planner
-            </p>
-
-        </footer>
+<!-- Progress -->
 
 
-    </div>
+<section class="progress-section">
+
+
+<h2>
+Daily Progress
+</h2>
 
 
 
-<script src="script.js"></script>
+<div class="progress-bar">
 
 
+<div 
+class="progress"
+id="progress">
 
-<div class="background-shapes">
-
-
-    <span class="shape shape1"></span>
-
-    <span class="shape shape2"></span>
-
-    <span class="shape shape3"></span>
+</div>
 
 
 </div>
 
-</body>
+
+
+
+<p>
+
+<span id="progressText">
+
+0%
+
+</span>
+
+Completed
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+
+
+<footer>
+
+
+<p>
+
+© 2026 Daywise | Academic Planner
+
+</p>
+
+
+</footer>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<script src="java.js"></script></body>
 
 </html>
