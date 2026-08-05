@@ -157,3 +157,26 @@ h1{
     font-size:3rem;
 
 }
+/* --- CSS Update for New Logo --- */
+
+/* Ensures the logo link is a flex container for alignment */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 8px; /* Adds space between the image and the text */
+}
+
+/* Specific styling for the new logo image asset */
+.logo-image {
+    height: 24px; /* Adjust this height to match your navbar size */
+    width: auto;  /* Maintains aspect ratio */
+    display: block;
+}
+
+.logo-text {
+    /* Insert font styling for "Daywise" in the header here (e.g., Space Grotesk) */
+    color: #333; /* Or your preferred brand color */
+    font-weight: 700;
+    font-size: 1.2rem;
+}
