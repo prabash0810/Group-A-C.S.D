@@ -1,0 +1,23 @@
+:root{
+  --ink:#10121b;        /* page background */
+  --surface:#171a26;    /* card background */
+  --surface-2:#1e2231;  /* nested card background */
+  --line: rgba(241,238,229,0.09);  /* hairline borders */
+  --text:#f1eee5;
+  --text-dim:#9aa0b4;
+  --text-faint:#666c82;
+
+  --amber:#f4a93b;      /* brand accent */
+  --periwinkle:#8aa0ff; /* university */
+  --coral:#ff8266;      /* work */
+  --mint:#52d68a;       /* income */
+  --gold:#ffc857;       /* achievements */
+  --lavender:#c9a6ff;   /* events */
+  --slate:#8fa3b8;      /* settings */
+}
+body{
+  background:var(--ink);
+  color:var(--text);
+}
+h1,h2,h3{ font-family:'Space Grotesk', sans-serif; }
+.mono{ font-family:'IBM Plex Mono', monospace; }
