@@ -1,23 +1,159 @@
-:root{
-  --ink:#10121b;        /* page background */
-  --surface:#171a26;    /* card background */
-  --surface-2:#1e2231;  /* nested card background */
-  --line: rgba(241,238,229,0.09);  /* hairline borders */
-  --text:#f1eee5;
-  --text-dim:#9aa0b4;
-  --text-faint:#666c82;
+/* RESET */
 
-  --amber:#f4a93b;      /* brand accent */
-  --periwinkle:#8aa0ff; /* university */
-  --coral:#ff8266;      /* work */
-  --mint:#52d68a;       /* income */
-  --gold:#ffc857;       /* achievements */
-  --lavender:#c9a6ff;   /* events */
-  --slate:#8fa3b8;      /* settings */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+/* COLORS */
+
+:root{
+
+    --ink:#10121b;
+    --surface:#171a26;
+    --surface-2:#1e2231;
+    --line:rgba(241,238,229,.09);
+
+    --text:#f1eee5;
+    --text-dim:#9aa0b4;
+
+    --amber:#f4a93b;
+    --periwinkle:#8aa0ff;
+    --coral:#ff8266;
+    --mint:#52d68a;
+    --gold:#ffc857;
+    --lavender:#c9a6ff;
+    --slate:#8fa3b8;
+
+}
+
+/* BODY */
+
 body{
-  background:var(--ink);
-  color:var(--text);
+
+    font-family:'Inter',sans-serif;
+    background:var(--ink);
+    color:var(--text);
+
 }
-h1,h2,h3{ font-family:'Space Grotesk', sans-serif; }
-.mono{ font-family:'IBM Plex Mono', monospace; }
+
+/* HEADINGS */
+
+h1,h2,h3{
+
+    font-family:'Space Grotesk',sans-serif;
+
+}
+
+.mono{
+
+    font-family:'IBM Plex Mono',monospace;
+
+}
+
+/* NAVBAR */
+
+header{
+
+    border-bottom:1px solid var(--line);
+
+}
+
+.wrap{
+
+    width:min(1200px,90%);
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 0;
+
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    text-decoration:none;
+    color:var(--text);
+    font-weight:600;
+
+}
+
+.logo-circle{
+
+    width:28px;
+    height:28px;
+    border-radius:50%;
+
+    background:conic-gradient(
+        var(--amber) 0deg 90deg,
+        var(--periwinkle) 90deg 180deg,
+        var(--coral) 180deg 250deg,
+        var(--mint) 250deg 320deg,
+        var(--lavender) 320deg 360deg
+    );
+
+}
+
+.nav-links{
+
+    display:flex;
+    gap:30px;
+
+}
+
+.nav-links a{
+
+    color:var(--text);
+    text-decoration:none;
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--amber);
+
+}
+
+.btn{
+
+    background:var(--amber);
+    color:#1a1305;
+
+    text-decoration:none;
+
+    padding:10px 22px;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+main{
+
+    width:min(1200px,90%);
+    margin:80px auto;
+
+}
+
+h1{
+
+    font-size:3rem;
+
+}

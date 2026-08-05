@@ -1,135 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daywise Schedule</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f7f7f7;
-      color: #333;
-    }
-    header {
-      background: #0057b8;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      padding: 15px;
-      background: #e8ecf4;
-    }
-    nav a {
-      text-decoration: none;
-      color: #0057b8;
-      padding: 10px 15px;
-      border: 1px solid #0057b8;
-      border-radius: 4px;
-      transition: background 0.2s ease;
-    }
-    nav a:hover {
-      background: #0057b8;
-      color: #fff;
-    }
-    main {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 0 20px 40px;
-    }
-    section {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-      padding: 20px;
-    }
-    section h2 {
-      margin-top: 0;
-    }
-    .day-list {
-      list-style: none;
-      padding: 0;
-    }
-    .day-list li {
-      margin-bottom: 10px;
-      padding: 10px;
-      border: 1px solid #e0e0e0;
-      border-radius: 4px;
-      background: #fafafa;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Daywise</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="webpage.css">
 </head>
+
 <body>
-  <header>
-    <h1>Daywise Webpage</h1>
-    <p>Organize your content by day for a simple weekly view</p>
-  </header>
-  <nav>
-    <a href="#monday">Monday</a>
-    <a href="#tuesday">Tuesday</a>
-    <a href="#wednesday">Wednesday</a>
-    <a href="#thursday">Thursday</a>
-    <a href="#friday">Friday</a>
-    <a href="#saturday">Saturday</a>
-    <a href="#sunday">Sunday</a>
-  </nav>
-  <main>
-    <section id="monday">
-      <h2>Monday</h2>
-      <ul class="day-list">
-        <li>Task 1: Example item</li>
-        <li>Task 2: Example item</li>
-      </ul>
+
+    <!-- Header -->
+    <header>
+
+        <nav class="wrap">
+
+            <!-- Logo -->
+            <a href="#top" class="logo">
+
+                <span class="logo-circle"></span>
+
+                <span>Daywise</span>
+
+            </a>
+
+            <!-- Navigation -->
+            <div class="nav-links">
+
+                <a href="#dashboard">Dashboard</a>
+
+                <a href="#planner">Planner</a>
+
+                <a href="#work-university">Work &amp; University</a>
+
+                <a href="#income">Income</a>
+
+                <a href="#achievements-events">Achievements &amp; Events</a>
+
+                <a href="#settings">Settings</a>
+
+            </div>
+
+            <!-- Button -->
+            <a href="#final-cta" class="btn">
+
+                Start Planning Free
+
+            </a>
+
+        </nav>
+
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="top">
+
+        <div class="hero-content">
+
+            <h1>
+                Plan Your Day Smarter with <span>Daywise</span>
+            </h1>
+
+            <p>
+                Organize your university work, assignments, income,
+                achievements, and daily goals—all in one beautiful planner.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#planner" class="btn">
+                    Get Started
+                </a>
+
+                <a href="#dashboard" class="btn secondary-btn">
+                    View Dashboard
+                </a>
+
+            </div>
+
+        </div>
+
     </section>
-    <section id="tuesday">
-      <h2>Tuesday</h2>
-      <ul class="day-list">
-        <li>Task 1: Example item</li>
-        <li>Task 2: Example item</li>
-      </ul>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="section">
+
+        <h2>Dashboard</h2>
+
+        <div class="card">
+
+            <h3>Today's Overview</h3>
+
+            <p>See today's tasks, completed goals, and upcoming deadlines.</p>
+
+        </div>
+
     </section>
-    <section id="wednesday">
-      <h2>Wednesday</h2>
-      <ul class="day-list">
-        <li>Task 1: Example item</li>
-        <li>Task 2: Example item</li>
-      </ul>
+
+    <!-- Planner -->
+    <section id="planner" class="section">
+
+        <h2>Planner</h2>
+
+        <div class="card">
+
+            <h3>Daily Planner</h3>
+
+            <p>Create and manage your daily schedule efficiently.</p>
+
+        </div>
+
     </section>
-    <section id="thursday">
-      <h2>Thursday</h2>
-      <ul class="day-list">
-        <li>Task 1: Example item</li>
-        <li>Task 2: Example item</li>
-      </ul>
+
+    <!-- Work & University -->
+    <section id="work-university" class="section">
+
+        <h2>Work & University</h2>
+
+        <div class="card">
+
+            <h3>Assignments & Work</h3>
+
+            <p>
+                Track lectures, assignments, projects,
+                work shifts, and deadlines.
+            </p>
+
+        </div>
+
     </section>
-    <section id="friday">
-      <h2>Friday</h2>
-      <ul class="day-list">
-        <li>Task 1: Example item</li>
-        <li>Task 2: Example item</li>
-      </ul>
+
+    <!-- Income -->
+    <section id="income" class="section">
+
+        <h2>Income</h2>
+
+        <div class="card">
+
+            <h3>Income Tracker</h3>
+
+            <p>
+                Record your earnings and monitor monthly income.
+            </p>
+
+        </div>
+
     </section>
-    <section id="saturday">
-      <h2>Saturday</h2>
-      <ul class="day-list">
-        <li>Task 1: Example item</li>
-        <li>Task 2: Example item</li>
-      </ul>
+
+    <!-- Achievements -->
+    <section id="achievements-events" class="section">
+
+        <h2>Achievements & Events</h2>
+
+        <div class="card">
+
+            <h3>Milestones</h3>
+
+            <p>
+                Save your achievements, certificates,
+                birthdays, and important events.
+            </p>
+
+        </div>
+
     </section>
-    <section id="sunday">
-      <h2>Sunday</h2>
-      <ul class="day-list">
-        <li>Task 1: Example item</li>
-        <li>Task 2: Example item</li>
-      </ul>
+
+    <!-- Settings -->
+    <section id="settings" class="section">
+
+        <h2>Settings</h2>
+
+        <div class="card">
+
+            <h3>Customize Daywise</h3>
+
+            <p>
+                Change themes, notifications,
+                planner preferences, and account settings.
+            </p>
+
+        </div>
+
     </section>
-  </main>
+
+    <!-- Footer CTA -->
+    <section id="final-cta" class="section">
+
+        <div class="card">
+
+            <h2>Ready to Stay Organized?</h2>
+
+            <p>
+                Join thousands of students and professionals
+                using Daywise to plan every day efficiently.
+            </p>
+
+            <br>
+
+            <a href="#top" class="btn">
+                Start Planning Today
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Daywise. All Rights Reserved.
+        </p>
+
+    </footer>
+
 </body>
 </html>
