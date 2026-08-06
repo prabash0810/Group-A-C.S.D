@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DayWise - Achievements</title>
+    <link rel="stylesheet" href="1stpage of events and achievements.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <h2>DayWise</h2>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="achievements.html">Achievements</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero hero-animated">
+                <h1>Achievements</h1>
+                <p>Celebrate your wins, milestones, and completed goals in a dedicated space.</p>
+            </section>
+
+            <section class="combined-layout">
+                <div class="panel page-card">
+                    <div class="panel-header">
+                        <h2><i class="fa-solid fa-trophy"></i> Achievements</h2>
+                        <p>Record your wins and important milestones.</p>
+                    </div>
+
+                    <form class="panel-form" onsubmit="event.preventDefault(); addAchievement();">
+                        <input type="text" id="achievementTitle" placeholder="Achievement title" required>
+                        <input type="text" id="achievementDescription" placeholder="Short description" required>
+                        <button type="submit" class="submit-btn">Add Achievement</button>
+                    </form>
+
+                    <div id="achievementList" class="item-list"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 DayWise | Achievements Module</p>
+        </footer>
+    </div>
+
+    <script src="events and achievements.js"></script>
+</body>
+</html>
