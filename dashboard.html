@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Website character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Makes website responsive on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Page title -->
+    <title>DayWise | Smart Life Management</title>
+
+
+    <!-- Dashboard stylesheet -->
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- 
+        Main DayWise Dashboard Container
+        All dashboard components will be placed inside this wrapper
+    -->
+
+    <div class="dashboard-container">
+
+
+
+        <!-- 
+            Sidebar Navigation Section
+            Menu items will be added in Commit 2
+        -->
+
+        <!--
+    Sidebar Navigation
+    Contains all main DayWise life management modules
+-->
+
+<aside class="sidebar">
+
+
+    <!-- DayWise Brand Logo -->
+
+    <div class="logo">
+
+        <h1>
+            DayWise
+        </h1>
+
+        <p>
+            Smart Life Management
+        </p>
+
+    </div>
+
+
+
+    <!-- Main Navigation Menu -->
+
+    <nav class="navigation">
+
+
+        <!-- Dashboard Overview -->
+
+        <a href="dashboard.html" class="active">
+
+            🏠 Dashboard
+
+        </a>
+
+
+
+        <!-- Daily Planning Module -->
+
+        <a href="#">
+
+            📅 Day Planner
+
+        </a>
+
+
+
+        <!-- Work and University Module -->
+
+        <a href="#">
+
+            💼 Work & Study
+
+        </a>
+
+
+
+        <!-- Finance Management Module -->
+
+        <a href="#">
+
+            💳 Money Manager
+
+        </a>
+
+
+
+        <!-- Events and Achievements Module -->
+
+        <a href="events.html">
+
+            🏆 Events & Achievements
+
+        </a>
+
+
+
+        <!-- Personal Goals Module -->
+
+        <a href="#">
+
+            🎯 Goals & Targets
+
+        </a>
+
+
+
+        <!-- Notes Module -->
+
+        <a href="#">
+
+            📝 Notes & Reminders
+
+        </a>
+
+
+
+        <!-- Health Tracking Module -->
+
+        <a href="#">
+
+            ❤️ Health & Habits
+
+        </a>
+
+
+
+        <!-- Settings -->
+
+        <a href="#">
+
+            ⚙️ Settings
+
+        </a>
+
+
+    </nav>
+
+
+</aside>
+
+
+
+
+
+        <!-- 
+            Main Dashboard Content Area
+        -->
+
+        <main class="main-content">
+
+
+            <!-- Welcome Header Section -->
+
+            <!--
+    Dashboard Welcome Header
+
+    This section gives users a personalised
+    introduction when they open DayWise
+-->
+
+<section class="welcome-section">
+
+
+    <!-- Welcome Message -->
+
+    <div class="welcome-text">
+
+
+        <h2>
+            Welcome back, User 👋
+        </h2>
+
+
+        <p>
+            Plan your day, improve productivity,
+            manage finances and achieve your goals.
+        </p>
+
+
+        <span class="daily-message">
+
+            "Small steps every day create big achievements."
+
+        </span>
+
+
+    </div>
+
+
+
+
+
+    <!-- User Profile Area -->
+
+    <div class="profile-area">
+
+
+        <div class="profile-circle">
+
+            DW
+
+        </div>
+
+
+        <div class="profile-info">
+
+
+            <h3>
+                DayWise User
+            </h3>
+
+
+            <p>
+                Productivity Journey
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+</section>
+<!--
+    Date and Time Widget
+
+    This area will display:
+    - Current day
+    - Current date
+    - Current time
+
+    JavaScript functionality will be added later
+-->
+
+<section class="date-widget">
+
+
+    <div class="date-icon">
+
+        📅
+
+    </div>
+
+
+
+    <div class="date-content">
+
+
+        <h3>
+            Today
+        </h3>
+
+
+        <p id="current-day">
+
+            Loading day...
+
+        </p>
+
+
+        <p id="current-date">
+
+            Loading date...
+
+        </p>
+
+
+        <p id="current-time">
+
+            Loading time...
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+            <!-- 
+                Dashboard Cards Section
+                Modules will be added in future commits:
+
+                📅 Day Planner
+                💼 Work & Study
+                💳 Money Manager
+                🏆 Events & Achievements
+                🎯 Goals & Targets
+                📝 Notes & Reminders
+                ❤️ Health & Habits
+            -->
+             <!--
+    Quick Action Section
+
+    Provides fast access to important
+    DayWise features
+-->
+
+<section class="quick-actions">
+
+
+    <h2>
+        Quick Actions
+    </h2>
+
+
+
+    <div class="action-container">
+
+
+
+        <!-- Day Planner Action -->
+
+        <button class="action-card">
+
+            <span class="action-icon">
+                📅
+            </span>
+
+
+            <span>
+                Plan My Day
+            </span>
+
+        </button>
+
+
+
+
+        <!-- Work and Study Action -->
+
+        <button class="action-card">
+
+
+            <span class="action-icon">
+                💼
+            </span>
+
+
+            <span>
+                Add Work Task
+            </span>
+
+
+        </button>
+
+
+
+
+
+        <!-- Money Management Action -->
+
+        <button class="action-card">
+
+
+            <span class="action-icon">
+                💳
+            </span>
+
+
+            <span>
+                Add Expense
+            </span>
+
+
+        </button>
+
+
+
+
+
+        <!-- Events and Achievements Action -->
+
+        <button class="action-card">
+
+
+            <span class="action-icon">
+                🏆
+            </span>
+
+
+            <span>
+                Add Achievement
+            </span>
+
+
+        </button>
+
+
+
+    </div>
+
+
+</section>
+
+            <section class="dashboard-cards">
+
+<!--
+    Main Dashboard Overview Cards
+
+    These cards provide users with
+    a quick overview of their daily life.
+-->
+
+
+
+
+    <!-- Day Planner Card -->
+
+    <div class="dashboard-card planner-card">
+
+
+        <div class="card-icon">
+
+            📅
+
+        </div>
+
+
+        <div class="card-content">
+
+
+            <h3>
+                Day Planner
+            </h3>
+
+
+            <p>
+                Organise your daily tasks,
+                schedules and reminders.
+            </p>
+
+
+            <span>
+                0 Tasks Today
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <!-- Work and Study Card -->
+
+    <div class="dashboard-card work-card">
+
+
+        <div class="card-icon">
+
+            💼
+
+        </div>
+
+
+        <div class="card-content">
+
+
+            <h3>
+                Work & Study
+            </h3>
+
+
+            <p>
+                Manage university,
+                work shifts and deadlines.
+            </p>
+
+
+            <span>
+                No Upcoming Tasks
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <!-- Money Manager Card -->
+
+    <div class="dashboard-card money-card">
+
+
+        <div class="card-icon">
+
+            💳
+
+        </div>
+
+
+        <div class="card-content">
+
+
+            <h3>
+                Money Manager
+            </h3>
+
+
+            <p>
+                Track income, expenses
+                and savings.
+            </p>
+
+
+            <span>
+                £0 Balance
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <!-- Events and Achievements Card -->
+
+    <div class="dashboard-card event-card">
+
+
+        <div class="card-icon">
+
+            🏆
+
+        </div>
+
+
+        <div class="card-content">
+
+
+            <h3>
+                Events & Achievements
+            </h3>
+
+
+            <p>
+                Manage events, certificates
+                and personal achievements.
+            </p>
+
+
+            <span>
+                0 Achievements
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+</section>
+
+
+
+         <!-- 
+    Weekly Progress Section
+
+    Shows user's weekly improvement
+-->
+
+<section class="progress-section">
+
+
+    <h2>
+        Weekly Progress 📈
+    </h2>
+
+
+    <div class="progress-box">
+
+
+        <div>
+            <h3>
+                Tasks
+            </h3>
+
+            <p>
+                0 Completed
+            </p>
+        </div>
+
+
+
+        <div>
+            <h3>
+                Savings
+            </h3>
+
+            <p>
+                £0 Saved
+            </p>
+        </div>
+
+
+
+        <div>
+            <h3>
+                Achievements
+            </h3>
+
+            <p>
+                0 Completed
+            </p>
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+        <!-- Events & Achievements Preview -->
+
+        
+     <!--
+    Events & Achievements Preview Section
+
+    Provides a quick overview of:
+    - Upcoming events
+    - Recent achievements
+    - Certificates
+
+    Full functionality will be added later
+    using JavaScript and localStorage.
+-->
+
+<section class="events-preview">
+
+
+    <!-- Section Heading -->
+
+    <div class="section-header">
+
+
+        <h2>
+            Events & Achievements 🏆
+        </h2>
+
+
+        <p>
+            Track important moments and celebrate your progress.
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <div class="events-container">
+
+
+
+        <!-- Upcoming Events -->
+
+        <div class="event-preview-card">
+
+
+            <div class="event-icon">
+
+                📅
+
+            </div>
+
+
+            <div class="event-details">
+
+
+                <h3>
+                    Upcoming Events
+                </h3>
+
+
+                <p>
+                    No upcoming events available.
+                </p>
+
+
+                <span>
+                    View Events →
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <!-- Achievements -->
+
+        <div class="event-preview-card">
+
+
+            <div class="event-icon">
+
+                🏆
+
+            </div>
+
+
+            <div class="event-details">
+
+
+                <h3>
+                    Recent Achievements
+                </h3>
+
+
+                <p>
+                    Start adding your achievements.
+                </p>
+
+
+                <span>
+                    View Achievements →
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <!-- Certificates -->
+
+        <div class="event-preview-card">
+
+
+            <div class="event-icon">
+
+                📜
+
+            </div>
+
+
+            <div class="event-details">
+
+
+                <h3>
+                    Certificates
+                </h3>
+
+
+                <p>
+                    Store your certificates and awards.
+                </p>
+
+
+                <span>
+                    Add Certificate →
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+</section>
+      <!--
+    Money Manager Preview Section
+
+    Provides a quick financial overview:
+    - Balance
+    - Expenses
+    - Savings
+    - Budget tracking
+
+    Dynamic data will be added later
+    using JavaScript and localStorage.
+-->
+
+<section class="finance-preview">
+
+
+    <!-- Section Header -->
+
+    <div class="section-header">
+
+
+        <h2>
+            Money Manager 💳
+        </h2>
+
+
+        <p>
+            Track your income, expenses and savings progress.
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <div class="finance-container">
+
+
+
+        <!-- Balance Card -->
+
+        <div class="finance-card">
+
+
+            <div class="finance-icon">
+
+                💰
+
+            </div>
+
+
+            <h3>
+                Current Balance
+            </h3>
+
+
+            <p>
+                £0.00
+            </p>
+
+
+        </div>
+
+
+
+
+
+        <!-- Expense Card -->
+
+        <div class="finance-card">
+
+
+            <div class="finance-icon">
+
+                📉
+
+            </div>
+
+
+            <h3>
+                Monthly Expenses
+            </h3>
+
+
+            <p>
+                £0.00
+            </p>
+
+
+        </div>
+
+
+
+
+
+        <!-- Savings Card -->
+
+        <div class="finance-card">
+
+
+            <div class="finance-icon">
+
+                🏦
+
+            </div>
+
+
+            <h3>
+                Savings Goal
+            </h3>
+
+
+            <p>
+                £0 Saved
+            </p>
+
+
+        </div>
+
+
+
+
+
+        <!-- Budget Card -->
+
+        <div class="finance-card">
+
+
+            <div class="finance-icon">
+
+                📊
+
+            </div>
+
+
+            <h3>
+                Budget Status
+            </h3>
+
+
+            <p>
+                Not Started
+            </p>
+
+
+        </div>
+
+
+
+    </div>
+
+
+</section>
+<!--
+    Goals & Targets Preview Section
+
+    Helps users track:
+    - Personal goals
+    - Weekly targets
+    - Progress
+
+    Interactive features will be added
+    later using JavaScript.
+-->
+
+<section class="goals-preview">
+
+
+    <!-- Section Header -->
+
+    <div class="section-header">
+
+
+        <h2>
+            Goals & Targets 🎯
+        </h2>
+
+
+        <p>
+            Set goals and track your progress every day.
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <div class="goals-container">
+
+
+
+        <!-- Goal Card -->
+
+        <div class="goal-card">
+
+
+            <div class="goal-icon">
+
+                🎯
+
+            </div>
+
+
+            <div class="goal-details">
+
+
+                <h3>
+                    Daily Goals
+                </h3>
+
+
+                <p>
+                    Complete your planned tasks.
+                </p>
+
+
+                <span>
+                    0% Completed
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <!-- Study Goal -->
+
+        <div class="goal-card">
+
+
+            <div class="goal-icon">
+
+                📚
+
+            </div>
+
+
+            <div class="goal-details">
+
+
+                <h3>
+                    Study Target
+                </h3>
+
+
+                <p>
+                    Track learning progress.
+                </p>
+
+
+                <span>
+                    No Progress
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <!-- Personal Growth Goal -->
+
+        <div class="goal-card">
+
+
+            <div class="goal-icon">
+
+                🌱
+
+            </div>
+
+
+            <div class="goal-details">
+
+
+                <h3>
+                    Personal Growth
+                </h3>
+
+
+                <p>
+                    Improve habits and routines.
+                </p>
+
+
+                <span>
+                    Starting Soon
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+</section>
+
+        </main>
+
+
+
+    </div>
+
+
+
+
+
+    <!-- JavaScript File -->
+    <script src="js/dashboard.js"></script>
+
+
+</body>
+
+</html>

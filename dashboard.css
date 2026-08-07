@@ -1,75 +1,117 @@
-/* ===============================
-   Basic Reset
-================================ */
+/*
+    DayWise Dashboard
+    Global Design System
+
+    Theme Colours:
+    Navy  - Professional
+    Blue  - Productivity
+    Green - Growth & Finance
+    Teal  - Balance
+    Orange - Achievements
+*/
+
+
+:root {
+
+    --navy: #0F172A;
+
+    --blue: #2563EB;
+
+    --green: #16A34A;
+
+    --teal: #0D9488;
+
+    --orange: #F59E0B;
+
+    --purple: #9333EA;
+
+
+    --background: #F8FAFC;
+
+    --white: #FFFFFF;
+
+
+    --text-dark: #1E293B;
+
+    --text-light: #64748B;
+
+
+    --shadow:
+    0 10px 30px rgba(15, 23, 42, 0.08);
+
+}
+
+
+
+
+
+/*
+    Reset browser default styles
+*/
 
 * {
 
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
 
 }
 
 
+
+
+
+/*
+    Main Website Body
+
+    Multi-colour wave background
+*/
+
 body {
 
     min-height: 100vh;
 
-    font-family: 'Poppins', sans-serif;
-
-    overflow-x: hidden;
-
-    color: white;
-
-
-    /* Animated Background */
-
-    background: linear-gradient(
-        -45deg,
-        #667eea,
-        #764ba2,
-        #00c6ff,
-        #0072ff
-    );
-
-    background-size: 400% 400%;
-
-    animation: backgroundAnimation 15s ease infinite;
-
-}
+    font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
 
 
+    color: var(--text-dark);
 
 
+    background:
 
-/* ===============================
-   Moving Background Animation
-================================ */
-
-
-@keyframes backgroundAnimation {
-
-
-    0% {
-
-        background-position: 0% 50%;
-
-    }
+    radial-gradient(
+        circle at top left,
+        rgba(37,99,235,0.25),
+        transparent 35%
+    ),
 
 
-    50% {
+    radial-gradient(
+        circle at top right,
+        rgba(13,148,136,0.25),
+        transparent 35%
+    ),
 
-        background-position: 100% 50%;
 
-    }
+    radial-gradient(
+        circle at bottom left,
+        rgba(22,163,74,0.25),
+        transparent 35%
+    ),
 
 
-    100% {
+    radial-gradient(
+        circle at bottom right,
+        rgba(245,158,11,0.20),
+        transparent 35%
+    ),
 
-        background-position: 0% 50%;
-
-    }
-
+    var(--background);
 
 }
 
@@ -77,183 +119,15 @@ body {
 
 
 
-/* ===============================
-   Floating Background Shapes
-================================ */
-
-
-.background-shape {
-
-    position: fixed;
-
-    border-radius: 50%;
-
-    filter: blur(2px);
-
-    opacity: 0.4;
-
-    animation: floating 8s infinite alternate;
-
-    z-index: -1;
-
-}
-
-
-
-.shape-one {
-
-    width: 250px;
-
-    height:250px;
-
-    background:#ff758c;
-
-    top:10%;
-
-    left:5%;
-
-}
-
-
-
-.shape-two {
-
-    width:300px;
-
-    height:300px;
-
-    background:#43cea2;
-
-    right:5%;
-
-    bottom:10%;
-
-}
-
-
-
-.shape-three {
-
-    width:180px;
-
-    height:180px;
-
-    background:#fff;
-
-    top:50%;
-
-    left:50%;
-
-}
-
-
-
-
-
-@keyframes floating {
-
-
-from {
-
-    transform:translateY(0px);
-
-}
-
-
-to {
-
-    transform:translateY(50px);
-
-}
-
-
-}
-
-
-
-
-
-/* ===============================
-   Header
-================================ */
-
-
-.top-header {
-
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-
-    padding:25px 40px;
-
-
-    background:rgba(255,255,255,0.15);
-
-
-    backdrop-filter:blur(15px);
-
-
-    animation:slideDown 1s ease;
-
-
-}
-
-
-
-.top-header h1 {
-
-    font-size:32px;
-
-}
-
-
-
-
-@keyframes slideDown {
-
-
-from {
-
-    transform:translateY(-100px);
-
-    opacity:0;
-
-}
-
-
-to {
-
-    transform:translateY(0);
-
-    opacity:1;
-
-}
-
-
-}
-
-
-
-
-
-
-
-/* ===============================
-   Dashboard Layout
-================================ */
-
+/*
+    Main Dashboard Layout
+*/
 
 .dashboard-container {
 
+    display: flex;
 
-    display:flex;
-
-    min-height:90vh;
-
+    min-height: 100vh;
 
 }
 
@@ -261,65 +135,60 @@ to {
 
 
 
+/*
+    Main Content Area
+*/
+
+.main-content {
+
+    flex: 1;
+
+    padding: 40px;
+
+}
+
+/*
+    Commit 12
+    DayWise Sidebar Design
+
+    Features:
+    - Navy glass sidebar
+    - Logo styling
+    - Navigation animation
+    - Active menu highlight
+*/
 
 
-/* ===============================
-   Sidebar
-================================ */
-
+/*
+    Sidebar Layout
+*/
 
 .sidebar {
 
+    width: 280px;
 
-    width:260px;
+    padding: 30px 20px;
 
+    background:
 
-    padding:30px 20px;
-
-
-    background:rgba(0,0,0,0.25);
-
-
-    backdrop-filter:blur(15px);
-
-
-    animation:slideLeft 1s ease;
+    linear-gradient(
+        160deg,
+        rgba(15,23,42,0.95),
+        rgba(30,64,175,0.90)
+    );
 
 
-}
+    color: white;
+
+    min-height: 100vh;
+
+    position: sticky;
+
+    top: 0;
 
 
-
-
-.sidebar h2 {
-
-    margin-bottom:25px;
-
-}
-
-
-
-
-@keyframes slideLeft {
-
-
-from {
-
-    transform:translateX(-200px);
-
-    opacity:0;
-
-}
-
-
-to {
-
-    transform:translateX(0);
-
-    opacity:1;
-
-}
-
+    box-shadow:
+    10px 0 30px rgba(15,23,42,0.15);
 
 }
 
@@ -327,34 +196,565 @@ to {
 
 
 
-.menu-btn {
+/*
+    DayWise Logo Area
+*/
+
+.logo {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+}
 
 
-    width:100%;
+
+.logo h1 {
+
+    font-size: 32px;
+
+    letter-spacing: 1px;
+
+    color: #38BDF8;
+
+}
 
 
-    padding:15px;
+
+.logo p {
+
+    margin-top: 8px;
+
+    font-size: 14px;
+
+    color: #CBD5E1;
+
+}
 
 
-    margin:12px 0;
 
 
-    border:none;
+
+/*
+    Navigation Menu
+*/
+
+.navigation {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
 
 
-    border-radius:30px;
 
 
-    cursor:pointer;
+
+/*
+    Navigation Links
+*/
+
+.navigation a {
+
+    text-decoration: none;
+
+    color: #E2E8F0;
+
+
+    padding: 14px 18px;
+
+
+    border-radius: 14px;
+
+
+    font-size: 15px;
+
+
+    transition:
+    0.3s ease;
+
+}
+
+
+
+
+
+/*
+    Hover Animation
+*/
+
+.navigation a:hover {
+
+    background:
+
+    rgba(255,255,255,0.12);
+
+
+    transform:
+
+    translateX(8px);
+
+
+    color: white;
+
+}
+
+
+
+
+
+/*
+    Active Dashboard Button
+*/
+
+.navigation a.active {
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #2563EB,
+        #0D9488
+    );
 
 
     color:white;
 
 
-    background:rgba(255,255,255,0.2);
+    box-shadow:
+
+    0 8px 20px rgba(37,99,235,0.35);
+
+}
+
+/*
+    Commit 13
+    Welcome Section Design
+
+    Includes:
+    - Glass welcome card
+    - Profile styling
+    - User avatar
+    - Smooth animation
+*/
 
 
-    transition:0.4s;
+/*
+    Welcome Main Card
+*/
+
+.welcome-section {
+
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+
+    padding: 35px;
+
+
+    margin-bottom: 30px;
+
+
+    background:
+
+    rgba(255,255,255,0.75);
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+    border-radius: 25px;
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+    border:
+
+    1px solid rgba(255,255,255,0.5);
+
+
+}
+
+
+
+
+
+/*
+    Welcome Text Area
+*/
+
+.welcome-text h2 {
+
+
+    font-size: 32px;
+
+
+    color:
+
+    var(--navy);
+
+
+    margin-bottom: 12px;
+
+
+}
+
+
+
+
+
+.welcome-text p {
+
+
+    color:
+
+    var(--text-light);
+
+
+    font-size: 16px;
+
+
+    max-width: 500px;
+
+
+}
+
+
+
+
+
+/*
+    Daily Motivation Message
+*/
+
+.daily-message {
+
+
+    display: inline-block;
+
+
+    margin-top: 18px;
+
+
+    padding: 10px 18px;
+
+
+    border-radius: 20px;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #2563EB,
+        #0D9488
+    );
+
+
+    color:white;
+
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+/*
+    Profile Area
+*/
+
+.profile-area {
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:15px;
+
+
+}
+
+
+
+
+
+/*
+    User Circle
+*/
+
+.profile-circle {
+
+
+    width:75px;
+
+
+    height:75px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    border-radius:50%;
+
+
+    font-size:24px;
+
+
+    font-weight:bold;
+
+
+    color:white;
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #16A34A,
+        #2563EB
+    );
+
+
+    box-shadow:
+
+    0 10px 25px rgba(37,99,235,0.3);
+
+
+}
+
+
+
+
+
+.profile-info h3 {
+
+
+    color:
+
+    var(--navy);
+
+
+    font-size:18px;
+
+
+}
+
+
+
+
+
+.profile-info p {
+
+
+    color:
+
+    var(--text-light);
+
+
+    font-size:14px;
+
+
+}
+
+/*
+    Commit 14
+    Date Widget Design
+
+    Features:
+    - Glass card style
+    - Animated calendar icon
+    - Clean date display
+*/
+
+
+/*
+    Date Widget Container
+*/
+
+.date-widget {
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:25px;
+
+
+    padding:25px;
+
+
+    margin-bottom:30px;
+
+
+    background:
+
+
+    rgba(255,255,255,0.75);
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+
+    border-radius:22px;
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+
+    border:
+
+    1px solid rgba(255,255,255,0.5);
+
+
+    transition:
+
+    0.3s ease;
+
+
+}
+
+
+
+
+
+/*
+    Hover Effect
+*/
+
+.date-widget:hover {
+
+
+    transform:
+
+    translateY(-5px);
+
+
+}
+
+
+
+
+
+/*
+    Calendar Icon
+*/
+
+.date-icon {
+
+
+    width:80px;
+
+
+    height:80px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    border-radius:20px;
+
+
+    font-size:40px;
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #2563EB,
+        #0D9488
+    );
+
+
+    box-shadow:
+
+
+    0 10px 25px rgba(37,99,235,0.3);
+
+
+}
+
+
+
+
+
+/*
+    Date Content
+*/
+
+.date-content h3 {
+
+
+    font-size:22px;
+
+
+    color:
+
+    var(--navy);
+
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+
+
+.date-content p {
+
+
+    color:
+
+    var(--text-light);
+
+
+    margin:5px 0;
 
 
     font-size:15px;
@@ -365,16 +765,44 @@ to {
 
 
 
-.menu-btn:hover {
+
+/*
+    Time Highlight
+*/
+
+#current-time {
 
 
-    background:white;
+    font-weight:bold;
 
 
-    color:#764ba2;
+    color:
+
+    var(--blue);
 
 
-    transform:translateX(10px);
+}
+
+/*
+    Commit 15
+    Quick Actions Design
+
+    Features:
+    - Modern action cards
+    - Glass effect
+    - Hover animation
+    - Feature colours
+*/
+
+
+/*
+    Quick Action Section
+*/
+
+.quick-actions {
+
+
+    margin-bottom:40px;
 
 
 }
@@ -383,20 +811,18 @@ to {
 
 
 
+.quick-actions h2 {
 
 
-/* ===============================
-   Main Content
-================================ */
+    font-size:26px;
 
 
-.content {
+    color:
+
+    var(--navy);
 
 
-    flex:1;
-
-
-    padding:40px;
+    margin-bottom:20px;
 
 
 }
@@ -405,21 +831,288 @@ to {
 
 
 
-/* ===============================
-   Dashboard Cards
-================================ */
+/*
+    Action Cards Container
+*/
 
+.action-container {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(4,1fr);
+
+
+    gap:20px;
+
+
+}
+
+
+
+
+
+/*
+    Individual Action Card
+*/
+
+.action-card {
+
+
+    border:none;
+
+
+    padding:25px 15px;
+
+
+    border-radius:22px;
+
+
+    background:
+
+
+    rgba(255,255,255,0.75);
+
+
+    backdrop-filter:
+
+    blur(12px);
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+    cursor:pointer;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    align-items:center;
+
+
+    gap:12px;
+
+
+    font-size:16px;
+
+
+    color:
+
+    var(--text-dark);
+
+
+    transition:
+
+    0.3s ease;
+
+
+}
+
+
+
+
+
+/*
+    Hover Animation
+*/
+
+.action-card:hover {
+
+
+    transform:
+
+    translateY(-8px);
+
+
+    box-shadow:
+
+    0 15px 35px rgba(15,23,42,0.15);
+
+
+}
+
+
+
+
+
+/*
+    Action Icons
+*/
+
+.action-icon {
+
+
+    width:65px;
+
+
+    height:65px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    border-radius:18px;
+
+
+    font-size:32px;
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #2563EB,
+        #0D9488
+    );
+
+
+}
+
+
+
+
+
+/*
+    Different Action Themes
+*/
+
+
+.action-card:nth-child(1)
+.action-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #2563EB,
+        #38BDF8
+    );
+
+
+}
+
+
+
+
+
+.action-card:nth-child(2)
+.action-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #16A34A,
+        #22C55E
+    );
+
+
+}
+
+
+
+
+
+.action-card:nth-child(3)
+.action-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #F59E0B,
+        #F97316
+    );
+
+
+}
+
+
+
+
+
+.action-card:nth-child(4)
+.action-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #9333EA,
+        #EC4899
+    );
+
+
+}
+
+/*
+    Commit 16
+    Dashboard Overview Cards Design
+
+    Features:
+    - Glass cards
+    - Module colours
+    - Hover animation
+*/
+
+
+/*
+    Dashboard Cards Grid
+*/
+
+.dashboard-cards {
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+    gap:25px;
+
+    margin-bottom:40px;
+
+}
+
+
+
+
+
+/*
+    Main Dashboard Card
+*/
 
 .dashboard-card {
 
 
-    display:none;
+    display:flex;
 
 
-    background:rgba(255,255,255,0.15);
+    align-items:center;
 
 
-    backdrop-filter:blur(20px);
+    gap:20px;
 
 
     padding:30px;
@@ -428,71 +1121,50 @@ to {
     border-radius:25px;
 
 
-    margin-bottom:25px;
+    background:
 
 
-    box-shadow:0 20px 40px rgba(0,0,0,0.2);
+    rgba(255,255,255,0.80);
 
 
-    animation:cardAnimation 0.8s ease;
+    backdrop-filter:
 
-
-}
-
-
+    blur(15px);
 
 
 
-#achievementSection {
+    box-shadow:
 
-
-    display:block;
-
-}
+    var(--shadow);
 
 
 
+    border:
+
+    1px solid rgba(255,255,255,0.5);
 
 
-@keyframes cardAnimation {
+    transition:
 
-
-from {
-
-
-    opacity:0;
-
-
-    transform:translateY(50px);
-
-
-}
-
-
-to {
-
-
-    opacity:1;
-
-
-    transform:translateY(0);
-
-
-}
+    0.3s ease;
 
 
 }
 
 
 
+
+
+/*
+    Card Hover Effect
+*/
 
 .dashboard-card:hover {
 
 
-    transform:translateY(-10px);
+    transform:
 
-
-    transition:0.4s;
+    translateY(-8px);
 
 
 }
@@ -501,50 +1173,107 @@ to {
 
 
 
+/*
+    Card Icon
+*/
 
-/* ===============================
-   Inputs
-================================ */
-
-
-input,
-textarea {
+.card-icon {
 
 
-    width:70%;
+    width:75px;
 
 
-    padding:15px;
+    height:75px;
 
 
-    margin:15px 0;
+    display:flex;
 
 
-    border:none;
+    justify-content:center;
 
 
-    outline:none;
+    align-items:center;
+
+
+    border-radius:22px;
+
+
+    font-size:38px;
+
+
+}
+
+
+
+
+
+/*
+    Card Content
+*/
+
+.card-content h3 {
+
+
+    color:
+
+    var(--navy);
+
+
+    font-size:22px;
+
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+
+
+.card-content p {
+
+
+    color:
+
+    var(--text-light);
+
+
+    font-size:14px;
+
+
+    line-height:1.5;
+
+
+}
+
+
+
+
+
+.card-content span {
+
+
+    display:inline-block;
+
+
+    margin-top:12px;
+
+
+    padding:6px 12px;
 
 
     border-radius:20px;
 
 
-    background:white;
+    background:
 
 
-    color:#333;
+    #E2E8F0;
 
 
-}
+    font-size:13px;
 
-
-
-textarea {
-
-
-    height:120px;
-
-    resize:none;
 
 }
 
@@ -552,42 +1281,246 @@ textarea {
 
 
 
+/*
+    Module Colours
+*/
 
 
-/* ===============================
-   Buttons
-================================ */
+.planner-card .card-icon {
 
 
-button {
+    background:
 
-
-    padding:12px 25px;
-
-
-    border:none;
-
-
-    border-radius:25px;
-
-
-    cursor:pointer;
-
-
-    background:linear-gradient(
-        45deg,
-        #ff512f,
-        #dd2476
+    linear-gradient(
+        135deg,
+        #2563EB,
+        #38BDF8
     );
 
 
-    color:white;
+}
+
+
+
+
+
+.work-card .card-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #16A34A,
+        #22C55E
+    );
+
+
+}
+
+
+
+
+
+.money-card .card-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #F59E0B,
+        #F97316
+    );
+
+
+}
+
+
+
+
+
+.event-card .card-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #9333EA,
+        #EC4899
+    );
+
+
+}
+
+/*
+    Commit 17
+    Weekly Progress Section Design
+
+    Features:
+    - Progress dashboard cards
+    - Glass effect
+    - Progress indicators
+*/
+
+
+/*
+    Progress Section Container
+*/
+
+.progress-section {
+
+
+    margin-bottom:40px;
+
+
+}
+
+
+
+
+
+.progress-section h2 {
+
+
+    font-size:28px;
+
+
+    color:
+
+    var(--navy);
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+/*
+    Progress Box Layout
+*/
+
+.progress-box {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    gap:20px;
+
+
+}
+
+
+
+
+
+/*
+    Individual Progress Card
+*/
+
+.progress-box div {
+
+
+    padding:25px;
+
+
+    border-radius:22px;
+
+
+    background:
+
+
+    rgba(255,255,255,0.80);
+
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+
+    text-align:center;
+
+
+    transition:
+
+    0.3s ease;
+
+
+}
+
+
+
+
+
+/*
+    Hover Animation
+*/
+
+.progress-box div:hover {
+
+
+    transform:
+
+    translateY(-8px);
+
+
+}
+
+
+
+
+
+.progress-box h3 {
+
+
+    color:
+
+    var(--navy);
+
+
+    font-size:20px;
+
+
+    margin-bottom:12px;
+
+
+}
+
+
+
+
+
+.progress-box p {
+
+
+    font-size:18px;
 
 
     font-weight:bold;
 
 
-    transition:0.4s;
+    color:
+
+    var(--blue);
 
 
 }
@@ -596,13 +1529,89 @@ button {
 
 
 
-button:hover {
+/*
+    Add Progress Visual Line
+*/
+
+.progress-box div::after {
 
 
-    transform:scale(1.1);
+    content:"";
 
 
-    box-shadow:0 0 20px white;
+    display:block;
+
+
+    height:8px;
+
+
+    margin-top:20px;
+
+
+    border-radius:10px;
+
+
+    background:
+
+
+    linear-gradient(
+        90deg,
+        #2563EB,
+        #0D9488
+    );
+
+
+}
+/*
+    Commit 18
+    Events & Achievements Preview Design
+
+    Features:
+    - Modern event cards
+    - Achievement styling
+    - Certificate section
+    - Hover animations
+*/
+
+
+/*
+    Section Header
+*/
+
+.section-header {
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+.section-header h2 {
+
+
+    font-size:28px;
+
+
+    color:
+
+    var(--navy);
+
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+.section-header p {
+
+
+    color:
+
+    var(--text-light);
 
 
 }
@@ -611,31 +1620,22 @@ button:hover {
 
 
 
-/* ===============================
-   Lists
-================================ */
+/*
+    Events Container
+*/
+
+.events-container {
 
 
-li,
-.item {
+    display:grid;
 
 
-    list-style:none;
+    grid-template-columns:
+
+    repeat(3,1fr);
 
 
-    background:rgba(255,255,255,0.2);
-
-
-    padding:15px;
-
-
-    margin:10px 0;
-
-
-    border-radius:15px;
-
-
-    animation:itemShow 0.5s ease;
+    gap:20px;
 
 
 }
@@ -644,77 +1644,137 @@ li,
 
 
 
-@keyframes itemShow {
+/*
+    Event Preview Card
+*/
+
+.event-preview-card {
 
 
-from {
+    display:flex;
 
-    opacity:0;
 
-    transform:translateX(-50px);
+    flex-direction:column;
+
+
+    gap:15px;
+
+
+    padding:25px;
+
+
+    border-radius:25px;
+
+
+    background:
+
+
+    rgba(255,255,255,0.80);
+
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+
+    transition:
+
+    0.3s ease;
+
 
 }
 
 
-to {
 
-    opacity:1;
 
-    transform:translateX(0);
+
+/*
+    Card Hover
+*/
+
+.event-preview-card:hover {
+
+
+    transform:
+
+    translateY(-8px);
+
 
 }
 
 
-}
 
 
 
+/*
+    Event Icon
+*/
+
+.event-icon {
 
 
-/* ===============================
-   Progress Bar
-================================ */
+    width:70px;
 
 
-.progress-bar {
+    height:70px;
 
 
-    height:20px;
+    display:flex;
 
 
-    width:100%;
+    justify-content:center;
 
 
-    background:white;
+    align-items:center;
 
 
     border-radius:20px;
 
 
-    overflow:hidden;
-
-
-}
+    font-size:35px;
 
 
 
-.progress {
+    background:
 
 
-    height:100%;
-
-
-    width:60%;
-
-
-    background:linear-gradient(
-        90deg,
-        #00f260,
-        #0575e6
+    linear-gradient(
+        135deg,
+        #9333EA,
+        #EC4899
     );
 
 
-    animation:progressAnimation 2s;
+}
+
+
+
+
+
+/*
+    Event Details
+*/
+
+.event-details h3 {
+
+
+    color:
+
+    var(--navy);
+
+
+    font-size:20px;
+
+
+    margin-bottom:10px;
 
 
 }
@@ -722,90 +1782,648 @@ to {
 
 
 
-@keyframes progressAnimation {
+
+.event-details p {
 
 
-from {
+    color:
 
-    width:0;
-
-}
+    var(--text-light);
 
 
-to {
-
-    width:60%;
-
-}
+    font-size:14px;
 
 
-}
-
-
-
-
-
-
-
-/* ===============================
-   Mobile Responsive
-================================ */
-
-
-@media(max-width:800px){
-
-
-.dashboard-container {
-
-
-    flex-direction:column;
+    line-height:1.5;
 
 
 }
 
 
 
-.sidebar {
 
 
-    width:100%;
+.event-details span {
+
+
+    display:inline-block;
+
+
+    margin-top:15px;
+
+
+    padding:8px 15px;
+
+
+    border-radius:20px;
+
+
+    background:
+
+
+    #E0F2FE;
+
+
+    color:
+
+    var(--blue);
+
+
+    font-size:13px;
+
+
+    cursor:pointer;
+
+
+}
+
+/*
+    Commit 19
+    Money Manager Finance Cards Design
+
+    Features:
+    - Finance dashboard cards
+    - Colour themes
+    - Glass UI
+    - Hover effects
+*/
+
+
+/*
+    Finance Preview Section
+*/
+
+.finance-preview {
+
+
+    margin-bottom:40px;
 
 
 }
 
 
 
-.content {
 
 
-    padding:20px;
+/*
+    Finance Cards Layout
+*/
+
+.finance-container {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(4,1fr);
+
+
+    gap:20px;
+
+
+}
+
+
+
+
+
+/*
+    Finance Card
+*/
+
+.finance-card {
+
+
+    padding:25px;
+
+
+    border-radius:25px;
+
+
+    background:
+
+
+    rgba(255,255,255,0.80);
+
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+
+    text-align:center;
+
+
+    transition:
+
+    0.3s ease;
 
 
 }
 
 
 
-input,
-textarea {
 
 
-    width:100%;
+/*
+    Hover Effect
+*/
+
+.finance-card:hover {
+
+
+    transform:
+
+    translateY(-8px);
+
+
+}
+
+
+
+
+
+/*
+    Finance Icon
+*/
+
+.finance-icon {
+
+
+    width:70px;
+
+
+    height:70px;
+
+
+    margin:auto;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    border-radius:20px;
+
+
+    font-size:35px;
+
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #16A34A,
+        #0D9488
+    );
 
 
 }
 
 
 
-.top-header {
 
 
-    flex-direction:column;
+/*
+    Finance Text
+*/
+
+.finance-card h3 {
 
 
-    gap:10px;
+    margin-top:18px;
+
+
+    margin-bottom:10px;
+
+
+    color:
+
+    var(--navy);
+
+
+    font-size:18px;
 
 
 }
+
+
+
+
+
+.finance-card p {
+
+
+    color:
+
+    var(--text-light);
+
+
+    font-size:20px;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+
+
+/*
+    Individual Finance Colours
+*/
+
+
+.finance-card:nth-child(1)
+.finance-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #16A34A,
+        #22C55E
+    );
+
+
+}
+
+
+
+
+
+.finance-card:nth-child(2)
+.finance-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #EF4444,
+        #F97316
+    );
+
+
+}
+
+
+
+
+
+.finance-card:nth-child(3)
+.finance-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #2563EB,
+        #38BDF8
+    );
+
+
+}
+
+
+
+
+
+.finance-card:nth-child(4)
+.finance-icon {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #9333EA,
+        #EC4899
+    );
+
+
+}
+
+/*
+    Commit 20
+    Goals & Targets Section Design
+
+    Features:
+    - Goal tracking cards
+    - Progress display
+    - Growth theme colours
+    - Glass UI
+*/
+
+
+/*
+    Goals Preview Section
+*/
+
+.goals-preview {
+
+
+    margin-bottom:40px;
+
+
+}
+
+
+
+
+
+/*
+    Goals Container
+*/
+
+.goals-container {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    gap:20px;
+
+
+}
+
+
+
+
+
+/*
+    Goal Card
+*/
+
+.goal-card {
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:18px;
+
+
+    padding:25px;
+
+
+    border-radius:25px;
+
+
+    background:
+
+
+    rgba(255,255,255,0.80);
+
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+
+    transition:
+
+    0.3s ease;
+
+
+}
+
+
+
+
+
+/*
+    Hover Animation
+*/
+
+.goal-card:hover {
+
+
+    transform:
+
+    translateY(-8px);
+
+
+}
+
+
+
+
+
+/*
+    Goal Icon
+*/
+
+.goal-icon {
+
+
+    width:70px;
+
+
+    height:70px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    border-radius:20px;
+
+
+    font-size:35px;
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #16A34A,
+        #0D9488
+    );
+
+
+}
+
+
+
+
+
+/*
+    Goal Details
+*/
+
+.goal-details h3 {
+
+
+    color:
+
+    var(--navy);
+
+
+    font-size:19px;
+
+
+    margin-bottom:8px;
+
+
+}
+
+
+
+
+
+.goal-details p {
+
+
+    color:
+
+    var(--text-light);
+
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+.goal-details span {
+
+
+    display:inline-block;
+
+
+    margin-top:12px;
+
+
+    padding:7px 14px;
+
+
+    border-radius:20px;
+
+
+    background:
+
+
+    #DCFCE7;
+
+
+    color:
+
+    #15803D;
+
+
+    font-size:13px;
+
+
+}
+
+
+
+
+
+/*
+    Different Goal Colours
+*/
+
+
+.goal-card:nth-child(1)
+.goal-icon {
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #2563EB,
+        #38BDF8
+    );
+
+
+}
+
+
+
+
+
+.goal-card:nth-child(2)
+.goal-icon {
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #9333EA,
+        #EC4899
+    );
+
+
+}
+
+
+
+
+
+.goal-card:nth-child(3)
+.goal-icon {
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #16A34A,
+        #22C55E
+    );
 
 
 }
