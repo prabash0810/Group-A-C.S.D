@@ -1,4 +1,4 @@
-/* ============================================================
+/*
    DayWise Dashboard
    File : dashboard.js
    Purpose :
@@ -9,13 +9,13 @@
    - Animate counters
    - Store theme in localStorage
    - Remember cookie consent
-   ============================================================ */
+*/
 
 "use strict";
 
-/* ============================================================
+/*
    Wait until the page is fully loaded
-============================================================ */
+*/
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -34,9 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-/* ============================================================
+/*
    Dashboard Data
-============================================================ */
+*/
 
 function loadDashboard() {
 
@@ -78,9 +78,9 @@ function loadDashboard() {
 }
 
 
-/* ============================================================
+/* 
    Update Cards
-============================================================ */
+ */
 
 function updateDashboardCards() {
 
@@ -95,9 +95,9 @@ function updateDashboardCards() {
 }
 
 
-/* ============================================================
+/* 
    Helper Function
-============================================================ */
+ */
 
 function setText(id, value) {
 
@@ -112,9 +112,9 @@ function setText(id, value) {
 }
 
 
-/* ============================================================
+/* 
    Greeting
-============================================================ */
+*/
 
 function showGreeting() {
 
@@ -148,10 +148,9 @@ function showGreeting() {
 
 }
 
-
-/* ============================================================
+/* 
    Counter Animation
-============================================================ */
+*/
 
 function animateNumbers() {
 
@@ -192,9 +191,9 @@ function animateNumbers() {
 }
 
 
-/* ============================================================
+/*
    Weekly Progress
-============================================================ */
+*/
 
 function calculateWeeklyProgress() {
 
@@ -231,9 +230,9 @@ function calculateWeeklyProgress() {
 }
 
 
-/* ============================================================
+/*
    Theme Switch
-============================================================ */
+*/
 
 function changeTheme() {
 
@@ -267,9 +266,9 @@ function loadTheme() {
 }
 
 
-/* ============================================================
+/*
    Cookie Consent
-============================================================ */
+*/
 
 function acceptCookies() {
 
@@ -310,9 +309,9 @@ function checkCookieStatus() {
 }
 
 
-/* ============================================================
+/*
    Daily Notification
-============================================================ */
+*/
 
 function showNotification(message) {
 
@@ -334,9 +333,9 @@ function showNotification(message) {
 }
 
 
-/* ============================================================
+/*
    Save Dashboard
-============================================================ */
+*/
 
 function saveDashboard(data) {
 
@@ -348,9 +347,9 @@ function saveDashboard(data) {
 }
 
 
-/* ============================================================
+/*
    Reset Dashboard
-============================================================ */
+*/
 
 function resetDashboard() {
 
@@ -361,9 +360,9 @@ function resetDashboard() {
 }
 
 
-/* ============================================================
+/*
    Random Motivation Message
-============================================================ */
+*/
 
 function motivationalMessage() {
 
@@ -385,9 +384,9 @@ function motivationalMessage() {
 }
 
 
-/* ============================================================
+/*
    Automatically show motivation
-============================================================ */
+*/
 
 setTimeout(function () {
 
