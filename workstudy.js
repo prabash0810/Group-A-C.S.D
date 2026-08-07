@@ -42,3 +42,146 @@ function calculateHours(start,end){
 
 
 
+function updateDashboard(){
+
+    uniCount.textContent = university.length + " Classes";
+
+    workCount.textContent = work.length + " Shifts";
+
+    let totalHours = 0;
+
+    work.forEach(item=>{
+
+        totalHours += item.hours;
+
+    });
+
+    hours.textContent = totalHours + " hrs";
+
+    if(university.length>0){
+
+        reminder.textContent = university[0].day;
+
+    }
+    else{
+
+        reminder.textContent="None";
+
+    }
+
+}
+
+
+
+uniForm.addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    let item={
+
+        module:document.getElementById("moduleName").value,
+
+        lecturer:document.getElementById("lecturer").value,
+
+        day:document.getElementById("uniDay").value,
+
+        start:document.getElementById("uniStart").value,
+
+        end:document.getElementById("uniEnd").value,
+
+        room:document.getElementById("room").value
+
+    };
+
+    university.push(item);
+
+    saveData();
+
+    displayUniversity();
+
+    updateDashboard();
+
+    uniForm.reset();
+
+});
+
+
+
+workForm.addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    let h = calculateHours(
+
+        document.getElementById("workStart").value,
+
+        document.getElementById("workEnd").value
+
+    );
+
+    let item={
+
+        company:document.getElementById("company").value,
+
+        role:document.getElementById("jobRole").value,
+
+        day:document.getElementById("workDay").value,
+
+        start:document.getElementById("workStart").value,
+
+        end:document.getElementById("workEnd").value,
+
+        location:document.getElementById("location").value,
+
+        hours:h
+
+    };
+
+    work.push(item);
+
+    saveData();
+
+    displayWork();
+
+    updateDashboard();
+
+    workForm.reset();
+
+});
+
+function displayUniversity() {
+
+    uniTable.innerHTML = "";
+
+    university.forEach((item, index) => {
+
+        uniTable.innerHTML += `
+
+        <tr>
+
+            <td>${item.module}</td>
+
+            <td>${item.day}</td>
+
+            <td>${item.start} - ${item.end}</td>
+
+            <td>
+
+                <button class="delete-btn" onclick="deleteUniversity(${index})">
+
+                    Delete
+
+                </button>
+
+            </td>
+
+        </tr>
+
+        `;
+
+    });
+
+}
+
+
+
