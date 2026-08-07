@@ -20,3 +20,11 @@ const reminder = document.getElementById("reminder");
 
 
 
+function saveData() {
+
+    localStorage.setItem("university", JSON.stringify(university));
+    localStorage.setItem("work", JSON.stringify(work));
+
+}
+
+
