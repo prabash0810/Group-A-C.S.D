@@ -42,17 +42,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function initQuickActions() {
 
-    const actionButtons = document.querySelectorAll(".action-card[data-href]");
+    const navigableItems = document.querySelectorAll(".action-card[data-href], .dashboard-card[data-href]");
 
-    actionButtons.forEach(function (button) {
+    navigableItems.forEach(function (item) {
 
-        button.addEventListener("click", function () {
+        item.addEventListener("click", function () {
 
-            const target = button.getAttribute("data-href");
+            const target = item.getAttribute("data-href");
 
             if (target && target !== "#") {
 
                 window.location.href = target;
+
+            }
+
+        });
+
+        item.addEventListener("keydown", function (event) {
+
+            if (event.key === "Enter" || event.key === " ") {
+
+                event.preventDefault();
+
+                const target = item.getAttribute("data-href");
+
+                if (target && target !== "#") {
+
+                    window.location.href = target;
+
+                }
 
             }
 
