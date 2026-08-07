@@ -1,9 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
     displayAchievements();
 
-    const addButton = document.getElementById("addAchievementBtn");
-    if (addButton) {
-        addButton.addEventListener("click", addAchievement);
+    const achievementForm = document.getElementById("achievementForm");
+    if (achievementForm) {
+        achievementForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            addAchievement();
+        });
     }
 });
 
@@ -82,24 +85,36 @@ function displayAchievements() {
     achievements.forEach(item => {
 
         const card = document.createElement("div");
-
         card.className = "achievement-card";
 
+        const title = document.createElement("h4");
+        title.textContent = item.title;
 
-        card.innerHTML = `
-            <h4>${item.title}</h4>
-            <p>${item.description}</p>
-            <p>Status: ${item.completed ? "Completed ✅" : "Pending ⏳"}</p>
+        const description = document.createElement("p");
+        description.textContent = item.description;
 
-            <button onclick="completeAchievement(${item.id})">
-                Complete
-            </button>
+        const status = document.createElement("p");
+        status.textContent = `Status: ${item.completed ? "Completed ✅" : "Pending ⏳"}`;
 
-            <button onclick="deleteAchievement(${item.id})">
-                Delete
-            </button>
-        `;
+        const actions = document.createElement("div");
 
+        const completeButton = document.createElement("button");
+        completeButton.type = "button";
+        completeButton.textContent = "Complete";
+        completeButton.addEventListener("click", () => completeAchievement(item.id));
+
+        const deleteButton = document.createElement("button");
+        deleteButton.type = "button";
+        deleteButton.textContent = "Delete";
+        deleteButton.addEventListener("click", () => deleteAchievement(item.id));
+
+        actions.appendChild(completeButton);
+        actions.appendChild(deleteButton);
+
+        card.appendChild(title);
+        card.appendChild(description);
+        card.appendChild(status);
+        card.appendChild(actions);
 
         list.appendChild(card);
     });

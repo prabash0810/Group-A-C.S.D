@@ -31,12 +31,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
     checkCookieStatus();
 
+    initQuickActions();
+
 });
 
 
 /*
    Dashboard Data
 */
+
+function initQuickActions() {
+
+    const actionButtons = document.querySelectorAll(".action-card[data-href]");
+
+    actionButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const target = button.getAttribute("data-href");
+
+            if (target && target !== "#") {
+
+                window.location.href = target;
+
+            }
+
+        });
+
+    });
+
+}
 
 function loadDashboard() {
 
