@@ -157,3 +157,48 @@ select:focus {
     border-color: #3B82F6;
 }
 
+.btn {
+    width: 100%;
+    padding: 14px 28px;
+    background: #FACC15;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.lists {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(450px,1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.table-box {
+    background: #1E293B;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
+.table-box h2 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    color: #FACC15;
+    text-align: left;
+    padding: 14px;
+    border-bottom: 2px solid #334155;
+}
