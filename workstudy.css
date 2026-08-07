@@ -110,3 +110,50 @@ body {
     padding: 30px;
     box-shadow: 0 12px 30px rgba(0,0,0,.35);
 }
+
+.forms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.form-box {
+    background: #1E293B;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
+.form-box h2 {
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #94A3B8;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 14px;
+    background: #0F172A;
+    color: white;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #3B82F6;
+}
+
