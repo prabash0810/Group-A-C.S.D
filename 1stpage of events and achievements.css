@@ -1,4 +1,4 @@
-/* LifeSync Dashboard CSS
+/* DayWise Dashboard CSS
    Events & Achievements Module */
 
 
@@ -553,6 +553,37 @@ footer {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+  body {
+    animation: pageLoad 0.8s ease;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.panel {
+    animation: showPanel 0.6s ease;
+}
+
+@keyframes showPanel {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
