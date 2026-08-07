@@ -28,3 +28,17 @@ function saveData() {
 }
 
 
+function calculateHours(start,end){
+
+    let s = start.split(":");
+    let e = end.split(":");
+
+    let startMinutes = Number(s[0])*60 + Number(s[1]);
+    let endMinutes = Number(e[0])*60 + Number(e[1]);
+
+    return (endMinutes-startMinutes)/60;
+
+}
+
+
+
