@@ -9,6 +9,8 @@
     --primary-color: #2563eb;
     --navy: #0f172a;
     --blue: #2563eb;
+    --motion-fast: 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    --motion-medium: 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
     --green: #16a34a;
     --teal: #0d9488;
     --orange: #f59e0b;
@@ -113,7 +115,7 @@ body {
     top: 0;
     box-shadow: 10px 0 30px rgba(15, 23, 42, 0.15);
     border-right: 1px solid rgba(255, 255, 255, 0.08);
-    transition: width 0.35s ease, box-shadow 0.35s ease;
+    transition: width var(--motion-medium), box-shadow var(--motion-medium), transform var(--motion-medium);
     animation: sidebarReveal 0.8s ease-out;
 }
 
@@ -135,8 +137,8 @@ body {
 }
 
 .logo:hover h1 {
-    transform: translateY(-2px);
-    letter-spacing: 2px;
+    transform: translateY(-2px) scale(1.01);
+    letter-spacing: 1.2px;
 }
 
 .logo p {
@@ -157,7 +159,7 @@ body {
     padding: 14px 18px;
     border-radius: 14px;
     font-size: 15px;
-    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    transition: transform var(--motion-medium), background var(--motion-medium), box-shadow var(--motion-medium), color var(--motion-medium);
     position: relative;
     overflow: hidden;
     transform: translateX(0);
@@ -178,7 +180,7 @@ body {
 
 .navigation a:hover {
     background: rgba(255, 255, 255, 0.12);
-    transform: translateX(8px);
+    transform: translateX(6px);
     color: white;
 }
 
@@ -212,7 +214,7 @@ body {
     border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    transition: transform var(--motion-medium), box-shadow var(--motion-medium), background var(--motion-medium);
 }
 
 .welcome-section::before {
@@ -240,7 +242,7 @@ body {
 }
 
 .welcome-section:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px) scale(1.005);
     box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
 }
 
@@ -306,7 +308,7 @@ body {
 }
 
 .profile-area:hover .profile-circle {
-    transform: translateY(-3px) scale(1.04);
+    transform: translateY(-2px) scale(1.03) rotate(-1deg);
     box-shadow: 0 14px 30px rgba(37, 99, 235, 0.28);
 }
 
@@ -351,7 +353,7 @@ body {
 }
 
 .date-widget:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px) scale(1.005);
     box-shadow: 0 16px 35px rgba(15, 23, 42, 0.12);
 }
 
@@ -369,7 +371,7 @@ body {
 }
 
 .date-widget:hover .date-icon {
-    transform: rotate(-4deg) scale(1.05);
+    transform: rotate(-3deg) scale(1.04);
     box-shadow: 0 14px 30px rgba(37, 99, 235, 0.25);
 }
 
@@ -432,7 +434,7 @@ body {
     gap: 12px;
     font-size: 16px;
     color: var(--text-main);
-    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+    transition: transform var(--motion-medium), box-shadow var(--motion-medium);
     position: relative;
     overflow: hidden;
     isolation: isolate;
@@ -453,7 +455,7 @@ body {
 }
 
 .action-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-6px) scale(1.01);
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.14);
 }
 
@@ -475,7 +477,7 @@ body {
 }
 
 .action-card:hover .action-icon {
-    transform: translateY(-4px) scale(1.08);
+    transform: translateY(-3px) scale(1.05);
     box-shadow: 0 12px 25px rgba(37, 99, 235, 0.20);
 }
 
@@ -535,7 +537,7 @@ body {
 }
 
 .dashboard-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-6px) scale(1.01);
     box-shadow: 0 22px 45px rgba(15, 23, 42, 0.14);
 }
 
@@ -557,7 +559,7 @@ body {
 }
 
 .dashboard-card:hover .card-icon {
-    transform: scale(1.08) rotate(-3deg);
+    transform: scale(1.04) rotate(-2deg);
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.15);
 }
 
@@ -634,7 +636,7 @@ body {
 }
 
 .dashboard-card.event-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px) scale(1.01);
     box-shadow: 0 20px 45px rgba(37, 99, 235, 0.16);
 }
 
@@ -824,7 +826,7 @@ body {
 }
 
 .progress-box div:hover {
-    transform: translateY(-7px);
+    transform: translateY(-4px) scale(1.01);
     box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
 }
 
@@ -998,7 +1000,7 @@ body {
 }
 
 .finance-card:hover {
-    transform: translateY(-9px);
+    transform: translateY(-5px) scale(1.01);
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.13);
 }
 
@@ -1020,7 +1022,7 @@ body {
 }
 
 .finance-card:hover .finance-icon {
-    transform: scale(1.08);
+    transform: scale(1.04);
     box-shadow: 0 12px 25px rgba(22, 163, 74, 0.20);
 }
 
@@ -1150,73 +1152,20 @@ body {
     background: linear-gradient(135deg, var(--green), #22c55e);
 }
 
-/* Animations */
+/* Page and section entrance animations */
 
 @keyframes pageFadeIn {
     from {
         opacity: 0;
+        transform: translateY(6px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
 @keyframes dashboardReveal {
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes sidebarReveal {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes contentReveal {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes logoReveal {
-    from {
-        opacity: 0;
-        transform: translateY(-12px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes cardEntrance {
-    from {
-        opacity: 0;
-        transform: translateY(25px) scale(0.98);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-@keyframes eventCardFadeIn {
     from {
         opacity: 0;
         transform: translateY(10px);
@@ -1227,29 +1176,108 @@ body {
     }
 }
 
+@keyframes sidebarReveal {
+    from {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes contentReveal {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes logoReveal {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes eventCardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Interactive card and link motion */
+
+.sidebar,
+.logo h1,
+.navigation a,
+.welcome-section,
+.profile-circle,
+.date-widget,
+.action-card,
+.dashboard-card,
+.progress-box div,
+.event-preview-card,
+.finance-card,
+.goal-card {
+    transition: transform var(--motion-medium), box-shadow var(--motion-medium), opacity var(--motion-medium), color var(--motion-medium), background var(--motion-medium);
+}
+
+.action-card::before,
+.dashboard-card::before,
+.welcome-section::before,
+.welcome-section::after {
+    transition: transform var(--motion-medium), opacity var(--motion-medium);
+}
+
 /* Staggered entrance */
 
 .action-card:nth-child(1),
 .dashboard-card:nth-child(1) {
-    animation: cardEntrance 0.65s ease-out both;
+    animation: cardEntrance 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
     animation-delay: 0.10s;
 }
 
 .action-card:nth-child(2),
 .dashboard-card:nth-child(2) {
-    animation: cardEntrance 0.65s ease-out both;
+    animation: cardEntrance 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
     animation-delay: 0.18s;
 }
 
 .action-card:nth-child(3),
 .dashboard-card:nth-child(3) {
-    animation: cardEntrance 0.65s ease-out both;
+    animation: cardEntrance 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
     animation-delay: 0.26s;
 }
 
 .action-card:nth-child(4),
 .dashboard-card:nth-child(4) {
-    animation: cardEntrance 0.65s ease-out both;
+    animation: cardEntrance 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
     animation-delay: 0.34s;
 }
 
