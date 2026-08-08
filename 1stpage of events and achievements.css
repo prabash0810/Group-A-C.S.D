@@ -183,154 +183,35 @@ body {
 }
 
 
-/* ===========================
+
+
+/*
    Hero Section
-=========================== */
+*/
 
 .hero {
-
-    padding: 80px 10%;
-
+    padding: 65px 8% 45px;
     text-align: center;
-
+    max-width: 1000px;
+    margin: 0 auto;
 }
-
 
 .hero h1 {
-
-    font-size: 45px;
-
     max-width: 800px;
-
-    margin: auto;
-
-    color: #1e293b;
-
+    margin: 0 auto;
+    color: #0f172a;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -1.5px;
 }
-
 
 .hero p {
-
-    margin-top: 20px;
-
-    font-size: 18px;
-
+    max-width: 650px;
+    margin: 18px auto 0;
     color: #64748b;
-
-}
-
-
-/*Dashboard Cards*/
-
-.cards-container {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 40px;
-
-    padding: 40px 8%;
-
-}
-
-
-.dashboard-card {
-
-    width: 350px;
-
-    padding: 35px;
-
-    text-decoration: none;
-
-    color: inherit;
-
-    background: white;
-
-    border-radius: 20px;
-
-    text-align: center;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-
-    transition: 0.4s;
-
-}
-
-
-/* Card Hover Animation */
-
-.dashboard-card:hover {
-
-    transform: translateY(-10px);
-
-}
-
-
-/* Icons */
-
-.icon {
-
-    width: 80px;
-
-    height: 80px;
-
-    margin: auto;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    border-radius: 50%;
-
-    background: #eef2ff;
-
-}
-
-
-.icon i {
-
-    font-size: 35px;
-
-    color: #4f46e5;
-
-}
-
-
-.dashboard-card h2 {
-
-    margin: 20px 0;
-
-}
-
-
-.dashboard-card p {
-
-    color: #64748b;
-
-    line-height: 1.6;
-
-}
-
-
-/* Button style */
-
-.card-button {
-
-    display: inline-block;
-
-    margin-top: 20px;
-
-    padding: 12px 25px;
-
-    background: #4f46e5;
-
-    color: white;
-
-    border-radius: 30px;
-
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 
@@ -344,47 +225,6 @@ body {
     text-align: center;
 
 }
-
-
-.statistics h2 {
-
-    margin-bottom: 30px;
-
-}
-
-
-.stats-grid {
-
-    display: grid;
-
-    grid-template-columns: repeat(4,1fr);
-
-    gap: 20px;
-
-}
-
-
-.stat-box {
-
-    background: rgb(255, 254, 255);
-
-    padding: 25px;
-
-    border-radius: 15px;
-
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-
-}
-
-
-.stat-box h3 {
-
-    font-size: 32px;
-
-    color: #4f46e5;
-
-}
-
 
 /* Footer*/
 
@@ -465,12 +305,9 @@ footer {
 }
 
 .submit-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.35);
-}
-
-.submit-btn:hover {
     background: #4338ca;
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.35);
 }
 
 .item-list {
@@ -687,36 +524,77 @@ footer {
 @media(max-width:600px){
 
 
-    .navbar {
+   /* 
+   Navigation Bar
+ */
 
-        flex-direction: column;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+    position: relative;
+    z-index: 10;
+}
 
-        gap:20px;
+/* Logo */
 
-    }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #2563eb;
+}
 
+.logo i {
+    font-size: 26px;
+}
 
-    .nav-links {
+.logo h2 {
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
 
-        flex-direction: column;
+/* Navigation Links */
 
-        text-align:center;
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 28px;
+}
 
-    }
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: #475569;
+    font-weight: 500;
+    padding: 8px 2px;
+    transition: color 0.25s ease;
+}
 
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #2563eb;
+    border-radius: 10px;
+    transition: width 0.25s ease;
+}
 
-    .hero h1 {
+.nav-links a:hover {
+    color: #2563eb;
+}
 
-        font-size:32px;
-
-    }
-
-
-    .stats-grid {
-
-        grid-template-columns:1fr;
-
-    }
-
-
+.nav-links a:hover::after {
+    width: 100%;
 }
