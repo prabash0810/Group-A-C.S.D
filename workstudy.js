@@ -220,3 +220,23 @@ function displayWork() {
 }
 
 
+displayUniversity();
+
+displayWork();
+
+updateDashboard();
+
+function deleteUniversity(index){
+
+    university.splice(index,1);
+
+    saveData();
+
+    displayUniversity();
+
+    updateDashboard();
+
+    showMessage("University class deleted.");
+
+}
+
