@@ -240,3 +240,32 @@ function deleteUniversity(index){
 
 }
 
+function deleteWork(index){
+
+    work.splice(index,1);
+
+    saveData();
+
+    displayWork();
+
+    updateDashboard();
+
+    showMessage("Work shift deleted.");
+
+}
+
+function showMessage(message){
+
+    const box = document.getElementById("messageBox");
+
+    box.innerText = message;
+
+    box.classList.add("show");
+
+    setTimeout(function(){
+
+        box.classList.remove("show");
+
+    },3000);
+
+}
