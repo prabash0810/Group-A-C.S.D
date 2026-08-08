@@ -185,3 +185,87 @@ function displayUniversity() {
 
 
 
+function displayWork() {
+
+    workTable.innerHTML = "";
+
+    work.forEach((item, index) => {
+
+        workTable.innerHTML += `
+
+        <tr>
+
+            <td>${item.company}</td>
+
+            <td>${item.day}</td>
+
+            <td>${item.hours} hrs</td>
+
+            <td>
+
+                <button class="delete-btn" onclick="deleteWork(${index})">
+
+                    Delete
+
+                </button>
+
+            </td>
+
+        </tr>
+
+        `;
+
+    });
+
+}
+
+
+displayUniversity();
+
+displayWork();
+
+updateDashboard();
+
+function deleteUniversity(index){
+
+    university.splice(index,1);
+
+    saveData();
+
+    displayUniversity();
+
+    updateDashboard();
+
+    showMessage("University class deleted.");
+
+}
+
+function deleteWork(index){
+
+    work.splice(index,1);
+
+    saveData();
+
+    displayWork();
+
+    updateDashboard();
+
+    showMessage("Work shift deleted.");
+
+}
+
+function showMessage(message){
+
+    const box = document.getElementById("messageBox");
+
+    box.innerText = message;
+
+    box.classList.add("show");
+
+    setTimeout(function(){
+
+        box.classList.remove("show");
+
+    },3000);
+
+}
