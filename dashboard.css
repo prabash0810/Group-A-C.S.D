@@ -9,8 +9,6 @@
     --primary-color: #2563eb;
     --navy: #0f172a;
     --blue: #2563eb;
-    --motion-fast: 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
-    --motion-medium: 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
     --green: #16a34a;
     --teal: #0d9488;
     --orange: #f59e0b;
@@ -20,6 +18,8 @@
     --text-dark: var(--text-main);
     --text-light: var(--text-muted);
     --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    --motion-fast: 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    --motion-medium: 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 body.theme-default {
@@ -70,6 +70,7 @@ body {
         radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.20), transparent 35%),
         var(--bg-main);
     animation: pageFadeIn 0.7s ease-out;
+    overflow-x: hidden;
 }
 
 .dashboard-container {
@@ -133,7 +134,7 @@ body {
     font-size: 32px;
     letter-spacing: 1px;
     color: var(--primary-color);
-    transition: transform 0.3s ease, letter-spacing 0.3s ease;
+    transition: transform var(--motion-medium), letter-spacing var(--motion-medium);
 }
 
 .logo:hover h1 {
@@ -175,7 +176,7 @@ body {
     border-radius: 0 5px 5px 0;
     background: var(--primary-color);
     transform: translateY(-50%);
-    transition: height 0.3s ease;
+    transition: height var(--motion-medium);
 }
 
 .navigation a:hover {
@@ -227,6 +228,7 @@ body {
     border-radius: 50%;
     background: rgba(37, 99, 235, 0.08);
     pointer-events: none;
+    transition: transform var(--motion-medium), opacity var(--motion-medium);
 }
 
 .welcome-section::after {
@@ -239,11 +241,20 @@ body {
     border-radius: 50%;
     background: rgba(13, 148, 136, 0.07);
     pointer-events: none;
+    transition: transform var(--motion-medium), opacity var(--motion-medium);
 }
 
 .welcome-section:hover {
     transform: translateY(-3px) scale(1.005);
     box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+}
+
+.welcome-section:hover::before {
+    transform: scale(1.04);
+}
+
+.welcome-section:hover::after {
+    transform: scale(1.04);
 }
 
 .welcome-text,
@@ -256,7 +267,7 @@ body {
     font-size: 32px;
     color: var(--text-main);
     margin-bottom: 12px;
-    transition: transform 0.3s ease, letter-spacing 0.3s ease;
+    transition: transform var(--motion-medium), letter-spacing var(--motion-medium);
 }
 
 .welcome-section:hover .welcome-text h2 {
@@ -278,7 +289,7 @@ body {
     background: linear-gradient(135deg, var(--blue), var(--teal));
     color: white;
     font-size: 14px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--motion-medium), box-shadow var(--motion-medium);
 }
 
 .daily-message:hover {
@@ -304,7 +315,7 @@ body {
     color: white;
     background: linear-gradient(135deg, var(--green), var(--blue));
     box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform var(--motion-medium), box-shadow var(--motion-medium);
 }
 
 .profile-area:hover .profile-circle {
@@ -335,7 +346,7 @@ body {
     border-radius: 22px;
     box-shadow: var(--shadow);
     border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--motion-medium), box-shadow var(--motion-medium);
     position: relative;
     overflow: hidden;
 }
@@ -350,11 +361,16 @@ body {
     border-radius: 50%;
     background: rgba(37, 99, 235, 0.06);
     pointer-events: none;
+    transition: transform var(--motion-medium);
 }
 
 .date-widget:hover {
     transform: translateY(-4px) scale(1.005);
     box-shadow: 0 16px 35px rgba(15, 23, 42, 0.12);
+}
+
+.date-widget:hover::after {
+    transform: scale(1.04);
 }
 
 .date-icon {
@@ -367,7 +383,7 @@ body {
     font-size: 40px;
     background: linear-gradient(135deg, var(--blue), var(--teal));
     box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform var(--motion-medium), box-shadow var(--motion-medium);
 }
 
 .date-widget:hover .date-icon {
@@ -395,7 +411,7 @@ body {
 #current-time {
     font-weight: bold;
     color: var(--blue);
-    transition: letter-spacing 0.3s ease;
+    transition: letter-spacing var(--motion-medium);
 }
 
 .date-widget:hover #current-time {
@@ -450,7 +466,7 @@ body {
     top: -100px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.25);
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    transition: transform var(--motion-medium), opacity var(--motion-medium);
     z-index: -1;
 }
 
@@ -473,7 +489,7 @@ body {
     border-radius: 18px;
     font-size: 32px;
     background: linear-gradient(135deg, var(--blue), var(--teal));
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+    transition: transform var(--motion-medium), box-shadow var(--motion-medium);
 }
 
 .action-card:hover .action-icon {
@@ -516,7 +532,7 @@ body {
     backdrop-filter: blur(15px);
     box-shadow: var(--shadow);
     border: 1px solid var(--border-color);
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+    transition: transform var(--motion-medium), box-shadow var(--motion-medium);
     position: relative;
     overflow: hidden;
     isolation: isolate;
@@ -532,7 +548,7 @@ body {
     top: -100px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.25);
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    transition: transform var(--motion-medium), opacity var(--motion-medium);
     z-index: -1;
 }
 
@@ -555,7 +571,7 @@ body {
     border-radius: 22px;
     font-size: 38px;
     flex-shrink: 0;
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+    transition: transform var(--motion-medium), box-shadow var(--motion-medium);
 }
 
 .dashboard-card:hover .card-icon {
@@ -564,7 +580,7 @@ body {
 }
 
 .card-content {
-    transition: transform 0.35s ease;
+    transition: transform var(--motion-medium);
 }
 
 .dashboard-card:hover .card-content {
@@ -591,7 +607,7 @@ body {
     background: var(--border-color);
     font-size: 13px;
     color: var(--text-main);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--motion-medium), box-shadow var(--motion-medium);
 }
 
 .dashboard-card:hover .card-content span {
@@ -808,7 +824,7 @@ body {
     backdrop-filter: blur(15px);
     box-shadow: var(--shadow);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--motion-medium), box-shadow var(--motion-medium);
     position: relative;
     overflow: hidden;
 }
@@ -822,7 +838,7 @@ body {
     top: -80px;
     border-radius: 50%;
     background: rgba(37, 99, 235, 0.06);
-    transition: transform 0.45s ease;
+    transition: transform var(--motion-medium);
 }
 
 .progress-box div:hover {
@@ -897,7 +913,7 @@ body {
     background: var(--bg-card);
     backdrop-filter: blur(15px);
     box-shadow: var(--shadow);
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+    transition: transform var(--motion-medium), box-shadow var(--motion-medium);
     position: relative;
     overflow: hidden;
 }
@@ -911,11 +927,11 @@ body {
     height: 0;
     border-radius: 0 0 5px 5px;
     background: linear-gradient(180deg, var(--purple), #ec4899);
-    transition: height 0.4s ease;
+    transition: height var(--motion-medium);
 }
 
 .event-preview-card:hover {
-    transform: translateY(-9px);
+    transform: translateY(-5px) scale(1.01);
     box-shadow: 0 20px 42px rgba(15, 23, 42, 0.14);
 }
 
@@ -932,11 +948,11 @@ body {
     border-radius: 20px;
     font-size: 35px;
     background: linear-gradient(135deg, var(--purple), #ec4899);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform var(--motion-medium), box-shadow var(--motion-medium);
 }
 
 .event-preview-card:hover .event-icon {
-    transform: scale(1.08) rotate(-4deg);
+    transform: scale(1.04) rotate(-2deg);
     box-shadow: 0 12px 25px rgba(147, 51, 234, 0.20);
 }
 
@@ -982,7 +998,7 @@ body {
     backdrop-filter: blur(15px);
     box-shadow: var(--shadow);
     text-align: center;
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+    transition: transform var(--motion-medium), box-shadow var(--motion-medium);
     position: relative;
     overflow: hidden;
 }
@@ -996,7 +1012,7 @@ body {
     bottom: -60px;
     border-radius: 50%;
     background: rgba(22, 163, 74, 0.06);
-    transition: transform 0.4s ease;
+    transition: transform var(--motion-medium);
 }
 
 .finance-card:hover {
@@ -1005,7 +1021,7 @@ body {
 }
 
 .finance-card:hover::after {
-    transform: scale(1.5);
+    transform: scale(1.4);
 }
 
 .finance-icon {
@@ -1018,7 +1034,7 @@ body {
     border-radius: 20px;
     font-size: 35px;
     background: linear-gradient(135deg, var(--green), var(--teal));
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform var(--motion-medium), box-shadow var(--motion-medium);
 }
 
 .finance-card:hover .finance-icon {
@@ -1076,7 +1092,7 @@ body {
     background: var(--bg-card);
     backdrop-filter: blur(15px);
     box-shadow: var(--shadow);
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+    transition: transform var(--motion-medium), box-shadow var(--motion-medium);
     position: relative;
     overflow: hidden;
 }
@@ -1090,11 +1106,11 @@ body {
     height: 3px;
     border-radius: 5px;
     background: linear-gradient(90deg, var(--green), var(--teal));
-    transition: width 0.4s ease;
+    transition: width var(--motion-medium);
 }
 
 .goal-card:hover {
-    transform: translateY(-9px);
+    transform: translateY(-5px) scale(1.01);
     box-shadow: 0 20px 42px rgba(15, 23, 42, 0.14);
 }
 
@@ -1111,11 +1127,11 @@ body {
     border-radius: 20px;
     font-size: 35px;
     background: linear-gradient(135deg, var(--green), var(--teal));
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform var(--motion-medium), box-shadow var(--motion-medium);
 }
 
 .goal-card:hover .goal-icon {
-    transform: scale(1.08) rotate(3deg);
+    transform: scale(1.04) rotate(2deg);
     box-shadow: 0 12px 25px rgba(22, 163, 74, 0.20);
 }
 
@@ -1476,5 +1492,24 @@ body {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+
+    .welcome-section:hover,
+    .date-widget:hover,
+    .action-card:hover,
+    .dashboard-card:hover,
+    .progress-box div:hover,
+    .event-preview-card:hover,
+    .finance-card:hover,
+    .goal-card:hover,
+    .profile-area:hover .profile-circle,
+    .welcome-section:hover .welcome-text h2,
+    .date-widget:hover #current-time,
+    .logo:hover h1,
+    .navigation a:hover,
+    .action-card:hover .action-icon,
+    .daily-message:hover {
+        transform: none !important;
+        box-shadow: var(--shadow) !important;
     }
 }

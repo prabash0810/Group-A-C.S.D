@@ -1,3 +1,9 @@
+/* Load the DayWise theme saved in Settings */
+document.addEventListener("DOMContentLoaded", function () {
+    const savedTheme = localStorage.getItem("daywiseTheme") || "default";
+
+    document.body.classList.add(`theme-${savedTheme}`);
+});
 document.addEventListener("DOMContentLoaded", function () {
     displayEvents();
     displayAchievements();

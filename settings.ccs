@@ -1,14 +1,6 @@
-/* DayWise Settings Page
-   Theme and settings styling */
+/* DayWise Settings Page */
 
-/* Basic reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Main theme variables */
+/* Theme colours */
 :root {
     --bg-main: #f8fafc;
     --bg-card: #ffffff;
@@ -20,7 +12,7 @@
     --shadow-color: rgba(15, 23, 42, 0.08);
 }
 
-/* Default DayWise theme */
+/* Default theme */
 body.theme-default {
     --bg-main: #f8fafc;
     --bg-card: #ffffff;
@@ -56,22 +48,30 @@ body.theme-light {
     --shadow-color: rgba(15, 23, 42, 0.06);
 }
 
-/* Page styling */
+/* Basic page reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 body {
     font-family: 'Poppins', sans-serif;
     background: var(--bg-main);
     color: var(--text-main);
     min-height: 100vh;
+    overflow-x: hidden;
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Settings page container */
+/* Main settings area */
 .settings-page {
     min-height: 100vh;
     padding: 40px 8%;
 }
 
-/* Settings heading area */
+/* Settings heading */
 .settings-header {
     max-width: 1100px;
     margin: 0 auto 35px;
@@ -94,7 +94,7 @@ body {
     font-size: 0.95rem;
 }
 
-/* Back button */
+/* Back to dashboard button */
 .back-btn {
     display: inline-flex;
     align-items: center;
@@ -106,16 +106,17 @@ body {
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
-    box-shadow: 0 7px 18px var(--shadow-color);
+    box-shadow: 0 7px 18px rgba(37, 99, 235, 0.2);
     transition: all 0.25s ease;
 }
 
 .back-btn:hover {
     background: var(--primary-hover);
     transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(37, 99, 235, 0.28);
 }
 
-/* Settings cards */
+/* Settings cards layout */
 .settings-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -154,7 +155,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* Individual setting rows */
+/* Individual settings */
 .setting-row {
     display: flex;
     align-items: center;
@@ -177,11 +178,11 @@ body {
     line-height: 1.5;
 }
 
-/* Small setting buttons */
+/* Small settings buttons */
 .setting-btn {
     padding: 10px 17px;
     border-radius: 10px;
-    background: #eff6ff;
+    background: rgba(37, 99, 235, 0.1);
     color: var(--primary-color);
     text-decoration: none;
     font-size: 0.88rem;
@@ -190,76 +191,23 @@ body {
 }
 
 .setting-btn:hover {
-    background: #dbeafe;
+    background: rgba(37, 99, 235, 0.16);
     transform: translateY(-2px);
 }
 
-/* Theme selection area */
-.theme-options {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-top: 18px;
-}
-
-/* Individual theme option */
-.theme-option {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 18px;
-    border: 1px solid var(--border-color);
-    border-radius: 18px;
-    background: var(--bg-card);
-    color: var(--text-main);
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-.theme-option:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px var(--shadow-color);
-}
-
-/* Shows which theme is currently selected */
-.theme-option.active {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
-}
-
-/* Theme preview boxes */
-.theme-preview {
-    width: 100%;
-    height: 70px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-}
-
-/* Preview for default theme */
-.default-preview {
-    background: linear-gradient(135deg, #f8fafc, #dbeafe);
-}
-
-/* Preview for dark theme */
-.dark-preview {
-    background: linear-gradient(135deg, #020617, #1e293b);
-}
-
-/* Preview for light theme */
-.light-preview {
-    background: #ffffff;
-}
-
-/* Mobile layout */
+/* Tablet layout */
 @media (max-width: 700px) {
     .settings-page {
-        padding: 30px 5%;
+        padding: 30px 6%;
     }
 
     .settings-header {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .back-btn {
+        width: 100%;
     }
 
     .theme-options {
@@ -277,10 +225,10 @@ body {
     }
 }
 
-/* Smaller phone screens */
+/* Small mobile screens */
 @media (max-width: 450px) {
     .settings-page {
-        padding: 25px 4%;
+        padding: 25px 5%;
     }
 
     .settings-card {
@@ -290,5 +238,9 @@ body {
 
     .settings-header h1 {
         font-size: 2rem;
+    }
+
+    .theme-option {
+        padding: 15px;
     }
 }

@@ -1,20 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const themeSelector = document.getElementById("themeSelector");
+
     loadSavedTheme();
 
-    const themeOptions = document.querySelectorAll(".theme-option");
-
-    themeOptions.forEach(function (option) {
-        option.addEventListener("click", function () {
-            const selectedTheme = this.dataset.theme;
+    if (themeSelector) {
+        themeSelector.addEventListener("change", function () {
+            const selectedTheme = this.value;
 
             applyTheme(selectedTheme);
-            localStorage.setItem("daywiseTheme", selectedTheme);
 
-            updateSelectedTheme(selectedTheme);
+            localStorage.setItem("daywiseTheme", selectedTheme);
         });
-    });
+    }
 });
 
+/* Apply the selected theme to the page */
 function applyTheme(theme) {
     document.body.classList.remove(
         "theme-default",
@@ -25,21 +25,22 @@ function applyTheme(theme) {
     document.body.classList.add(`theme-${theme}`);
 }
 
+/* Load the user's saved theme */
 function loadSavedTheme() {
-    const savedTheme = localStorage.getItem("daywiseTheme") || "default";
+    const savedTheme =
+        localStorage.getItem("daywiseTheme") || "default";
 
     applyTheme(savedTheme);
-    updateSelectedTheme(savedTheme);
+
+    const themeSelector = document.getElementById("themeSelector");
+
+    if (themeSelector) {
+        themeSelector.value = savedTheme;
+    }
 }
+/* Load the DayWise theme saved in Settings */
+document.addEventListener("DOMContentLoaded", function () {
+    const savedTheme = localStorage.getItem("daywiseTheme") || "default";
 
-function updateSelectedTheme(theme) {
-    const themeOptions = document.querySelectorAll(".theme-option");
-
-    themeOptions.forEach(function (option) {
-        option.classList.remove("active");
-
-        if (option.dataset.theme === theme) {
-            option.classList.add("active");
-        }
-    });
-}
+    document.body.classList.add(`theme-${savedTheme}`);
+});
