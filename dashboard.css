@@ -130,7 +130,7 @@ body {
 .logo h1 {
     font-size: 32px;
     letter-spacing: 1px;
-    color: #38bdf8;
+    color: var(--primary-color);
     transition: transform 0.3s ease, letter-spacing 0.3s ease;
 }
 
@@ -153,7 +153,7 @@ body {
 
 .navigation a {
     text-decoration: none;
-    color: #e2e8f0;
+    color: rgba(255, 255, 255, 0.92);
     padding: 14px 18px;
     border-radius: 14px;
     font-size: 15px;
@@ -171,7 +171,7 @@ body {
     width: 3px;
     height: 0;
     border-radius: 0 5px 5px 0;
-    background: #38bdf8;
+    background: var(--primary-color);
     transform: translateY(-50%);
     transition: height 0.3s ease;
 }
@@ -187,7 +187,7 @@ body {
 }
 
 .navigation a.active {
-    background: linear-gradient(135deg, var(--blue), var(--teal));
+    background: linear-gradient(135deg, var(--primary-color), var(--teal));
     color: white;
     box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
     transform: translateX(4px);
@@ -252,7 +252,7 @@ body {
 
 .welcome-text h2 {
     font-size: 32px;
-    color: var(--navy);
+    color: var(--text-main);
     margin-bottom: 12px;
     transition: transform 0.3s ease, letter-spacing 0.3s ease;
 }
@@ -311,7 +311,7 @@ body {
 }
 
 .profile-info h3 {
-    color: var(--navy);
+    color: var(--text-main);
     font-size: 18px;
 }
 
@@ -380,7 +380,7 @@ body {
 
 .date-content h3 {
     font-size: 22px;
-    color: var(--navy);
+    color: var(--text-main);
     margin-bottom: 10px;
 }
 
@@ -408,7 +408,7 @@ body {
 
 .quick-actions h2 {
     font-size: 26px;
-    color: var(--navy);
+    color: var(--text-main);
     margin-bottom: 20px;
 }
 
@@ -570,7 +570,7 @@ body {
 }
 
 .card-content h3 {
-    color: var(--navy);
+    color: var(--text-main);
     font-size: 22px;
     margin-bottom: 10px;
 }
@@ -696,7 +696,7 @@ body {
 
 .event-card-ring-inner strong {
     font-size: 28px;
-    color: var(--navy);
+    color: var(--text-main);
 }
 
 .event-card-ring-inner span {
@@ -727,7 +727,7 @@ body {
 .event-card-mini-stat strong {
     display: block;
     font-size: 16px;
-    color: var(--navy);
+    color: var(--text-main);
 }
 
 .event-card-mini-stat small {
@@ -750,7 +750,7 @@ body {
 }
 
 .event-card-footer-row strong {
-    color: var(--navy);
+    color: var(--text-main);
     font-size: 14px;
 }
 
@@ -778,7 +778,7 @@ body {
 
 .progress-section h2 {
     font-size: 28px;
-    color: var(--navy);
+    color: var(--text-main);
     margin-bottom: 25px;
     position: relative;
 }
@@ -833,7 +833,7 @@ body {
 }
 
 .progress-box h3 {
-    color: var(--navy);
+    color: var(--text-main);
     font-size: 20px;
     margin-bottom: 12px;
 }
@@ -861,7 +861,7 @@ body {
 
 .section-header h2 {
     font-size: 28px;
-    color: var(--navy);
+    color: var(--text-main);
     margin-bottom: 10px;
     position: relative;
 }
@@ -939,7 +939,7 @@ body {
 }
 
 .event-details h3 {
-    color: var(--navy);
+    color: var(--text-main);
     font-size: 20px;
     margin-bottom: 10px;
 }
@@ -1027,7 +1027,7 @@ body {
 .finance-card h3 {
     margin-top: 18px;
     margin-bottom: 10px;
-    color: var(--navy);
+    color: var(--text-main);
     font-size: 18px;
 }
 
@@ -1118,7 +1118,7 @@ body {
 }
 
 .goal-details h3 {
-    color: var(--navy);
+    color: var(--text-main);
     font-size: 19px;
     margin-bottom: 8px;
 }
@@ -1262,6 +1262,181 @@ body {
 .goal-card:focus-visible {
     outline: 3px solid rgba(37, 99, 235, 0.25);
     outline-offset: 4px;
+}
+
+/* Responsive layout */
+
+@media (max-width: 1100px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+    }
+
+    .main-content {
+        padding: 28px;
+    }
+
+    .action-container,
+    .dashboard-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .events-container,
+    .finance-container,
+    .goals-container,
+    .progress-box {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 800px) {
+    .main-content {
+        padding: 24px;
+    }
+
+    .welcome-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .profile-area {
+        width: 100%;
+    }
+
+    .date-widget {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .action-container,
+    .dashboard-cards,
+    .events-container,
+    .finance-container,
+    .goals-container,
+    .progress-box {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-card {
+        align-items: flex-start;
+    }
+
+    .event-card {
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-content {
+        padding: 18px;
+    }
+
+    .sidebar {
+        padding: 20px 16px;
+    }
+
+    .logo {
+        margin-bottom: 24px;
+    }
+
+    .logo h1 {
+        font-size: 28px;
+    }
+
+    .navigation {
+        gap: 10px;
+    }
+
+    .navigation a {
+        padding: 12px 14px;
+        text-align: center;
+    }
+
+    .welcome-section,
+    .date-widget,
+    .action-card,
+    .dashboard-card,
+    .event-preview-card,
+    .finance-card,
+    .goal-card {
+        border-radius: 18px;
+    }
+
+    .welcome-section {
+        padding: 22px;
+    }
+
+    .date-widget {
+        padding: 20px;
+    }
+
+    .action-card {
+        padding: 20px 12px;
+    }
+
+    .dashboard-card {
+        padding: 22px;
+        gap: 16px;
+    }
+
+    .event-card-ring {
+        width: 90px;
+        height: 90px;
+    }
+
+    .event-card-ring-shell {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .event-card-mini-stat {
+        padding: 8px 6px;
+    }
+
+    .profile-area {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-circle {
+        width: 64px;
+        height: 64px;
+        font-size: 20px;
+    }
+
+    .navigation a:hover,
+    .action-card:hover,
+    .dashboard-card:hover,
+    .event-preview-card:hover,
+    .finance-card:hover,
+    .goal-card:hover {
+        transform: none;
+        box-shadow: var(--shadow);
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .action-card:hover,
+    .dashboard-card:hover,
+    .event-preview-card:hover,
+    .finance-card:hover,
+    .goal-card:hover {
+        transform: none;
+    }
 }
 
 /* Reduced motion */
