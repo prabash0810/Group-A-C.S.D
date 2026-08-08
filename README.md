@@ -9,10 +9,9 @@ graph TD
     B --> D[Dashboard]
 
     D --> E[Daily Planner]
-    D --> F[Work and Uni]
+    D --> F[Work and study]
     D --> G[Income Tracker]
-    D --> H[Achievements]
-    D --> I[Events]
+    D --> H[Events and Achievements]
 
     %% Session Storage
     E --> J[Session Storage]
@@ -32,6 +31,7 @@ graph TD
 
     K --> K1[Remember Me]
     K --> K2[Theme Preference]
-    K --> K3[Language Preference]
-    K --> K4[User Session]
+    K --> K3[Language]
+    K --> K4[Session Identifier]
 ```
+

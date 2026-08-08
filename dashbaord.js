@@ -25,13 +25,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     animateNumbers();
 
-    calculateWeeklyProgress();
-
     loadTheme();
 
     checkCookieStatus();
 
     initQuickActions();
+
+    bindStorageSync();
+
+    updateDashboard();
 
 });
 
@@ -80,6 +82,141 @@ function initQuickActions() {
 
 }
 
+function bindStorageSync() {
+
+    window.addEventListener("storage", function (event) {
+
+        if (!event.key || event.key === "events" || event.key === "achievements") {
+
+            updateDashboard();
+
+        }
+
+    });
+
+    window.addEventListener("daywise:data-changed", function () {
+
+        updateDashboard();
+
+    });
+
+}
+
+function getStoredItems(key) {
+
+    try {
+
+        const storedValue = localStorage.getItem(key);
+        const parsedValue = storedValue ? JSON.parse(storedValue) : [];
+        return Array.isArray(parsedValue) ? parsedValue : [];
+
+    }
+
+    catch (error) {
+
+        console.warn("Unable to read storage for " + key, error);
+        return [];
+
+    }
+
+}
+
+function getWeekStart(date) {
+
+    const weekStart = new Date(date);
+    const day = weekStart.getDay();
+    const diff = weekStart.getDate() - day + (day === 0 ? -6 : 1);
+    weekStart.setDate(diff);
+    weekStart.setHours(0, 0, 0, 0);
+    return weekStart;
+
+}
+
+function getWeekEnd(date) {
+
+    const weekEnd = getWeekStart(date);
+    weekEnd.setDate(weekEnd.getDate() + 6);
+    weekEnd.setHours(23, 59, 59, 999);
+    return weekEnd;
+
+}
+
+function getWeekEvents() {
+
+    const events = getStoredItems("events");
+    const now = new Date();
+    const weekStart = getWeekStart(now);
+    const weekEnd = getWeekEnd(now);
+
+    return events.filter(function (item) {
+
+        const eventDate = new Date(item.date);
+        return !Number.isNaN(eventDate.getTime()) && eventDate >= weekStart && eventDate <= weekEnd;
+
+    });
+
+}
+
+function calculateEventProgress(events) {
+
+    const completed = events.filter(function (item) {
+        return item.completed;
+    }).length;
+
+    return {
+        total: events.length,
+        completed: completed,
+        pending: events.length - completed
+    };
+
+}
+
+function calculateAchievementProgress(achievements) {
+
+    const completed = achievements.filter(function (item) {
+        return item.completed;
+    }).length;
+
+    const completionRate = achievements.length > 0
+        ? Math.round((completed / achievements.length) * 100)
+        : 0;
+
+    return {
+        total: achievements.length,
+        completed: completed,
+        completionRate: completionRate
+    };
+
+}
+
+function calculateOverallProgress(eventStats, achievementStats) {
+
+    const totalItems = eventStats.total + achievementStats.total;
+    const completedItems = eventStats.completed + achievementStats.completed;
+
+    if (totalItems === 0) {
+        return 0;
+    }
+
+    return Math.round((completedItems / totalItems) * 100);
+
+}
+
+function calculateWeeklyProgress() {
+
+    const weekEvents = getWeekEvents();
+    const completedThisWeek = weekEvents.filter(function (item) {
+        return item.completed;
+    }).length;
+
+    if (weekEvents.length === 0) {
+        return 0;
+    }
+
+    return Math.round((completedThisWeek / weekEvents.length) * 100);
+
+}
+
 function loadDashboard() {
 
     // Default dashboard values
@@ -115,7 +252,7 @@ function loadDashboard() {
 
     }
 
-    updateDashboardCards();
+    updateDashboard();
 
 }
 
@@ -124,15 +261,96 @@ function loadDashboard() {
    Update Cards
  */
 
-function updateDashboardCards() {
+function updateDashboard() {
 
-    const dashboardData =
-        JSON.parse(localStorage.getItem("dashboardData"));
+    const events = getStoredItems("events");
+    const achievements = getStoredItems("achievements");
+    const eventStats = calculateEventProgress(events);
+    const achievementStats = calculateAchievementProgress(achievements);
+    const weeklyProgress = calculateWeeklyProgress();
+    const overallProgress = calculateOverallProgress(eventStats, achievementStats);
 
-    setText("plannerCount", dashboardData.planner);
-    setText("taskCount", dashboardData.completedTasks);
-    setText("achievementCount", dashboardData.achievements);
-    setText("eventCount", dashboardData.events);
+    const safeWeeklyProgress = Number.isFinite(weeklyProgress) ? Math.max(0, Math.min(100, weeklyProgress)) : 0;
+    const safeOverallProgress = Number.isFinite(overallProgress) ? Math.max(0, Math.min(100, overallProgress)) : 0;
+
+    setText("weeklyEventsScheduledText", getWeekEvents().length + " Scheduled");
+    setText("weeklyEventsCompletedText", getWeekEvents().filter(function (item) {
+        return item.completed;
+    }).length + " Completed");
+    setText("weeklyAchievementsCompletedText", achievementStats.completed + " Completed");
+
+    setText("plannerCount", eventStats.total);
+    setText("taskCount", eventStats.completed);
+    setText("achievementCount", achievementStats.completed);
+    setText("eventCount", eventStats.pending);
+
+    updateEventsAchievementsCard();
+
+}
+
+function updateEventsAchievementsCard() {
+
+    const events = getStoredItems("events");
+    const achievements = getStoredItems("achievements");
+    const eventStats = calculateEventProgress(events);
+    const achievementStats = calculateAchievementProgress(achievements);
+    const weeklyProgress = calculateWeeklyProgress();
+    const overallProgress = calculateOverallProgress(eventStats, achievementStats);
+
+    const achievementPercent = Number.isFinite(achievementStats.completionRate)
+        ? Math.max(0, Math.min(100, achievementStats.completionRate))
+        : 0;
+
+    const weeklyPercent = Number.isFinite(weeklyProgress)
+        ? Math.max(0, Math.min(100, weeklyProgress))
+        : 0;
+
+    const overallPercent = Number.isFinite(overallProgress)
+        ? Math.max(0, Math.min(100, overallProgress))
+        : 0;
+
+    const ring = document.getElementById("eventCardProgressRing");
+    const percentText = document.getElementById("eventCardPercent");
+    const eventsCountText = document.getElementById("eventCardEventsCount");
+    const achievementsCountText = document.getElementById("eventCardAchievementsCount");
+    const completedCountText = document.getElementById("eventCardCompletedCount");
+    const overallText = document.getElementById("eventCardOverallProgress");
+    const weeklyText = document.getElementById("eventCardWeeklyProgress");
+    const weeklyBar = document.getElementById("eventCardWeeklyBar");
+
+    if (ring) {
+        const circumference = 2 * Math.PI * 52;
+        ring.style.strokeDasharray = circumference;
+        ring.style.strokeDashoffset = circumference * (1 - achievementPercent / 100);
+    }
+
+    if (percentText) {
+        percentText.textContent = achievementPercent + "%";
+    }
+
+    if (eventsCountText) {
+        eventsCountText.textContent = eventStats.total;
+    }
+
+    if (achievementsCountText) {
+        achievementsCountText.textContent = achievementStats.total;
+    }
+
+    if (completedCountText) {
+        completedCountText.textContent = eventStats.completed + achievementStats.completed;
+    }
+
+    if (overallText) {
+        overallText.textContent = overallPercent + "%";
+    }
+
+    if (weeklyText) {
+        weeklyText.textContent = weeklyPercent + "%";
+    }
+
+    if (weeklyBar) {
+        weeklyBar.style.width = weeklyPercent + "%";
+    }
 
 }
 

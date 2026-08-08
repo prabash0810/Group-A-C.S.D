@@ -1355,6 +1355,176 @@ body {
 }
 
 /*
+    Events & Achievements Dashboard Card Enhancements
+*/
+
+.dashboard-card.event-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    animation: eventCardFadeIn 0.6s ease both;
+}
+
+.dashboard-card.event-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.06), rgba(13, 148, 136, 0.04));
+    pointer-events: none;
+}
+
+.dashboard-card.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(37, 99, 235, 0.16);
+}
+
+.dashboard-card.event-card .card-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 32px;
+}
+
+.dashboard-card.event-card .card-content {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.event-card-progress-wrap {
+    margin-top: 12px;
+    display: grid;
+    gap: 14px;
+}
+
+.event-card-ring-shell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px 0;
+}
+
+.event-card-ring {
+    width: 110px;
+    height: 110px;
+    transform: rotate(-90deg);
+}
+
+.event-card-ring-bg,
+.event-card-ring-progress {
+    fill: none;
+    stroke-width: 12;
+}
+
+.event-card-ring-bg {
+    stroke: rgba(37, 99, 235, 0.12);
+}
+
+.event-card-ring-progress {
+    stroke: url(#eventCardGradient);
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.event-card-ring-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+}
+
+.event-card-ring-inner strong {
+    font-size: 28px;
+    color: var(--navy);
+}
+
+.event-card-ring-inner span {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.event-card-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.event-card-mini-stat {
+    padding: 10px 8px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.12);
+}
+
+.event-card-mini-icon {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.event-card-mini-stat strong {
+    display: block;
+    font-size: 16px;
+    color: var(--navy);
+}
+
+.event-card-mini-stat small {
+    color: var(--text-light);
+    font-size: 11px;
+}
+
+.event-card-footer {
+    padding: 12px 0 0;
+    border-top: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.event-card-footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 6px;
+}
+
+.event-card-footer-row strong {
+    color: var(--navy);
+    font-size: 14px;
+}
+
+.event-card-progress-bar {
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(37, 99, 235, 0.12);
+    overflow: hidden;
+}
+
+.event-card-progress-bar span {
+    display: block;
+    width: 0%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--blue), var(--teal));
+    transition: width 0.5s ease;
+}
+
+@keyframes eventCardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*
     Commit 17
     Weekly Progress Section Design
 

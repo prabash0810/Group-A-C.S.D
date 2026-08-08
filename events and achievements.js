@@ -33,6 +33,10 @@ function getStoredItems(key) {
 
 function saveStoredItems(key, items) {
     localStorage.setItem(key, JSON.stringify(items));
+
+    if (typeof window !== "undefined") {
+        window.dispatchEvent(new CustomEvent("daywise:data-changed"));
+    }
 }
 
 function addEvent() {
