@@ -9,28 +9,33 @@ graph TD
     B --> D[Dashboard]
 
     D --> E[Daily Planner]
-    D --> F[Work and study]
+    D --> F[Work & Study]
     D --> G[Income Tracker]
-    D --> H[Events and Achievements]
+    D --> H[Events & Achievements]
 
-    %% Session Storage
-    E --> J[Session Storage]
+    %% Local Storage
+    E --> J[Local Storage]
     F --> J
     G --> J
     H --> J
-    I --> J
 
-    J --> J1[Current Planner Data]
-    J --> J2[Current Work Schedule]
-    J --> J3[Current Income Data]
-    J --> J4[Current Achievement Progress]
-    J --> J5[Current Event Data]
+    J --> J1[University Class Data]
+    J --> J2[Work Shift Data]
+    J --> J3[Income Data]
+    J --> J4[Achievement Progress]
+    J --> J5[Event Data]
+
+    %% Session Storage
+    C --> K[Session Storage]
+
+    K --> K1[Current Login Session]
+    K --> K2[Temporary User State]
+    K --> K3[Current Dashboard State]
 
     %% Cookies
-    C --> K[Cookies]
+    C --> L[Cookies]
 
-    K --> K1[Remember Me]
-    K --> K2[Theme Preference]
-    K --> K3[Language]
-    K --> K4[Session Identifier]
-```
+    L --> L1[Remember Me]
+    L --> L2[Theme Preference]
+    L --> L3[Language Preference]
+    L --> L4[Session Identifier]
