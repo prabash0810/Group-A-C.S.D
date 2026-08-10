@@ -10,6 +10,12 @@
   position:absolute; inset:0; pointer-events:none;
   background: radial-gradient(520px 420px at 80% 10%, rgba(244,169,59,0.08), transparent 60%);
 }
+.slide{
+  position:absolute; inset:0 56px;
+  opacity:0; transform:translateY(18px) scale(0.98); pointer-events:none;
+  transition:opacity 0.75s ease, transform 0.75s ease;
+}
+.slide.active{ opacity:1; transform:translateY(0) scale(1); pointer-events:auto; position:relative; }
 
 
 *{
@@ -229,3 +235,6 @@ h1{
 
 
 }
+.dots{ position:absolute; left:56px; bottom:40px; display:flex; gap:8px; }
+.dot{ width:8px; height:8px; border-radius:50%; background:var(--surface-3); }
+.dot.active{ width:26px; border-radius:5px; background:var(--amber); }
