@@ -269,6 +269,31 @@
   .foot-links a{ font-size:13.5px; color:var(--text-faint); }
   .foot-links a:hover{ color:var(--text-dim); }
   .foot-copy{ font-size:13px; color:var(--text-faint); }
+
+  /* ---------- split page structure ---------- */
+  .split-page {
+    display: flex;
+    min-height: 100vh;
+  }
+  .showcase {
+    flex: 1;
+    min-width: 0;
+  }
+  .auth-side {
+    width: 420px;
+    flex-shrink: 0;
+    border-left: 1px solid var(--line);
+    background: var(--surface);
+    padding: 40px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  @media (max-width: 1024px) {
+    .split-page { flex-direction: column; }
+    .auth-side { width: 100%; height: auto; position: static; border-left: none; border-top: 1px solid var(--line); }
+  }
 </style>
 </head>
 <body>
@@ -276,293 +301,301 @@
 <div class="bg-glow"></div>
 <div class="grain"></div>
 
-<header>
-  <nav>
-    <a href="#top" class="logo"><span class="logo-mark"></span>Daywise</a>
-    <div class="nav-links">
-      <a href="#dashboard">Dashboard</a>
-      <a href="#planner">Planner</a>
-      <a href="#work-university">Work &amp; University</a>
-      <a href="#income">Income</a>
-      <a href="#achievements-events">Achievements &amp; Events</a>
-      <a href="#settings">Settings</a>
-    </div>
-    <a href="#final-cta" class="nav-cta">Start planning free</a>
-  </nav>
-</header>
-
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow"><span class="dot"></span>Built for students who also work</span>
-        <h1>Your whole day,<br>arranged <em>wisely</em>.</h1>
-        <p class="lead">Daywise pulls your classes, shifts, income, and deadlines onto one dial — so lectures, work, and everything after never collide again.</p>
-        <div class="hero-actions">
-          <a href="#final-cta" class="btn-primary">Start planning free</a>
-          <a href="#dashboard" class="btn-ghost">See how it works ↓</a>
+<div class="split-page">
+  <section class="showcase" id="showcase">
+    <header>
+      <nav>
+        <a href="#top" class="logo"><span class="logo-mark"></span>Daywise</a>
+        <div class="nav-links">
+          <a href="#dashboard">Dashboard</a>
+          <a href="#planner">Planner</a>
+          <a href="#work-university">Work &amp; University</a>
+          <a href="#income">Income</a>
+          <a href="#achievements-events">Achievements &amp; Events</a>
+          <a href="#settings">Settings</a>
         </div>
-        <p class="hero-note">No credit card. Syncs with your existing calendar in under a minute.</p>
-      </div>
+        <a href="#final-cta" class="nav-cta">Start planning free</a>
+      </nav>
+    </header>
 
-      <div class="dial-stage">
-        <div class="dial">
-          <div class="dial-inner">
-            <div class="dial-time mono" id="dialTime">09:41</div>
-            <div class="dial-label">Econ 301 in 20 min</div>
-            <div class="dial-word">Daywise</div>
-          </div>
-        </div>
-        <div class="chip chip-1"><span class="dot" style="background:var(--periwinkle)"></span>Econ 301 · 9:00</div>
-        <div class="chip chip-2"><span class="dot" style="background:var(--coral)"></span>Café shift · 12:30</div>
-        <div class="chip chip-3"><span class="dot" style="background:var(--mint)"></span>Payday Friday</div>
-        <div class="chip chip-4"><span class="dot" style="background:var(--gold)"></span>6-day streak</div>
-        <div class="chip chip-5"><span class="dot" style="background:var(--lavender)"></span>Study night · 7pm</div>
-      </div>
-    </div>
-  </section>
+    <main id="top">
 
-  <!-- DASHBOARD -->
-  <section class="feature" id="dashboard">
-    <div class="wrap feature-grid">
-      <div class="feature-copy">
-        <span class="tag" style="background:var(--amber-dim); color:var(--amber);">Dashboard</span>
-        <h3>Today, at a glance — before you've had coffee.</h3>
-        <p>Open Daywise and see everything that's already on the books: your next class, your next shift, what's due, and what you've earned so far this week.</p>
-        <ul>
-          <li>One view pulled from every category you track</li>
-          <li>Nothing to refresh, filter, or dig for</li>
-          <li>Quiet by default — only shows what's actually next</li>
-        </ul>
-      </div>
-      <div class="feature-panel">
-        <div class="panel">
-          <div class="db-row">
-            <div class="db-left"><span class="db-dot" style="background:var(--periwinkle)"></span>Econ 301 — Lecture Hall B</div>
-            <div class="db-time mono">09:00</div>
-          </div>
-          <div class="db-row">
-            <div class="db-left"><span class="db-dot" style="background:var(--coral)"></span>Shift — Nordic Café</div>
-            <div class="db-time mono">12:30</div>
-          </div>
-          <div class="db-row">
-            <div class="db-left"><span class="db-dot" style="background:var(--mint)"></span>Weekly earnings so far</div>
-            <div class="db-time mono">£118</div>
-          </div>
-          <div class="db-row">
-            <div class="db-left"><span class="db-dot" style="background:var(--gold)"></span>Reading streak</div>
-            <div class="db-time mono">6 days</div>
-          </div>
-          <div class="db-row">
-            <div class="db-left"><span class="db-dot" style="background:var(--lavender)"></span>Housemates' games night</div>
-            <div class="db-time mono">19:00</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DAILY PLANNER -->
-  <section class="feature" id="planner">
-    <div class="wrap feature-grid reverse">
-      <div class="feature-copy">
-        <span class="tag" style="background:rgba(138,160,255,0.14); color:var(--periwinkle);">Daily Planner</span>
-        <h3>Plan by the hour, not by the guess.</h3>
-        <p>Drag tasks onto an open slot in your day and Daywise snaps them into place. Every plan, essay block, and errand lives on one honest timeline instead of six sticky notes.</p>
-        <ul>
-          <li>Snap-to-slot scheduling, no overlaps allowed</li>
-          <li>Recurring classes and shifts fill in automatically</li>
-          <li>Switch between day, week, and month in one tap</li>
-        </ul>
-      </div>
-      <div class="feature-panel">
-        <div class="panel">
-          <div class="tl">
-            <div class="tl-row"><div class="tl-hour mono">08:00</div><div class="tl-block" style="background:rgba(143,163,184,0.14); color:var(--slate);">Wake, review the day</div></div>
-            <div class="tl-row"><div class="tl-hour mono">09:00</div><div class="tl-block" style="background:rgba(138,160,255,0.16); color:var(--periwinkle);">Econ 301 lecture</div></div>
-            <div class="tl-row"><div class="tl-hour mono">11:00</div><div class="tl-block" style="background:rgba(255,200,87,0.14); color:var(--gold);">Problem set — 45 min</div></div>
-            <div class="tl-row"><div class="tl-hour mono">12:30</div><div class="tl-block" style="background:rgba(255,130,102,0.16); color:var(--coral);">Shift — Nordic Café</div></div>
-            <div class="tl-row"><div class="tl-hour mono">19:00</div><div class="tl-block" style="background:rgba(201,166,255,0.16); color:var(--lavender);">Games night</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK & UNIVERSITY -->
-  <section class="feature" id="work-university">
-    <div class="wrap feature-grid">
-      <div class="feature-copy">
-        <span class="tag" style="background:rgba(255,130,102,0.14); color:var(--coral);">Work &amp; University</span>
-        <h3>Two schedules, zero clashes.</h3>
-        <p>Overlay your class timetable and your work roster in one place. Before you accept a shift, Daywise flags anything that overlaps a lecture, lab, or deadline.</p>
-        <ul>
-          <li>Term timetable imports straight from your university portal</li>
-          <li>Roster shifts checked against classes automatically</li>
-          <li>Deadlines and exams sit alongside your work calendar</li>
-        </ul>
-      </div>
-      <div class="feature-panel">
-        <div class="panel">
-          <div class="split">
-            <div class="split-col">
-              <h4>University</h4>
-              <div class="split-item" style="border-color:var(--periwinkle);">Econ 301 · 9:00–10:30</div>
-              <div class="split-item" style="border-color:var(--periwinkle);">Lab report due · Fri</div>
-              <div class="split-item" style="border-color:var(--periwinkle);">Stats seminar · 14:00</div>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <span class="eyebrow"><span class="dot"></span>Built for students who also work</span>
+            <h1>Your whole day,<br>arranged <em>wisely</em>.</h1>
+            <p class="lead">Daywise pulls your classes, shifts, income, and deadlines onto one dial — so lectures, work, and everything after never collide again.</p>
+            <div class="hero-actions">
+              <a href="#final-cta" class="btn-primary">Start planning free</a>
+              <a href="#dashboard" class="btn-ghost">See how it works ↓</a>
             </div>
-            <div class="split-col">
-              <h4>Work</h4>
-              <div class="split-item" style="border-color:var(--coral);">Nordic Café · 12:30–17:00</div>
-              <div class="split-item" style="border-color:var(--coral);">Weekend shift · Sat</div>
-              <div class="split-item" style="border-color:var(--coral);">Payroll cutoff · Fri</div>
+            <p class="hero-note">No credit card. Syncs with your existing calendar in under a minute.</p>
+          </div>
+
+          <div class="dial-stage">
+            <div class="dial">
+              <div class="dial-inner">
+                <div class="dial-time mono" id="dialTime">09:41</div>
+                <div class="dial-label">Econ 301 in 20 min</div>
+                <div class="dial-word">Daywise</div>
+              </div>
+            </div>
+            <div class="chip chip-1"><span class="dot" style="background:var(--periwinkle)"></span>Econ 301 · 9:00</div>
+            <div class="chip chip-2"><span class="dot" style="background:var(--coral)"></span>Café shift · 12:30</div>
+            <div class="chip chip-3"><span class="dot" style="background:var(--mint)"></span>Payday Friday</div>
+            <div class="chip chip-4"><span class="dot" style="background:var(--gold)"></span>6-day streak</div>
+            <div class="chip chip-5"><span class="dot" style="background:var(--lavender)"></span>Study night · 7pm</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DASHBOARD -->
+      <section class="feature" id="dashboard">
+        <div class="wrap feature-grid">
+          <div class="feature-copy">
+            <span class="tag" style="background:var(--amber-dim); color:var(--amber);">Dashboard</span>
+            <h3>Today, at a glance — before you've had coffee.</h3>
+            <p>Open Daywise and see everything that's already on the books: your next class, your next shift, what's due, and what you've earned so far this week.</p>
+            <ul>
+              <li>One view pulled from every category you track</li>
+              <li>Nothing to refresh, filter, or dig for</li>
+              <li>Quiet by default — only shows what's actually next</li>
+            </ul>
+          </div>
+          <div class="feature-panel">
+            <div class="panel">
+              <div class="db-row">
+                <div class="db-left"><span class="db-dot" style="background:var(--periwinkle)"></span>Econ 301 — Lecture Hall B</div>
+                <div class="db-time mono">09:00</div>
+              </div>
+              <div class="db-row">
+                <div class="db-left"><span class="db-dot" style="background:var(--coral)"></span>Shift — Nordic Café</div>
+                <div class="db-time mono">12:30</div>
+              </div>
+              <div class="db-row">
+                <div class="db-left"><span class="db-dot" style="background:var(--mint)"></span>Weekly earnings so far</div>
+                <div class="db-time mono">£118</div>
+              </div>
+              <div class="db-row">
+                <div class="db-left"><span class="db-dot" style="background:var(--gold)"></span>Reading streak</div>
+                <div class="db-time mono">6 days</div>
+              </div>
+              <div class="db-row">
+                <div class="db-left"><span class="db-dot" style="background:var(--lavender)"></span>Housemates' games night</div>
+                <div class="db-time mono">19:00</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- INCOME -->
-  <section class="feature" id="income">
-    <div class="wrap feature-grid reverse">
-      <div class="feature-copy">
-        <span class="tag" style="background:rgba(82,214,138,0.14); color:var(--mint);">Income</span>
-        <h3>Watch your pay stack up as you work it.</h3>
-        <p>Log a shift once and Daywise totals your hours and earnings for you — by week, by job, or by term. Always know what's coming before payday does.</p>
-        <ul>
-          <li>Automatic totals from logged shifts and hourly rates</li>
-          <li>Split earnings by job when you juggle more than one</li>
-          <li>See a term-long view for budgeting ahead</li>
-        </ul>
-      </div>
-      <div class="feature-panel">
-        <div class="panel">
-          <div class="bars">
-            <div class="bar" style="height:38%;"></div>
-            <div class="bar" style="height:55%;"></div>
-            <div class="bar" style="height:30%;"></div>
-            <div class="bar" style="height:70%;"></div>
-            <div class="bar" style="height:48%;"></div>
-            <div class="bar" style="height:82%;"></div>
-            <div class="bar" style="height:60%;"></div>
+      <!-- DAILY PLANNER -->
+      <section class="feature" id="planner">
+        <div class="wrap feature-grid reverse">
+          <div class="feature-copy">
+            <span class="tag" style="background:rgba(138,160,255,0.14); color:var(--periwinkle);">Daily Planner</span>
+            <h3>Plan by the hour, not by the guess.</h3>
+            <p>Drag tasks onto an open slot in your day and Daywise snaps them into place. Every plan, essay block, and errand lives on one honest timeline instead of six sticky notes.</p>
+            <ul>
+              <li>Snap-to-slot scheduling, no overlaps allowed</li>
+              <li>Recurring classes and shifts fill in automatically</li>
+              <li>Switch between day, week, and month in one tap</li>
+            </ul>
           </div>
-          <div class="income-total">
-            <div>
-              <div class="db-time mono" style="font-size:12px;">This week · Nordic Café</div>
+          <div class="feature-panel">
+            <div class="panel">
+              <div class="tl">
+                <div class="tl-row"><div class="tl-hour mono">08:00</div><div class="tl-block" style="background:rgba(143,163,184,0.14); color:var(--slate);">Wake, review the day</div></div>
+                <div class="tl-row"><div class="tl-hour mono">09:00</div><div class="tl-block" style="background:rgba(138,160,255,0.16); color:var(--periwinkle);">Econ 301 lecture</div></div>
+                <div class="tl-row"><div class="tl-hour mono">11:00</div><div class="tl-block" style="background:rgba(255,200,87,0.14); color:var(--gold);">Problem set — 45 min</div></div>
+                <div class="tl-row"><div class="tl-hour mono">12:30</div><div class="tl-block" style="background:rgba(255,130,102,0.16); color:var(--coral);">Shift — Nordic Café</div></div>
+                <div class="tl-row"><div class="tl-hour mono">19:00</div><div class="tl-block" style="background:rgba(201,166,255,0.16); color:var(--lavender);">Games night</div></div>
+              </div>
             </div>
-            <div class="num mono" style="color:var(--mint);">£247.50</div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- ACHIEVEMENTS & EVENTS -->
-  <section class="feature" id="achievements-events">
-    <div class="wrap feature-grid">
-      <div class="feature-copy">
-        <span class="tag" style="background:rgba(255,200,87,0.14); color:var(--gold);">Achievements &amp; Events</span>
-        <h3>Streaks, badges, and what's coming next.</h3>
-        <p>Daywise notices when you show up — study streaks, submitted assignments, shifts covered without a miss. And it keeps every exam, deadline, and night out one glance away.</p>
-        <ul>
-          <li>Streaks for study sessions, gym visits, or anything recurring</li>
-          <li>Badges earned automatically, no self-tracking spreadsheets</li>
-          <li>Upcoming events pulled from every category you use</li>
-        </ul>
-      </div>
-      <div class="feature-panel">
-        <div class="panel">
-          <div class="badges">
-            <div class="badge" style="background:rgba(255,200,87,0.16);">🔥</div>
-            <div class="badge" style="background:rgba(82,214,138,0.16);">💪</div>
-            <div class="badge" style="background:rgba(138,160,255,0.16);">📚</div>
-            <div class="badge" style="background:rgba(201,166,255,0.16);">🎯</div>
+      <!-- WORK & UNIVERSITY -->
+      <section class="feature" id="work-university">
+        <div class="wrap feature-grid">
+          <div class="feature-copy">
+            <span class="tag" style="background:rgba(255,130,102,0.14); color:var(--coral);">Work &amp; University</span>
+            <h3>Two schedules, zero clashes.</h3>
+            <p>Overlay your class timetable and your work roster in one place. Before you accept a shift, Daywise flags anything that overlaps a lecture, lab, or deadline.</p>
+            <ul>
+              <li>Term timetable imports straight from your university portal</li>
+              <li>Roster shifts checked against classes automatically</li>
+              <li>Deadlines and exams sit alongside your work calendar</li>
+            </ul>
           </div>
-          <div class="ev-item"><span class="ev-date mono">FRI</span> Payday — Nordic Café</div>
-          <div class="ev-item"><span class="ev-date mono">SAT</span> Society formal, 8pm</div>
-          <div class="ev-item"><span class="ev-date mono">MON</span> Econ 301 midterm</div>
-          <div class="ev-item"><span class="ev-date mono">WED</span> Lab report due, 23:59</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SETTINGS -->
-  <section class="feature" id="settings">
-    <div class="wrap feature-grid reverse">
-      <div class="feature-copy">
-        <span class="tag" style="background:rgba(143,163,184,0.14); color:var(--slate);">Settings</span>
-        <h3>Make it run your way.</h3>
-        <p>Choose your week start, set quiet hours around lectures, sync your university and work calendars, and decide exactly how loud Daywise is allowed to be.</p>
-        <ul>
-          <li>Calendar sync for university, work, and personal accounts</li>
-          <li>Quiet hours that mute alerts during class or shifts</li>
-          <li>Full control over what shows on the dashboard first</li>
-        </ul>
-      </div>
-      <div class="feature-panel">
-        <div class="panel">
-          <div class="set-row">
-            <div><div class="set-label">Sync university timetable</div><div class="set-sub">Portal calendar · connected</div></div>
-            <div class="toggle on"></div>
-          </div>
-          <div class="set-row">
-            <div><div class="set-label">Quiet hours in class</div><div class="set-sub">Mute notifications automatically</div></div>
-            <div class="toggle on"></div>
-          </div>
-          <div class="set-row">
-            <div><div class="set-label">Week starts on Monday</div><div class="set-sub">Applies to planner and income views</div></div>
-            <div class="toggle on"></div>
-          </div>
-          <div class="set-row">
-            <div><div class="set-label">Shift reminders</div><div class="set-sub">45 minutes before each shift</div></div>
-            <div class="toggle"></div>
+          <div class="feature-panel">
+            <div class="panel">
+              <div class="split">
+                <div class="split-col">
+                  <h4>University</h4>
+                  <div class="split-item" style="border-color:var(--periwinkle);">Econ 301 · 9:00–10:30</div>
+                  <div class="split-item" style="border-color:var(--periwinkle);">Lab report due · Fri</div>
+                  <div class="split-item" style="border-color:var(--periwinkle);">Stats seminar · 14:00</div>
+                </div>
+                <div class="split-col">
+                  <h4>Work</h4>
+                  <div class="split-item" style="border-color:var(--coral);">Nordic Café · 12:30–17:00</div>
+                  <div class="split-item" style="border-color:var(--coral);">Weekend shift · Sat</div>
+                  <div class="split-item" style="border-color:var(--coral);">Payroll cutoff · Fri</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
+
+      <!-- INCOME -->
+      <section class="feature" id="income">
+        <div class="wrap feature-grid reverse">
+          <div class="feature-copy">
+            <span class="tag" style="background:rgba(82,214,138,0.14); color:var(--mint);">Income</span>
+            <h3>Watch your pay stack up as you work it.</h3>
+            <p>Log a shift once and Daywise totals your hours and earnings for you — by week, by job, or by term. Always know what's coming before payday does.</p>
+            <ul>
+              <li>Automatic totals from logged shifts and hourly rates</li>
+              <li>Split earnings by job when you juggle more than one</li>
+              <li>See a term-long view for budgeting ahead</li>
+            </ul>
+          </div>
+          <div class="feature-panel">
+            <div class="panel">
+              <div class="bars">
+                <div class="bar" style="height:38%;"></div>
+                <div class="bar" style="height:55%;"></div>
+                <div class="bar" style="height:30%;"></div>
+                <div class="bar" style="height:70%;"></div>
+                <div class="bar" style="height:48%;"></div>
+                <div class="bar" style="height:82%;"></div>
+                <div class="bar" style="height:60%;"></div>
+              </div>
+              <div class="income-total">
+                <div>
+                  <div class="db-time mono" style="font-size:12px;">This week · Nordic Café</div>
+                </div>
+                <div class="num mono" style="color:var(--mint);">£247.50</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENTS & EVENTS -->
+      <section class="feature" id="achievements-events">
+        <div class="wrap feature-grid">
+          <div class="feature-copy">
+            <span class="tag" style="background:rgba(255,200,87,0.14); color:var(--gold);">Achievements &amp; Events</span>
+            <h3>Streaks, badges, and what's coming next.</h3>
+            <p>Daywise notices when you show up — study streaks, submitted assignments, shifts covered without a miss. And it keeps every exam, deadline, and night out one glance away.</p>
+            <ul>
+              <li>Streaks for study sessions, gym visits, or anything recurring</li>
+              <li>Badges earned automatically, no self-tracking spreadsheets</li>
+              <li>Upcoming events pulled from every category you use</li>
+            </ul>
+          </div>
+          <div class="feature-panel">
+            <div class="panel">
+              <div class="badges">
+                <div class="badge" style="background:rgba(255,200,87,0.16);">🔥</div>
+                <div class="badge" style="background:rgba(82,214,138,0.16);">💪</div>
+                <div class="badge" style="background:rgba(138,160,255,0.16);">📚</div>
+                <div class="badge" style="background:rgba(201,166,255,0.16);">🎯</div>
+              </div>
+              <div class="ev-item"><span class="ev-date mono">FRI</span> Payday — Nordic Café</div>
+              <div class="ev-item"><span class="ev-date mono">SAT</span> Society formal, 8pm</div>
+              <div class="ev-item"><span class="ev-date mono">MON</span> Econ 301 midterm</div>
+              <div class="ev-item"><span class="ev-date mono">WED</span> Lab report due, 23:59</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SETTINGS -->
+      <section class="feature" id="settings">
+        <div class="wrap feature-grid reverse">
+          <div class="feature-copy">
+            <span class="tag" style="background:rgba(143,163,184,0.14); color:var(--slate);">Settings</span>
+            <h3>Make it run your way.</h3>
+            <p>Choose your week start, set quiet hours around lectures, sync your university and work calendars, and decide exactly how loud Daywise is allowed to be.</p>
+            <ul>
+              <li>Calendar sync for university, work, and personal accounts</li>
+              <li>Quiet hours that mute alerts during class or shifts</li>
+              <li>Full control over what shows on the dashboard first</li>
+            </ul>
+          </div>
+          <div class="feature-panel">
+            <div class="panel">
+              <div class="set-row">
+                <div><div class="set-label">Sync university timetable</div><div class="set-sub">Portal calendar · connected</div></div>
+                <div class="toggle on"></div>
+              </div>
+              <div class="set-row">
+                <div><div class="set-label">Quiet hours in class</div><div class="set-sub">Mute notifications automatically</div></div>
+                <div class="toggle on"></div>
+              </div>
+              <div class="set-row">
+                <div><div class="set-label">Week starts on Monday</div><div class="set-sub">Applies to planner and income views</div></div>
+                <div class="toggle on"></div>
+              </div>
+              <div class="set-row">
+                <div><div class="set-label">Shift reminders</div><div class="set-sub">45 minutes before each shift</div></div>
+                <div class="toggle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUOTE -->
+      <section class="quote-strip">
+        <div class="wrap">
+          <blockquote>"I stopped double-booking myself the week I moved my timetable and my roster into the same dial."</blockquote>
+          <cite>— Third-year student, working two shifts a week</cite>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="final-cta" id="final-cta">
+        <div class="wrap">
+          <h2>Put your whole day on one dial.</h2>
+          <p>Free to start. Ready in under a minute.</p>
+          <div class="store-row">
+            <a href="#" class="store-btn">▶ Download for iOS</a>
+            <a href="#" class="store-btn">▶ Download for Android</a>
+            <a href="#" class="store-btn">↳ Open Daywise Web</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="wrap foot-row">
+        <a href="#top" class="logo" style="font-size:16px;"><span class="logo-mark" style="width:20px;height:20px;"></span>Daywise</a>
+        <div class="foot-links">
+          <a href="#dashboard">Dashboard</a>
+          <a href="#planner">Planner</a>
+          <a href="#work-university">Work &amp; University</a>
+          <a href="#income">Income</a>
+          <a href="#achievements-events">Achievements &amp; Events</a>
+          <a href="#settings">Settings</a>
+        </div>
+        <div class="foot-copy">© 2026 Daywise</div>
       </div>
-    </div>
+    </footer>
   </section>
 
-  <!-- QUOTE -->
-  <section class="quote-strip">
-    <div class="wrap">
-      <blockquote>"I stopped double-booking myself the week I moved my timetable and my roster into the same dial."</blockquote>
-      <cite>— Third-year student, working two shifts a week</cite>
-    </div>
+  <section class="auth-side">
+    <!-- right panel content -->
   </section>
-
-  <!-- FINAL CTA -->
-  <section class="final-cta" id="final-cta">
-    <div class="wrap">
-      <h2>Put your whole day on one dial.</h2>
-      <p>Free to start. Ready in under a minute.</p>
-      <div class="store-row">
-        <a href="#" class="store-btn">▶ Download for iOS</a>
-        <a href="#" class="store-btn">▶ Download for Android</a>
-        <a href="#" class="store-btn">↳ Open Daywise Web</a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="wrap foot-row">
-    <a href="#top" class="logo" style="font-size:16px;"><span class="logo-mark" style="width:20px;height:20px;"></span>Daywise</a>
-    <div class="foot-links">
-      <a href="#dashboard">Dashboard</a>
-      <a href="#planner">Planner</a>
-      <a href="#work-university">Work &amp; University</a>
-      <a href="#income">Income</a>
-      <a href="#achievements-events">Achievements &amp; Events</a>
-      <a href="#settings">Settings</a>
-    </div>
-    <div class="foot-copy">© 2026 Daywise</div>
-  </div>
-</footer>
+</div>
 
 <script>
   function updateClock(){
