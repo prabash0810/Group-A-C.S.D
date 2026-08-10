@@ -239,3 +239,10 @@ h1{
 .dot{ width:8px; height:8px; border-radius:50%; background:var(--surface-3); }
 .dot.active{ width:26px; border-radius:5px; background:var(--amber); }
 .particles{ position:absolute; inset:0; z-index:1; }  /* scoped to .showcase, not the full page */
+@media (max-width:920px){
+  .split-page{ flex-direction:column; }
+  .showcase{ flex:none; height:42vh; border-right:none; border-bottom:1px solid var(--line); }
+  .slide p{ display:none; }
+  .dots{ left:28px; bottom:20px; }
+  .auth-side{ flex:1; min-width:0; }
+}
