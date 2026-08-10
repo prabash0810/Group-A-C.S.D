@@ -1,12 +1,10 @@
 /* =========================================================
-   DayWise Settings Page
+   DayWise Settings
+   Styling for the Settings page
    ========================================================= */
 
 
-/* -------------------------
-   Theme Colours
-   ------------------------- */
-
+/* Main colours used throughout the page */
 :root {
     --bg-main: #f8fafc;
     --bg-card: #ffffff;
@@ -19,62 +17,21 @@
 }
 
 
-/* Default Theme */
-
-body.theme-default {
-    --bg-main: #f8fafc;
-    --bg-card: #ffffff;
-    --text-main: #0f172a;
-    --text-muted: #64748b;
-    --border-color: #e2e8f0;
-    --primary-color: #2563eb;
-    --primary-hover: #1d4ed8;
-    --shadow-color: rgba(15, 23, 42, 0.08);
-}
-
-
-/* Dark Theme */
-
-body.theme-dark {
-    --bg-main: #020617;
-    --bg-card: #0f172a;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --border-color: #334155;
-    --primary-color: #60a5fa;
-    --primary-hover: #3b82f6;
-    --shadow-color: rgba(0, 0, 0, 0.35);
-}
-
-
-/* Light Theme */
-
-body.theme-light {
-    --bg-main: #ffffff;
-    --bg-card: #ffffff;
-    --text-main: #1e293b;
-    --text-muted: #64748b;
-    --border-color: #cbd5e1;
-    --primary-color: #2563eb;
-    --primary-hover: #1d4ed8;
-    --shadow-color: rgba(15, 23, 42, 0.06);
-}
-
-
-/* -------------------------
-   Global Reset
-   ------------------------- */
-
+/* Basic browser reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+/* Smooth page scrolling */
 html {
     scroll-behavior: smooth;
 }
 
+
+/* Overall page styling */
 body {
     font-family: "Poppins", Arial, sans-serif;
     background: var(--bg-main);
@@ -88,20 +45,14 @@ body {
 }
 
 
-/* -------------------------
-   Main Settings Area
-   ------------------------- */
-
+/* Main settings area */
 .settings-page {
     min-height: 100vh;
     padding: 40px 8%;
 }
 
 
-/* -------------------------
-   Header
-   ------------------------- */
-
+/* Page header */
 .settings-header {
     max-width: 1100px;
     margin: 0 auto 35px;
@@ -113,6 +64,8 @@ body {
     gap: 20px;
 }
 
+
+/* Settings title */
 .settings-header h1 {
     color: var(--text-main);
     font-size: clamp(2rem, 4vw, 2.8rem);
@@ -120,6 +73,8 @@ body {
     letter-spacing: -1px;
 }
 
+
+/* Text below the title */
 .settings-header p {
     margin-top: 8px;
     color: var(--text-muted);
@@ -128,10 +83,7 @@ body {
 }
 
 
-/* -------------------------
-   Back Button
-   ------------------------- */
-
+/* Back to dashboard button */
 .back-btn {
     display: inline-flex;
     align-items: center;
@@ -160,24 +112,22 @@ body {
         box-shadow 0.25s ease;
 }
 
+
 .back-btn:hover {
     background: var(--primary-hover);
-
     transform: translateY(-2px);
 
     box-shadow:
         0 10px 24px rgba(37, 99, 235, 0.28);
 }
 
+
 .back-btn:active {
     transform: translateY(0);
 }
 
 
-/* -------------------------
-   Settings Container
-   ------------------------- */
-
+/* Container for all settings cards */
 .settings-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -187,10 +137,7 @@ body {
 }
 
 
-/* -------------------------
-   Settings Cards
-   ------------------------- */
-
+/* Individual settings card */
 .settings-card {
     position: relative;
 
@@ -213,6 +160,8 @@ body {
         border-color 0.3s ease;
 }
 
+
+/* Small colour line at the top of a card */
 .settings-card::before {
     content: "";
 
@@ -231,6 +180,8 @@ body {
     transition: opacity 0.3s ease;
 }
 
+
+/* Card hover effect */
 .settings-card:hover {
     transform: translateY(-4px);
 
@@ -241,25 +192,24 @@ body {
         0 18px 40px var(--shadow-color);
 }
 
+
 .settings-card:hover::before {
     opacity: 1;
 }
 
 
-/* -------------------------
-   Card Header
-   ------------------------- */
-
+/* Heading area inside each card */
 .settings-card-header {
     margin-bottom: 22px;
 }
 
+
 .settings-card-header h2 {
     color: var(--text-main);
-
     font-size: 1.3rem;
     font-weight: 700;
 }
+
 
 .settings-card-header p {
     margin-top: 6px;
@@ -271,10 +221,7 @@ body {
 }
 
 
-/* -------------------------
-   Setting Rows
-   ------------------------- */
-
+/* Row containing a setting and its control */
 .setting-row {
     display: flex;
 
@@ -290,12 +237,14 @@ body {
         1px solid var(--border-color);
 }
 
+
 .setting-row h3 {
     color: var(--text-main);
 
     font-size: 0.98rem;
     font-weight: 600;
 }
+
 
 .setting-row p {
     margin-top: 5px;
@@ -307,50 +256,28 @@ body {
 }
 
 
-/* -------------------------
-   Select
-   ------------------------- */
-
-.settings-card select {
-    min-width: 150px;
-
-    padding: 11px 13px;
-
-    border: 1px solid var(--border-color);
+/* Label showing the default theme */
+.default-theme-label {
+    padding: 9px 14px;
 
     border-radius: 10px;
 
-    background: var(--bg-main);
-    color: var(--text-main);
+    background:
+        rgba(37, 99, 235, 0.10);
 
-    font-family: inherit;
-    font-size: 0.9rem;
+    color: var(--primary-color);
 
-    outline: none;
+    border:
+        1px solid rgba(37, 99, 235, 0.15);
 
-    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
 
-    transition:
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.settings-card select:hover {
-    border-color: var(--primary-color);
-}
-
-.settings-card select:focus {
-    border-color: var(--primary-color);
-
-    box-shadow:
-        0 0 0 3px rgba(37, 99, 235, 0.10);
+    white-space: nowrap;
 }
 
 
-/* -------------------------
-   Setting Button
-   ------------------------- */
-
+/* About Us button */
 .setting-btn {
     display: inline-flex;
 
@@ -359,18 +286,22 @@ body {
 
     padding: 10px 17px;
 
-    border: 1px solid rgba(37, 99, 235, 0.12);
+    border:
+        1px solid rgba(37, 99, 235, 0.12);
 
     border-radius: 10px;
 
-    background: rgba(37, 99, 235, 0.10);
+    background:
+        rgba(37, 99, 235, 0.10);
 
     color: var(--primary-color);
 
-    text-decoration: none;
+    font-family: inherit;
 
     font-size: 0.88rem;
     font-weight: 600;
+
+    cursor: pointer;
 
     white-space: nowrap;
 
@@ -380,8 +311,10 @@ body {
         border-color 0.25s ease;
 }
 
+
 .setting-btn:hover {
-    background: rgba(37, 99, 235, 0.16);
+    background:
+        rgba(37, 99, 235, 0.16);
 
     border-color:
         rgba(37, 99, 235, 0.25);
@@ -389,15 +322,13 @@ body {
     transform: translateY(-2px);
 }
 
+
 .setting-btn:active {
     transform: translateY(0);
 }
 
 
-/* -------------------------
-   Animation Toggle
-   ------------------------- */
-
+/* Animation switch */
 .toggle {
     position: relative;
 
@@ -409,6 +340,7 @@ body {
     flex-shrink: 0;
 }
 
+
 .toggle input {
     position: absolute;
 
@@ -417,6 +349,7 @@ body {
     width: 0;
     height: 0;
 }
+
 
 .toggle span {
     position: relative;
@@ -436,6 +369,8 @@ body {
         background 0.25s ease;
 }
 
+
+/* Circle inside the animation switch */
 .toggle span::before {
     content: "";
 
@@ -458,19 +393,42 @@ body {
         transform 0.25s ease;
 }
 
+
+/* Active animation switch */
 .toggle input:checked + span {
     background: var(--primary-color);
 }
+
 
 .toggle input:checked + span::before {
     transform: translateX(24px);
 }
 
 
-/* -------------------------
-   Disable Animations
-   ------------------------- */
+/* About Us section starts hidden */
+.about-us-content {
+    display: none;
+}
 
+
+/* About Us section becomes visible */
+.about-us-content.active {
+    display: block;
+}
+
+
+.about-us-content p {
+    color: var(--text-muted);
+
+    line-height: 1.7;
+
+    margin-top: 12px;
+
+    font-size: 0.92rem;
+}
+
+
+/* Disable animations when the setting is turned off */
 body.animations-disabled *,
 body.animations-disabled *::before,
 body.animations-disabled *::after {
@@ -479,10 +437,7 @@ body.animations-disabled *::after {
 }
 
 
-/* -------------------------
-   Tablet
-   ------------------------- */
-
+/* Tablet layout */
 @media (max-width: 800px) {
 
     .settings-page {
@@ -495,10 +450,7 @@ body.animations-disabled *::after {
 }
 
 
-/* -------------------------
-   Mobile
-   ------------------------- */
-
+/* Mobile layout */
 @media (max-width: 700px) {
 
     .settings-page {
@@ -532,8 +484,9 @@ body.animations-disabled *::after {
         gap: 14px;
     }
 
-    .settings-card select {
+    .default-theme-label {
         width: 100%;
+        text-align: center;
     }
 
     .setting-btn {
@@ -542,10 +495,7 @@ body.animations-disabled *::after {
 }
 
 
-/* -------------------------
-   Small Mobile
-   ------------------------- */
-
+/* Small phone screens */
 @media (max-width: 450px) {
 
     .settings-page {
@@ -567,10 +517,7 @@ body.animations-disabled *::after {
 }
 
 
-/* -------------------------
-   Reduced Motion
-   ------------------------- */
-
+/* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
 
     *,
