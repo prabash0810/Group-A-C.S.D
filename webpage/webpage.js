@@ -79,3 +79,25 @@ function resetTimer(){
   timer = setInterval(tick, interval);
 }
 resetTimer();
+for (var i = 0; i < total; i++){
+  var d = document.createElement('div');
+  d.className = 'dot' + (i === 0 ? ' active' : '');
+  d.addEventListener('click', (function(idx){
+    return function(){ goTo(idx); resetTimer(); };
+  })(i));
+  dotsWrap.appendChild(d);
+}
+window.__daywiseSlideshowFocus = function(on){
+  paused = on;
+  resetTimer();
+};
+
+function setFocus(on){
+  if (on === active) return;
+  active = on;
+  root.style.setProperty('--speed-scale', on ? '3' : '1');
+  root.style.setProperty('--stage-blur', on ? '6px' : '0px');
+  root.style.setProperty('--stage-dim', on ? '0.42' : '0');
+  if (window.__daywiseSlideshowFocus) window.__daywiseSlideshowFocus(on);
+}
+card.addEventListener('mouseenter', function(){ setFocus(true); });
