@@ -1,6 +1,11 @@
-/* DayWise Settings Page */
+/* =========================================================
+   DayWise Settings Page
+   ========================================================= */
 
-/* Theme colours */
+/* -------------------------
+   Theme Colours
+   ------------------------- */
+
 :root {
     --bg-main: #f8fafc;
     --bg-card: #ffffff;
@@ -12,7 +17,7 @@
     --shadow-color: rgba(15, 23, 42, 0.08);
 }
 
-/* Default theme */
+/* Default Theme */
 body.theme-default {
     --bg-main: #f8fafc;
     --bg-card: #ffffff;
@@ -24,7 +29,7 @@ body.theme-default {
     --shadow-color: rgba(15, 23, 42, 0.08);
 }
 
-/* Dark theme */
+/* Dark Theme */
 body.theme-dark {
     --bg-main: #020617;
     --bg-card: #0f172a;
@@ -36,7 +41,7 @@ body.theme-dark {
     --shadow-color: rgba(0, 0, 0, 0.35);
 }
 
-/* Light theme */
+/* Light Theme */
 body.theme-light {
     --bg-main: #ffffff;
     --bg-card: #ffffff;
@@ -48,13 +53,20 @@ body.theme-light {
     --shadow-color: rgba(15, 23, 42, 0.06);
 }
 
-/* Basic page reset */
+
+/* -------------------------
+   Global Reset
+   ------------------------- */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -62,16 +74,26 @@ body {
     color: var(--text-main);
     min-height: 100vh;
     overflow-x: hidden;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
-/* Main settings area */
+
+/* -------------------------
+   Main Settings Area
+   ------------------------- */
+
 .settings-page {
     min-height: 100vh;
     padding: 40px 8%;
 }
 
-/* Settings heading */
+
+/* -------------------------
+   Settings Header
+   ------------------------- */
+
 .settings-header {
     max-width: 1100px;
     margin: 0 auto 35px;
@@ -92,22 +114,33 @@ body {
     margin-top: 8px;
     color: var(--text-muted);
     font-size: 0.95rem;
+    line-height: 1.6;
 }
 
-/* Back to dashboard button */
+
+/* -------------------------
+   Back To Dashboard
+   ------------------------- */
+
 .back-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 11px 18px;
+    gap: 8px;
+    padding: 11px 20px;
     border-radius: 12px;
     background: var(--primary-color);
     color: #ffffff;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
+    white-space: nowrap;
     box-shadow: 0 7px 18px rgba(37, 99, 235, 0.2);
-    transition: all 0.25s ease;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .back-btn:hover {
@@ -116,7 +149,15 @@ body {
     box-shadow: 0 10px 24px rgba(37, 99, 235, 0.28);
 }
 
-/* Settings cards layout */
+.back-btn:active {
+    transform: translateY(0);
+}
+
+
+/* -------------------------
+   Settings Container
+   ------------------------- */
+
 .settings-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -124,21 +165,54 @@ body {
     gap: 22px;
 }
 
+
+/* -------------------------
+   Settings Cards
+   ------------------------- */
+
 .settings-card {
+    position: relative;
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 24px;
     padding: 28px;
+    overflow: hidden;
+
     box-shadow: 0 12px 30px var(--shadow-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.settings-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .settings-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 18px 38px var(--shadow-color);
+    transform: translateY(-4px);
+    border-color: rgba(37, 99, 235, 0.25);
+    box-shadow: 0 18px 40px var(--shadow-color);
 }
 
-/* Card headings */
+.settings-card:hover::before {
+    opacity: 1;
+}
+
+
+/* -------------------------
+   Card Header
+   ------------------------- */
+
 .settings-card-header {
     margin-bottom: 22px;
 }
@@ -153,16 +227,28 @@ body {
     margin-top: 6px;
     color: var(--text-muted);
     font-size: 0.9rem;
+    line-height: 1.5;
 }
 
-/* Individual settings */
+
+/* -------------------------
+   Individual Setting Rows
+   ------------------------- */
+
 .setting-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    padding-top: 20px;
+    padding: 20px 0 0;
+    margin-top: 20px;
     border-top: 1px solid var(--border-color);
+}
+
+.setting-row:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
 }
 
 .setting-row h3 {
@@ -178,25 +264,172 @@ body {
     line-height: 1.5;
 }
 
-/* Small settings buttons */
+
+/* -------------------------
+   Setting Buttons
+   ------------------------- */
+
 .setting-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 10px 17px;
+    border: 1px solid rgba(37, 99, 235, 0.12);
     border-radius: 10px;
     background: rgba(37, 99, 235, 0.1);
     color: var(--primary-color);
     text-decoration: none;
     font-size: 0.88rem;
     font-weight: 600;
-    transition: all 0.25s ease;
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .setting-btn:hover {
     background: rgba(37, 99, 235, 0.16);
+    border-color: rgba(37, 99, 235, 0.25);
     transform: translateY(-2px);
 }
 
-/* Tablet layout */
+.setting-btn:active {
+    transform: translateY(0);
+}
+
+
+/* -------------------------
+   Theme Options
+   ------------------------- */
+
+.theme-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.theme-option {
+    padding: 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    background: var(--bg-card);
+    color: var(--text-main);
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.theme-option:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.theme-option.active {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.theme-option h3 {
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.theme-option p {
+    margin-top: 5px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+
+/* -------------------------
+   Inputs / Selects
+   ------------------------- */
+
+.settings-card input,
+.settings-card select {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.settings-card input:focus,
+.settings-card select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* -------------------------
+   Checkbox / Toggle Support
+   ------------------------- */
+
+.settings-card input[type="checkbox"] {
+    width: auto;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+}
+
+
+/* -------------------------
+   Success / Status Messages
+   ------------------------- */
+
+.settings-message {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: rgba(22, 163, 74, 0.1);
+    color: #16a34a;
+    font-size: 0.85rem;
+}
+
+
+/* -------------------------
+   Tablet
+   ------------------------- */
+
+@media (max-width: 800px) {
+
+    .settings-page {
+        padding: 35px 6%;
+    }
+
+    .settings-header {
+        align-items: flex-start;
+    }
+
+    .theme-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* -------------------------
+   Mobile
+   ------------------------- */
+
 @media (max-width: 700px) {
+
     .settings-page {
         padding: 30px 6%;
     }
@@ -204,43 +437,79 @@ body {
     .settings-header {
         flex-direction: column;
         align-items: flex-start;
+        margin-bottom: 28px;
+    }
+
+    .settings-header h1 {
+        font-size: 2.1rem;
     }
 
     .back-btn {
         width: 100%;
     }
 
-    .theme-options {
-        grid-template-columns: 1fr;
+    .settings-card {
+        padding: 22px;
+        border-radius: 20px;
     }
 
     .setting-row {
         flex-direction: column;
         align-items: flex-start;
+        gap: 14px;
     }
 
     .setting-btn {
         width: 100%;
         text-align: center;
     }
+
+    .theme-options {
+        grid-template-columns: 1fr;
+    }
 }
 
-/* Small mobile screens */
+
+/* -------------------------
+   Small Mobile
+   ------------------------- */
+
 @media (max-width: 450px) {
+
     .settings-page {
         padding: 25px 5%;
     }
 
     .settings-card {
         padding: 20px;
-        border-radius: 20px;
+        border-radius: 18px;
     }
 
     .settings-header h1 {
         font-size: 2rem;
     }
 
+    .settings-header p {
+        font-size: 0.88rem;
+    }
+
     .theme-option {
         padding: 15px;
+    }
+}
+
+
+/* -------------------------
+   Reduced Motion
+   ------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
     }
 }
