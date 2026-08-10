@@ -2,6 +2,7 @@
    DayWise Settings Page
    ========================================================= */
 
+
 /* -------------------------
    Theme Colours
    ------------------------- */
@@ -17,7 +18,9 @@
     --shadow-color: rgba(15, 23, 42, 0.08);
 }
 
+
 /* Default Theme */
+
 body.theme-default {
     --bg-main: #f8fafc;
     --bg-card: #ffffff;
@@ -29,7 +32,9 @@ body.theme-default {
     --shadow-color: rgba(15, 23, 42, 0.08);
 }
 
+
 /* Dark Theme */
+
 body.theme-dark {
     --bg-main: #020617;
     --bg-card: #0f172a;
@@ -41,7 +46,9 @@ body.theme-dark {
     --shadow-color: rgba(0, 0, 0, 0.35);
 }
 
+
 /* Light Theme */
+
 body.theme-light {
     --bg-main: #ffffff;
     --bg-card: #ffffff;
@@ -69,11 +76,12 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", Arial, sans-serif;
     background: var(--bg-main);
     color: var(--text-main);
     min-height: 100vh;
     overflow-x: hidden;
+
     transition:
         background 0.3s ease,
         color 0.3s ease;
@@ -91,15 +99,17 @@ body {
 
 
 /* -------------------------
-   Settings Header
+   Header
    ------------------------- */
 
 .settings-header {
     max-width: 1100px;
     margin: 0 auto 35px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 20px;
 }
 
@@ -119,23 +129,30 @@ body {
 
 
 /* -------------------------
-   Back To Dashboard
+   Back Button
    ------------------------- */
 
 .back-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+
     padding: 11px 20px;
+
     border-radius: 12px;
+
     background: var(--primary-color);
     color: #ffffff;
+
     text-decoration: none;
+
     font-size: 0.9rem;
     font-weight: 600;
+
     white-space: nowrap;
-    box-shadow: 0 7px 18px rgba(37, 99, 235, 0.2);
+
+    box-shadow:
+        0 7px 18px rgba(37, 99, 235, 0.20);
 
     transition:
         transform 0.25s ease,
@@ -145,8 +162,11 @@ body {
 
 .back-btn:hover {
     background: var(--primary-hover);
+
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(37, 99, 235, 0.28);
+
+    box-shadow:
+        0 10px 24px rgba(37, 99, 235, 0.28);
 }
 
 .back-btn:active {
@@ -161,6 +181,7 @@ body {
 .settings-container {
     max-width: 1100px;
     margin: 0 auto;
+
     display: grid;
     gap: 22px;
 }
@@ -172,13 +193,19 @@ body {
 
 .settings-card {
     position: relative;
+
     background: var(--bg-card);
+
     border: 1px solid var(--border-color);
+
     border-radius: 24px;
+
     padding: 28px;
+
     overflow: hidden;
 
-    box-shadow: 0 12px 30px var(--shadow-color);
+    box-shadow:
+        0 12px 30px var(--shadow-color);
 
     transition:
         transform 0.3s ease,
@@ -188,20 +215,30 @@ body {
 
 .settings-card::before {
     content: "";
+
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 3px;
+
     background: var(--primary-color);
+
     opacity: 0;
+
     transition: opacity 0.3s ease;
 }
 
 .settings-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(37, 99, 235, 0.25);
-    box-shadow: 0 18px 40px var(--shadow-color);
+
+    border-color:
+        rgba(37, 99, 235, 0.25);
+
+    box-shadow:
+        0 18px 40px var(--shadow-color);
 }
 
 .settings-card:hover::before {
@@ -219,70 +256,123 @@ body {
 
 .settings-card-header h2 {
     color: var(--text-main);
+
     font-size: 1.3rem;
     font-weight: 700;
 }
 
 .settings-card-header p {
     margin-top: 6px;
+
     color: var(--text-muted);
+
     font-size: 0.9rem;
     line-height: 1.5;
 }
 
 
 /* -------------------------
-   Individual Setting Rows
+   Setting Rows
    ------------------------- */
 
 .setting-row {
     display: flex;
+
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
-    padding: 20px 0 0;
-    margin-top: 20px;
-    border-top: 1px solid var(--border-color);
-}
 
-.setting-row:first-child {
-    margin-top: 0;
-    padding-top: 0;
-    border-top: none;
+    gap: 20px;
+
+    padding-top: 20px;
+    margin-top: 20px;
+
+    border-top:
+        1px solid var(--border-color);
 }
 
 .setting-row h3 {
     color: var(--text-main);
+
     font-size: 0.98rem;
     font-weight: 600;
 }
 
 .setting-row p {
     margin-top: 5px;
+
     color: var(--text-muted);
+
     font-size: 0.85rem;
     line-height: 1.5;
 }
 
 
 /* -------------------------
-   Setting Buttons
+   Select
+   ------------------------- */
+
+.settings-card select {
+    min-width: 150px;
+
+    padding: 11px 13px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 10px;
+
+    background: var(--bg-main);
+    color: var(--text-main);
+
+    font-family: inherit;
+    font-size: 0.9rem;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.settings-card select:hover {
+    border-color: var(--primary-color);
+}
+
+.settings-card select:focus {
+    border-color: var(--primary-color);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* -------------------------
+   Setting Button
    ------------------------- */
 
 .setting-btn {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
+
     padding: 10px 17px;
+
     border: 1px solid rgba(37, 99, 235, 0.12);
+
     border-radius: 10px;
-    background: rgba(37, 99, 235, 0.1);
+
+    background: rgba(37, 99, 235, 0.10);
+
     color: var(--primary-color);
+
     text-decoration: none;
+
     font-size: 0.88rem;
     font-weight: 600;
+
     white-space: nowrap;
-    cursor: pointer;
 
     transition:
         background 0.25s ease,
@@ -292,7 +382,10 @@ body {
 
 .setting-btn:hover {
     background: rgba(37, 99, 235, 0.16);
-    border-color: rgba(37, 99, 235, 0.25);
+
+    border-color:
+        rgba(37, 99, 235, 0.25);
+
     transform: translateY(-2px);
 }
 
@@ -302,105 +395,87 @@ body {
 
 
 /* -------------------------
-   Theme Options
+   Animation Toggle
    ------------------------- */
 
-.theme-options {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
+.toggle {
+    position: relative;
+
+    display: inline-flex;
+
+    width: 52px;
+    height: 28px;
+
+    flex-shrink: 0;
 }
 
-.theme-option {
-    padding: 18px;
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    background: var(--bg-card);
-    color: var(--text-main);
+.toggle input {
+    position: absolute;
+
+    opacity: 0;
+
+    width: 0;
+    height: 0;
+}
+
+.toggle span {
+    position: relative;
+
+    display: block;
+
+    width: 52px;
+    height: 28px;
+
+    border-radius: 30px;
+
+    background: var(--border-color);
+
     cursor: pointer;
 
     transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease,
         background 0.25s ease;
 }
 
-.theme-option:hover {
-    transform: translateY(-3px);
-    border-color: var(--primary-color);
-    box-shadow: 0 8px 20px var(--shadow-color);
-}
+.toggle span::before {
+    content: "";
 
-.theme-option.active {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
-}
+    position: absolute;
 
-.theme-option h3 {
-    color: var(--text-main);
-    font-size: 0.95rem;
-    font-weight: 600;
-}
+    width: 22px;
+    height: 22px;
 
-.theme-option p {
-    margin-top: 5px;
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    line-height: 1.4;
-}
+    left: 3px;
+    top: 3px;
 
+    border-radius: 50%;
 
-/* -------------------------
-   Inputs / Selects
-   ------------------------- */
+    background: #ffffff;
 
-.settings-card input,
-.settings-card select {
-    width: 100%;
-    padding: 11px 13px;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    background: var(--bg-main);
-    color: var(--text-main);
-    font-family: inherit;
-    font-size: 0.9rem;
-    outline: none;
+    box-shadow:
+        0 2px 6px rgba(15, 23, 42, 0.20);
 
     transition:
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+        transform 0.25s ease;
 }
 
-.settings-card input:focus,
-.settings-card select:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+.toggle input:checked + span {
+    background: var(--primary-color);
 }
 
-
-/* -------------------------
-   Checkbox / Toggle Support
-   ------------------------- */
-
-.settings-card input[type="checkbox"] {
-    width: auto;
-    accent-color: var(--primary-color);
-    cursor: pointer;
+.toggle input:checked + span::before {
+    transform: translateX(24px);
 }
 
 
 /* -------------------------
-   Success / Status Messages
+   Disable Animations
    ------------------------- */
 
-.settings-message {
-    margin-top: 12px;
-    padding: 10px 14px;
-    border-radius: 10px;
-    background: rgba(22, 163, 74, 0.1);
-    color: #16a34a;
-    font-size: 0.85rem;
+body.animations-disabled *,
+body.animations-disabled *::before,
+body.animations-disabled *::after {
+    animation: none !important;
+    transition: none !important;
 }
 
 
@@ -416,10 +491,6 @@ body {
 
     .settings-header {
         align-items: flex-start;
-    }
-
-    .theme-options {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -437,6 +508,7 @@ body {
     .settings-header {
         flex-direction: column;
         align-items: flex-start;
+
         margin-bottom: 28px;
     }
 
@@ -456,16 +528,16 @@ body {
     .setting-row {
         flex-direction: column;
         align-items: flex-start;
+
         gap: 14px;
+    }
+
+    .settings-card select {
+        width: 100%;
     }
 
     .setting-btn {
         width: 100%;
-        text-align: center;
-    }
-
-    .theme-options {
-        grid-template-columns: 1fr;
     }
 }
 
@@ -491,10 +563,6 @@ body {
 
     .settings-header p {
         font-size: 0.88rem;
-    }
-
-    .theme-option {
-        padding: 15px;
     }
 }
 

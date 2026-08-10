@@ -7,10 +7,10 @@
 
     <title>DayWise | Settings</title>
 
-    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="./settings.css">
 </head>
 
-<body>
+<body class="theme-default">
 
     <div class="settings-page">
 
@@ -27,52 +27,70 @@
 
         <main class="settings-container">
 
+            <!-- Appearance -->
             <section class="settings-card">
+
                 <div class="settings-card-header">
                     <h2>Appearance</h2>
                     <p>Choose how DayWise looks across all pages.</p>
                 </div>
 
                 <div class="setting-row">
+
                     <div>
                         <h3>Theme</h3>
                         <p>Select your preferred DayWise theme.</p>
                     </div>
+                        <select id="themeSelect">
+                       <option value="white">White</option>
+                       <option value="dark">Dark</option>
+                        <option value="inverted">Inverted</option>
+</select>
 
-                    <select id="themeSelector">
-                        <option value="default">Default</option>
-                        <option value="dark">Black</option>
-                        <option value="light">White</option>
-                    </select>
                 </div>
+
             </section>
 
+
+            <!-- Preferences -->
             <section class="settings-card">
+
                 <div class="settings-card-header">
                     <h2>Preferences</h2>
                     <p>Manage your general DayWise preferences.</p>
                 </div>
 
                 <div class="setting-row">
+
                     <div>
                         <h3>Animations</h3>
                         <p>Enable smooth animations throughout DayWise.</p>
                     </div>
 
                     <label class="toggle">
-                        <input type="checkbox" id="animationToggle" checked>
+                        <input
+                            type="checkbox"
+                            id="animationToggle"
+                            checked
+                        >
                         <span></span>
                     </label>
+
                 </div>
+
             </section>
 
+
+            <!-- Account -->
             <section class="settings-card">
+
                 <div class="settings-card-header">
                     <h2>Account</h2>
                     <p>Manage your DayWise account settings.</p>
                 </div>
 
                 <div class="setting-row">
+
                     <div>
                         <h3>Profile</h3>
                         <p>View and manage your personal information.</p>
@@ -81,14 +99,16 @@
                     <a href="profile.html" class="setting-btn">
                         View Profile
                     </a>
+
                 </div>
+
             </section>
 
         </main>
 
     </div>
 
-    <script src="settings.js"></script>
+    <script src="./settings.js"></script>
 
 </body>
 

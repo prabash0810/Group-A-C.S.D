@@ -1,46 +1,74 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const themeSelector = document.getElementById("themeSelector");
 
-    loadSavedTheme();
+    const themeSelector = document.getElementById("themeSelector");
+    const animationToggle = document.getElementById("animationToggle");
+
+    /* Load saved theme */
+    const savedTheme =
+        localStorage.getItem("daywiseTheme") || "default";
+
+    applyTheme(savedTheme);
 
     if (themeSelector) {
+        themeSelector.value = savedTheme;
+
         themeSelector.addEventListener("change", function () {
+
             const selectedTheme = this.value;
 
             applyTheme(selectedTheme);
 
-            localStorage.setItem("daywiseTheme", selectedTheme);
+            localStorage.setItem(
+                "daywiseTheme",
+                selectedTheme
+            );
         });
     }
+
+
+    /* Load saved animation preference */
+    const savedAnimations =
+        localStorage.getItem("daywiseAnimations");
+
+    if (animationToggle) {
+
+        if (savedAnimations !== null) {
+            animationToggle.checked =
+                savedAnimations === "true";
+        }
+
+        animationToggle.addEventListener("change", function () {
+
+            localStorage.setItem(
+                "daywiseAnimations",
+                this.checked
+            );
+
+            document.body.classList.toggle(
+                "animations-disabled",
+                !this.checked
+            );
+        });
+
+        document.body.classList.toggle(
+            "animations-disabled",
+            !animationToggle.checked
+        );
+    }
+
 });
 
-/* Apply the selected theme to the page */
+
+/* Apply selected theme */
 function applyTheme(theme) {
+
     document.body.classList.remove(
         "theme-default",
         "theme-dark",
         "theme-light"
     );
 
-    document.body.classList.add(`theme-${theme}`);
+    document.body.classList.add(
+        `theme-${theme}`
+    );
 }
-
-/* Load the user's saved theme */
-function loadSavedTheme() {
-    const savedTheme =
-        localStorage.getItem("daywiseTheme") || "default";
-
-    applyTheme(savedTheme);
-
-    const themeSelector = document.getElementById("themeSelector");
-
-    if (themeSelector) {
-        themeSelector.value = savedTheme;
-    }
-}
-/* Load the DayWise theme saved in Settings */
-document.addEventListener("DOMContentLoaded", function () {
-    const savedTheme = localStorage.getItem("daywiseTheme") || "default";
-
-    document.body.classList.add(`theme-${savedTheme}`);
-});
