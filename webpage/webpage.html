@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Daywise — Sign in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="webpage.css">
+</head>
+<body><div class="split-page">
+
+  <!-- ================= LEFT: SLIDESHOW OF THE WHOLE SITE ================= -->
+  <section class="showcase" id="showcase">
+    <div class="bg-glow"></div>
+    <div class="grain"></div>
+    <div class="particles" id="particles"></div>
+
+    <div class="slides" id="slides">
+
+      <!-- 0 Overview -->
+      <div class="slide active">
+        <div class="mini-dial-wrap"><div class="mini-dial"><div class="mini-dial-inner"></div></div></div>
+        <span class="slide-tag" style="background:var(--amber-dim); color:var(--amber);">Daywise</span>
+        <h2>Your whole day, arranged wisely.</h2>
+        <p>Daywise pulls your classes, shifts, income, and deadlines onto one dial — so lectures, work, and everything after never collide again.</p>
+      </div>
+
+      <!-- 1 Dashboard -->
+      <div class="slide">
+        <span class="slide-tag" style="background:var(--amber-dim); color:var(--amber);">Dashboard</span>
+        <h2>Today, at a glance.</h2>
+        <p>Open Daywise and see everything already on the books — next class, next shift, what's due, what you've earned.</p>
+        <div class="sv-panel">
+          <div class="sv-row"><div class="sv-left"><span class="sv-dot" style="background:var(--periwinkle)"></span>Econ 301 — Lecture Hall B</div><span class="sv-time mono">09:00</span></div>
+          <div class="sv-row"><div class="sv-left"><span class="sv-dot" style="background:var(--coral)"></span>Shift — Nordic Café</div><span class="sv-time mono">12:30</span></div>
+          <div class="sv-row"><div class="sv-left"><span class="sv-dot" style="background:var(--mint)"></span>Weekly earnings so far</div><span class="sv-time mono">£118</span></div>
+          <div class="sv-row"><div class="sv-left"><span class="sv-dot" style="background:var(--gold)"></span>Reading streak</div><span class="sv-time mono">6 days</span></div>
+        </div>
+    </div>
+
+      <!-- 2 Planner -->
+      <div class="slide">
+        <span class="slide-tag" style="background:rgba(138,160,255,0.14); color:var(--periwinkle);">Daily Planner</span>
+        <h2>Plan by the hour, not the guess.</h2>
+        <p>Drag tasks onto an open slot and Daywise snaps them into place — one honest timeline, no overlaps.</p>
+        <div class="sv-panel">
+          <div class="sv-tl-row"><div class="sv-hour mono">09:00</div><div class="sv-block" style="background:rgba(138,160,255,0.16); color:var(--periwinkle);">Econ 301 lecture</div></div>
+          <div class="sv-tl-row"><div class="sv-hour mono">11:00</div><div class="sv-block" style="background:rgba(255,200,87,0.14); color:var(--gold);">Problem set — 45 min</div></div>
+          <div class="sv-tl-row"><div class="sv-hour mono">12:30</div><div class="sv-block" style="background:rgba(255,130,102,0.16); color:var(--coral);">Shift — Nordic Café</div></div>
+          <div class="sv-tl-row"><div class="sv-hour mono">19:00</div><div class="sv-block" style="background:rgba(201,166,255,0.16); color:var(--lavender);">Games night</div></div>
+        </div>
+    </div>
+
+      <!-- 3 Work & University -->
+      <div class="slide">
+        <span class="slide-tag" style="background:rgba(255,130,102,0.14); color:var(--coral);">Work &amp; University</span>
+        <h2>Two schedules, zero clashes.</h2>
+        <p>Overlay your class timetable and work roster. Daywise flags anything that overlaps a lecture or deadline.</p>
+        <div class="sv-panel">
+          <div class="sv-split">
+            <div><h4>University</h4>
+              <div class="sv-item" style="border-color:var(--periwinkle);">Econ 301 · 9:00–10:30</div>
+              <div class="sv-item" style="border-color:var(--periwinkle);">Lab report due · Fri</div>
+              <div class="sv-item" style="border-color:var(--periwinkle);">Stats seminar · 14:00</div>
+            </div>
+            <div><h4>Work</h4>
+              <div class="sv-item" style="border-color:var(--coral);">Nordic Café · 12:30–17:00</div>
+              <div class="sv-item" style="border-color:var(--coral);">Weekend shift · Sat</div>
+              <div class="sv-item" style="border-color:var(--coral);">Payroll cutoff · Fri</div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+      <!-- 4 Income -->
+      <div class="slide">
+        <span class="slide-tag" style="background:rgba(82,214,138,0.14); color:var(--mint);">Income</span>
+        <h2>Watch your pay stack up.</h2>
+        <p>Log a shift once and Daywise totals your hours and earnings — by week, by job, or by term.</p>
+        <div class="sv-panel">
+          <div class="sv-bars">
+            <div class="b" style="height:38%;"></div><div class="b" style="height:55%;"></div><div class="b" style="height:30%;"></div>
+            <div class="b" style="height:70%;"></div><div class="b" style="height:48%;"></div><div class="b" style="height:82%;"></div><div class="b" style="height:60%;"></div>
+          </div>
+          <div class="sv-total"><span style="font-size:12px; color:var(--text-faint);">This week · Nordic Café</span><span class="num" style="color:var(--mint);">£247.50</span></div>
+        </div>
+      </div>
+
+      <!-- 5 Achievements & Events -->
+      <div class="slide">
+        <span class="slide-tag" style="background:rgba(255,200,87,0.14); color:var(--gold);">Achievements &amp; Events</span>
+        <h2>Streaks, badges, what's next.</h2>
+        <p>Daywise notices when you show up, and keeps every exam, deadline, and night out one glance away.</p>
+        <div class="sv-panel">
+          <div class="sv-badges">
+            <div class="sv-badge" style="background:rgba(255,200,87,0.16);">🔥</div>
+            <div class="sv-badge" style="background:rgba(82,214,138,0.16);">💪</div>
+            <div class="sv-badge" style="background:rgba(138,160,255,0.16);">📚</div>
+            <div class="sv-badge" style="background:rgba(201,166,255,0.16);">🎯</div>
+          </div>
+          <div class="sv-ev"><span class="sv-date mono">FRI</span> Payday — Nordic Café</div>
+          <div class="sv-ev"><span class="sv-date mono">SAT</span> Society formal, 8pm</div>
+          <div class="sv-ev"><span class="sv-date mono">MON</span> Econ 301 midterm</div>
+        </div>
+    </div>
+
+      <!-- 6 Settings -->
+      <div class="slide">
+        <span class="slide-tag" style="background:rgba(143,163,184,0.14); color:var(--slate);">Settings</span>
+        <h2>Make it run your way.</h2>
+        <p>Sync calendars, set quiet hours around lectures, and control exactly how loud Daywise is allowed to be.</p>
+        <div class="sv-panel">
+          <div class="sv-row"><div><div>Sync university timetable</div></div><div class="sv-toggle"></div></div>
+          <div class="sv-row"><div><div>Quiet hours in class</div></div><div class="sv-toggle"></div></div>
+          <div class="sv-row"><div><div>Week starts on Monday</div></div><div class="sv-toggle"></div></div>
+        </div>
+    </div>
+
+      <!-- 7 Quote -->
+      <div class="slide slide-quote">
+        <span class="slide-tag" style="background:rgba(201,166,255,0.14); color:var(--lavender);">Loved by students</span>
+        <blockquote>"I stopped double-booking myself the week I moved my timetable and my roster into the same dial."</blockquote>
+        <cite>— Third-year student, working two shifts a week</cite>
+      </div>
+
+    </div>
+
+    <div class="dots" id="dots"></div>
+    <div class="showcase-scrim"></div>
+  </section>
+
+  <!-- ================= RIGHT: LOGIN ================= -->
+  <section class="auth-side">
+    <div class="auth-glow"></div>
+    <form class="login-card" id="loginCard" autocomplete="on" novalidate>
+      <div class="card-logo"><span class="card-mark"></span><span>Daywise</span></div>
+
+      <h1>Welcome back</h1>
+      <p class="sub">Sign in to see what's next on your dial.</p>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@university.ac.uk" autocomplete="email" required>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="••••••••" autocomplete="current-password" minlength="8" required>
+      </div>
+
+      <div class="row-between">
+        <label class="remember" id="rememberToggle">
+          <input class="sr-only" id="rememberMe" type="checkbox" checked>
+          <span class="toggle-mini on" id="toggleSwitch" aria-hidden="true"></span>
+          <span>Remember me</span>
+        </label>
+        <button type="button" class="forgot link-button" id="forgotPasswordBtn">Forgot password?</button>
+      </div>
+
+      <div class="form-message" id="loginMessage" role="status" aria-live="polite"></div>
+      <button type="submit" class="btn-primary" id="signInBtn">Sign in</button>
+
+      <div class="divider">or continue with</div>
+
+      <div class="oauth-row">
+        <button type="button" class="btn-oauth oauth-demo" data-provider="Google"><span class="oauth-icon" style="background:rgba(138,160,255,0.16); color:var(--periwinkle);">G</span>Google</button>
+        <button type="button" class="btn-oauth oauth-demo" data-provider="Apple"><span class="oauth-icon" style="background:rgba(201,166,255,0.16); color:var(--lavender);">A</span>Apple</button>
+      </div>
+
+      <p class="foot-line">New to Daywise? <button type="button" class="inline-action" id="createAccountBtn">Create an account</button></p>
+    </form>
+
+    <section class="login-card signed-in-card" id="signedInCard" hidden aria-live="polite">
+      <div class="card-logo"><span class="card-mark"></span><span>Daywise</span></div>
+      <div class="user-avatar" id="userAvatar">D</div>
+      <p class="eyebrow">Signed in</p>
+      <h1 id="welcomeName">Welcome back</h1>
+      <p class="sub" id="welcomeEmail"></p>
+      <div class="session-summary"><span>Session</span><strong id="sessionType">This tab</strong></div>
+      <p class="signed-in-note">You are signed in to your Daywise account.</p>
+      <button type="button" class="btn-primary" id="logoutBtn">Sign out</button>
+    </section>
+  </section>
+
+</div>
+
+
+<!-- Create account modal -->
+<div class="modal-backdrop" id="signupModal" hidden>
+  <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="signupTitle">
+    <button type="button" class="modal-close" data-close-modal="signupModal" aria-label="Close">×</button>
+    <div class="card-logo"><span class="card-mark"></span><span>Daywise</span></div>
+    <h2 id="signupTitle">Create your account</h2>
+    <p class="modal-sub">Create your Daywise account to get started.</p>
+    <form id="signupForm" novalidate>
+      <div class="field"><label for="signupName">Full name</label><input id="signupName" type="text" placeholder="Your name" autocomplete="name" minlength="2" required></div>
+      <div class="field"><label for="signupEmail">Email</label><input id="signupEmail" type="email" placeholder="you@university.ac.uk" autocomplete="email" required></div>
+      <div class="field"><label for="signupPassword">Password</label><input id="signupPassword" type="password" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" required></div>
+      <div class="field"><label for="signupConfirm">Confirm password</label><input id="signupConfirm" type="password" placeholder="Repeat password" autocomplete="new-password" minlength="8" required></div>
+      <div class="form-message" id="signupMessage" role="status" aria-live="polite"></div>
+      <button type="submit" class="btn-primary">Create account</button>
+    </form>
+  </section>
+</div>
+
+<!-- Password reset modal -->
+<div class="modal-backdrop" id="resetModal" hidden>
+  <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="resetTitle">
+    <button type="button" class="modal-close" data-close-modal="resetModal" aria-label="Close">×</button>
+    <div class="card-logo"><span class="card-mark"></span><span>Daywise</span></div>
+    <h2 id="resetTitle">Reset password</h2>
+   <p class="modal-sub">Enter your email and choose a new password.</p>
+    <form id="resetForm" novalidate>
+      <div class="field"><label for="resetEmail">Email</label><input id="resetEmail" type="email" placeholder="you@university.ac.uk" autocomplete="email" required></div>
+      <div class="field"><label for="resetPassword">New password</label><input id="resetPassword" type="password" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" required></div>
+      <div class="form-message" id="resetMessage" role="status" aria-live="polite"></div>
+      <button type="submit" class="btn-primary">Update password</button>
+    </form>
+  </section>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="webpage.js" defer></script>
+
+</body></html>
