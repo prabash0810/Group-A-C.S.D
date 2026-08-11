@@ -458,3 +458,31 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+// Logout
+document.addEventListener("DOMContentLoaded", function () {
+
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    if (logoutBtn) {
+
+        logoutBtn.addEventListener("click", function () {
+
+            const confirmLogout = confirm(
+                "Are you sure you want to logout?"
+            );
+
+            if (confirmLogout) {
+
+                localStorage.removeItem("isLoggedIn");
+                localStorage.removeItem("loggedIn");
+
+                sessionStorage.clear();
+
+                window.location.href = "login.html";
+            }
+
+        });
+
+    }
+
+});
