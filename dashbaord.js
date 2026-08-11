@@ -1,15 +1,11 @@
-/*
-   DayWise Dashboard
-   File : dashboard.js
-   Purpose :
-   - Manage dashboard statistics
-   - Save user preferences
-   - Display greeting
-   - Calculate weekly progress
-   - Animate counters
-   - Store theme in localStorage
-   - Remember cookie consent
-*/
+const daywiseSession =
+  localStorage.getItem("daywise.session.v1") ||
+  sessionStorage.getItem("daywise.session.v1");
+
+if (!daywiseSession) {
+  window.location.replace("webpage/webpage.html");
+}
+
 
 "use strict";
 

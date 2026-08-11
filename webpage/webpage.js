@@ -859,13 +859,13 @@ byId("loginCard")
         }
 
         passwordInput.value =
-  "";
+          "";
 
-setMessage(
-  message
-);
+        setMessage(
+          message
+        );
 
-window.location.replace("../dashboard.html");
+        window.location.replace("../dashboard.html");
 
       } catch (error) {
 
@@ -1398,14 +1398,6 @@ byId("logoutBtn")
 
       renderSession();
 
-showToast(
-  `Signed in as ${user.email}`
-);
-
-setTimeout(function () {
-  window.location.href = "../dashboard.html";
-}, 500);
-
       showToast(
         "You have been signed out."
       );
@@ -1436,9 +1428,4 @@ document
     }
   );
 
-/* ===============================
-   START APPLICATION
-================================ */
-
-renderSession();
-window.location.href = "../dashboard.html";
+  renderSession();
