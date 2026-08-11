@@ -435,54 +435,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const logoutBtn = document.getElementById("logoutBtn");
 
-    if (logoutBtn) {
-        logoutBtn.addEventListener("click", function () {
-
-            const confirmLogout = confirm(
-                "Are you sure you want to logout?"
-            );
-
-            if (!confirmLogout) {
-                return;
-            }
-
-            // Remove login/session information
-            localStorage.removeItem("loggedIn");
-            localStorage.removeItem("isLoggedIn");
-            localStorage.removeItem("currentUser");
-            sessionStorage.clear();
-
-            // Go back to login page
-            window.location.href = "login.html";
-        });
+    if (!logoutBtn) {
+        return;
     }
 
-});
-// Logout
-document.addEventListener("DOMContentLoaded", function () {
+    logoutBtn.addEventListener("click", function () {
 
-    const logoutBtn = document.getElementById("logoutBtn");
+        const confirmLogout = confirm("Are you sure you want to logout?");
 
-    if (logoutBtn) {
+        if (!confirmLogout) {
+            return;
+        }
 
-        logoutBtn.addEventListener("click", function () {
+        // Clear login/session information
+        localStorage.removeItem("isLoggedIn");
+        sessionStorage.clear();
 
-            const confirmLogout = confirm(
-                "Are you sure you want to logout?"
-            );
-
-            if (confirmLogout) {
-
-                localStorage.removeItem("isLoggedIn");
-                localStorage.removeItem("loggedIn");
-
-                sessionStorage.clear();
-
-                window.location.href = "login.html";
-            }
-
-        });
-
-    }
+        // Return to login page
+        window.location.href = "login.html";
+    });
 
 });

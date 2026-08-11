@@ -1388,23 +1388,25 @@ document
 /* ===============================
    LOGOUT
 ================================ */
+/* ===============================
+   LOGOUT
+================================ */
 
-byId("logoutBtn")
-  .addEventListener(
-    "click",
-    () => {
+const logoutBtn = byId("logoutBtn");
 
-      clearSession();
+if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
 
-      renderSession();
+        clearSession();
 
-      showToast(
-        "You have been signed out."
-      );
+        showToast("You have been signed out.");
 
-    }
-  );
+        setTimeout(() => {
+            window.location.href = "login.html";
+        }, 500);
 
+    });
+}
 /* ===============================
    REMOVE INPUT ERRORS WHILE TYPING
 ================================ */
