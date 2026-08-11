@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DayWise - Events & Achievements</title>
     <link rel="stylesheet" href="1stpage of events and achievements.css">
@@ -23,8 +23,8 @@
             </div>
             <ul class="nav-links">
                 <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="#events-section">Events</a></li>
-                <li><a href="#achievements-section">Achievements</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
             </ul>
         </nav>
     </header>
@@ -37,59 +37,43 @@
             </div>
         </section>
 
-        <section class="statistics">
-            <h2>Quick Overview</h2>
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <h3 id="totalEvents">0</h3>
-                    <p>Total Events</p>
-                </div>
-                <div class="stat-box">
-                    <h3 id="completedEvents">0</h3>
-                    <p>Completed Events</p>
-                </div>
-                <div class="stat-box">
-                    <h3 id="totalAchievements">0</h3>
-                    <p>Achievements</p>
-                </div>
-                <div class="stat-box">
-                    <h3 id="completionRate">0%</h3>
-                    <p>Completion Rate</p>
-                </div>
+        <div class="page-link-row">
+            <a class="page-link-btn" href="events.html"><i class="fa-solid fa-calendar-days"></i> Open Events Page</a>
+            <a class="page-link-btn secondary" href="achievements.html"><i class="fa-solid fa-trophy"></i> Open Achievements Page</a>
+        </div>
+<section class="statistics">
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <div class="stat-circle events-circle">
+                <span id="totalEvents">0</span>
             </div>
-        </section>
+            <h3>Total Events</h3>
+        </div>
 
-        <section class="combined-layout">
-            <div class="panel" id="events-section">
-                <div class="panel-header">
-                    <h2><i class="fa-solid fa-calendar-days"></i> Events</h2>
-                    <p>Keep your upcoming plans in one place.</p>
-                </div>
-
-                <form class="panel-form" onsubmit="event.preventDefault(); addEvent();">
-                    <input type="text" id="eventName" placeholder="Event name" required>
-                    <input type="date" id="eventDate" required>
-                    <button type="submit" class="submit-btn">Add Event</button>
-                </form>
-
-                <div id="eventList" class="item-list"></div>
+        <div class="stat-card">
+            <div class="stat-circle completed-circle">
+                <span id="completedEvents">0</span>
             </div>
+            <h3>Completed Events</h3>
+        </div>
 
-            <div class="panel" id="achievements-section">
-                <div class="panel-header">
-                    <h2><i class="fa-solid fa-trophy"></i> Achievements</h2>
-                    <p>Record your wins and important milestones.</p>
-                </div>
-
-                <form class="panel-form" onsubmit="event.preventDefault(); addAchievement();">
-                    <input type="text" id="achievementTitle" placeholder="Achievement title" required>
-                    <input type="text" id="achievementDescription" placeholder="Short description" required>
-                    <button type="submit" class="submit-btn">Add Achievement</button>
-                </form>
-
-                <div id="achievementList" class="item-list"></div>
+        <div class="stat-card">
+            <div class="stat-circle achievements-circle">
+                <span id="totalAchievements">0</span>
             </div>
-        </section>
+            <h3>Achievements</h3>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-circle rate-circle">
+                <span id="completionRate">0%</span>
+            </div>
+            <h3>Completion Rate</h3>
+        </div>
+
+    </div>
+</section>
     </main>
 
     <footer>

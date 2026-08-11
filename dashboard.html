@@ -108,7 +108,7 @@
 
         <!-- Events and Achievements Module -->
 
-        <a href="events.html">
+        <a href="1stpage%20of%20events%20and%20achievements.html">
 
             🏆 Events & Achievements
 
@@ -188,8 +188,8 @@
     <div class="welcome-text">
 
 
-        <h2>
-            Welcome back, User 👋
+        <h2 id="greeting">
+    Welcome back, User 👋
         </h2>
 
 
@@ -339,7 +339,7 @@
 
         <!-- Day Planner Action -->
 
-        <button class="action-card">
+        <button class="action-card" type="button" data-href="events.html" aria-label="Open events page">
 
             <span class="action-icon">
                 📅
@@ -357,7 +357,7 @@
 
         <!-- Work and Study Action -->
 
-        <button class="action-card">
+        <button class="action-card" type="button" data-href="Workandstudy.html" aria-label="Open work and study page">
 
 
             <span class="action-icon">
@@ -378,7 +378,7 @@
 
         <!-- Money Management Action -->
 
-        <button class="action-card">
+        <button class="action-card" type="button" data-href="#" aria-label="Open expense section">
 
 
             <span class="action-icon">
@@ -399,7 +399,7 @@
 
         <!-- Events and Achievements Action -->
 
-        <button class="action-card">
+        <button class="action-card" type="button" data-href="achievements.html" aria-label="Open achievements page">
 
 
             <span class="action-icon">
@@ -475,7 +475,7 @@
 
     <!-- Work and Study Card -->
 
-    <div class="dashboard-card work-card">
+    <div class="dashboard-card work-card" data-href="Workandstudy.html" role="button" tabindex="0" aria-label="Open work and study page">
 
 
         <div class="card-icon">
@@ -515,7 +515,7 @@
 
     <!-- Money Manager Card -->
 
-    <div class="dashboard-card money-card">
+    <div class="dashboard-card money-card" data-href="#" role="button" tabindex="0" aria-label="Open money manager section">
 
 
         <div class="card-icon">
@@ -555,7 +555,7 @@
 
     <!-- Events and Achievements Card -->
 
-    <div class="dashboard-card event-card">
+    <div class="dashboard-card event-card" data-href="1stpage%20of%20events%20and%20achievements.html" role="button" tabindex="0" aria-label="Open events and achievements page">
 
 
         <div class="card-icon">
@@ -656,168 +656,7 @@
 </section>
 
 
-        <!-- Events & Achievements Preview -->
-
-        
-     <!--
-    Events & Achievements Preview Section
-
-    Provides a quick overview of:
-    - Upcoming events
-    - Recent achievements
-    - Certificates
-
-    Full functionality will be added later
-    using JavaScript and localStorage.
--->
-
-<section class="events-preview">
-
-
-    <!-- Section Heading -->
-
-    <div class="section-header">
-
-
-        <h2>
-            Events & Achievements 🏆
-        </h2>
-
-
-        <p>
-            Track important moments and celebrate your progress.
-        </p>
-
-
-    </div>
-
-
-
-
-
-    <div class="events-container">
-
-
-
-        <!-- Upcoming Events -->
-
-        <div class="event-preview-card">
-
-
-            <div class="event-icon">
-
-                📅
-
-            </div>
-
-
-            <div class="event-details">
-
-
-                <h3>
-                    Upcoming Events
-                </h3>
-
-
-                <p>
-                    No upcoming events available.
-                </p>
-
-
-                <span>
-                    View Events →
-                </span>
-
-
-            </div>
-
-
-        </div>
-
-
-
-
-
-        <!-- Achievements -->
-
-        <div class="event-preview-card">
-
-
-            <div class="event-icon">
-
-                🏆
-
-            </div>
-
-
-            <div class="event-details">
-
-
-                <h3>
-                    Recent Achievements
-                </h3>
-
-
-                <p>
-                    Start adding your achievements.
-                </p>
-
-
-                <span>
-                    View Achievements →
-                </span>
-
-
-            </div>
-
-
-        </div>
-
-
-
-
-
-        <!-- Certificates -->
-
-        <div class="event-preview-card">
-
-
-            <div class="event-icon">
-
-                📜
-
-            </div>
-
-
-            <div class="event-details">
-
-
-                <h3>
-                    Certificates
-                </h3>
-
-
-                <p>
-                    Store your certificates and awards.
-                </p>
-
-
-                <span>
-                    Add Certificate →
-                </span>
-
-
-            </div>
-
-
-        </div>
-
-
-
-    </div>
-
-
-</section>
+      
       <!--
     Money Manager Preview Section
 
@@ -1143,9 +982,12 @@
 
 
 
-    <!-- JavaScript File -->
-    <script src="js/dashboard.js"></script>
-
+    <script src="dashboard.js"></script>
+    <script src="js/dashboard-clock.js"></script>
+    
+    <footer>
+        <p>© 2026 DayWise Module</p>
+    </footer>
 
 </body>
 
