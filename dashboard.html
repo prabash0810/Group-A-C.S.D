@@ -148,13 +148,17 @@
 
         <!-- Settings -->
 
-        <a href="#">
-
-            ⚙️ Settings
-
-        </a>
+       <a href="settings.html">
+    ⚙️ Settings
+</a>
 
 
+ <!-- Logout -->
+    <button type="button" id="logoutBtn" class="logout-btn">
+        🚪 Logout
+    </button>
+
+</nav>
     </nav>
 
 
@@ -578,10 +582,56 @@
                 and personal achievements.
             </p>
 
+            <div class="event-card-progress-wrap">
+                <div class="event-card-ring-shell">
+                    <svg class="event-card-ring" viewBox="0 0 140 140" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="eventCardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#2563EB"></stop>
+                                <stop offset="100%" stop-color="#0D9488"></stop>
+                            </linearGradient>
+                        </defs>
+                        <circle class="event-card-ring-bg" cx="70" cy="70" r="52"></circle>
+                        <circle class="event-card-ring-progress" id="eventCardProgressRing" cx="70" cy="70" r="52"></circle>
+                    </svg>
+                    <div class="event-card-ring-inner">
+                        <strong id="eventCardPercent">0%</strong>
+                        <span>Achievement Progress</span>
+                    </div>
+                </div>
 
-            <span>
-                0 Achievements
-            </span>
+                <div class="event-card-stat-grid">
+                    <div class="event-card-mini-stat">
+                        <span class="event-card-mini-icon">📅</span>
+                        <strong id="eventCardEventsCount">0</strong>
+                        <small>Events</small>
+                    </div>
+                    <div class="event-card-mini-stat">
+                        <span class="event-card-mini-icon">🏆</span>
+                        <strong id="eventCardAchievementsCount">0</strong>
+                        <small>Achievements</small>
+                    </div>
+                    <div class="event-card-mini-stat">
+                        <span class="event-card-mini-icon">✓</span>
+                        <strong id="eventCardCompletedCount">0</strong>
+                        <small>Completed</small>
+                    </div>
+                </div>
+
+                <div class="event-card-footer">
+                    <div class="event-card-footer-row">
+                        <span>Overall Progress</span>
+                        <strong id="eventCardOverallProgress">0%</strong>
+                    </div>
+                    <div class="event-card-footer-row">
+                        <span>Weekly Progress</span>
+                        <strong id="eventCardWeeklyProgress">0%</strong>
+                    </div>
+                    <div class="event-card-progress-bar">
+                        <span id="eventCardWeeklyBar"></span>
+                    </div>
+                </div>
+            </div>
 
 
         </div>
@@ -617,10 +667,22 @@
 
         <div>
             <h3>
-                Tasks
+                Events This Week
             </h3>
 
-            <p>
+            <p id="weeklyEventsScheduledText">
+                0 Scheduled
+            </p>
+        </div>
+
+
+
+        <div>
+            <h3>
+                Completed This Week
+            </h3>
+
+            <p id="weeklyEventsCompletedText">
                 0 Completed
             </p>
         </div>
@@ -629,29 +691,16 @@
 
         <div>
             <h3>
-                Savings
+                Achievements Completed
             </h3>
 
-            <p>
-                £0 Saved
-            </p>
-        </div>
-
-
-
-        <div>
-            <h3>
-                Achievements
-            </h3>
-
-            <p>
+            <p id="weeklyAchievementsCompletedText">
                 0 Completed
             </p>
         </div>
 
 
     </div>
-
 
 </section>
 
@@ -988,7 +1037,6 @@
     <footer>
         <p>© 2026 DayWise Module</p>
     </footer>
-
 </body>
 
 </html>

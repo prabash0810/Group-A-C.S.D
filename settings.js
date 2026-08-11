@@ -1,4 +1,3 @@
-```javascript
 document.addEventListener("DOMContentLoaded", function () {
 
     const animationToggle =
@@ -21,17 +20,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (animationToggle) {
 
         if (savedAnimations !== null) {
-
             animationToggle.checked =
                 savedAnimations === "true";
-
         }
 
         document.body.classList.toggle(
             "animations-disabled",
             !animationToggle.checked
         );
-
 
         animationToggle.addEventListener(
             "change",
@@ -49,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
         );
-
     }
 
 
@@ -65,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 aboutUsContent.classList.toggle("active");
 
-
                 if (
                     aboutUsContent.classList.contains("active")
                 ) {
@@ -77,13 +71,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     aboutUsBtn.textContent =
                         "About Us";
-
                 }
 
             }
         );
-
     }
 
 });
-```

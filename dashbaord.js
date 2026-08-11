@@ -435,3 +435,30 @@ setTimeout(function () {
     motivationalMessage();
 
 }, 2000);
+document.addEventListener("DOMContentLoaded", function () {
+
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", function () {
+
+            const confirmLogout = confirm(
+                "Are you sure you want to logout?"
+            );
+
+            if (!confirmLogout) {
+                return;
+            }
+
+            // Remove login/session information
+            localStorage.removeItem("loggedIn");
+            localStorage.removeItem("isLoggedIn");
+            localStorage.removeItem("currentUser");
+            sessionStorage.clear();
+
+            // Go back to login page
+            window.location.href = "login.html";
+        });
+    }
+
+});
