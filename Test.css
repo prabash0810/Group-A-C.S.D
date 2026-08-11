@@ -645,3 +645,45 @@ body {
         border: 0;
         border-radius: 0;
     }
+    .form-box {
+        height: 72%;
+        padding: 24px 20px;
+    }
+
+    .info-text,
+    .bg-animate,
+    .bg-animate2 {
+        height: 28%;
+    }
+
+    .info-text {
+        padding: 24px 20px;
+    }
+
+    .info-text h2 {
+        font-size: 1.55rem;
+    }
+
+    .input-box input {
+        height: 50px;
+    }
+
+    .btn {
+        min-height: 50px;
+    }
+}
+
+/* ==============================
+   14. Reduced motion
+   ============================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
