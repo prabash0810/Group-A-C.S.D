@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Daywise - Daily Planner</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- Background Shapes -->
+
+<div class="background-shapes">
+
+    <span class="shape shape1"></span>
+
+    <span class="shape shape2"></span>
+
+    <span class="shape shape3"></span>
+
+</div>
+
+
+
+
+
+<!-- Main Container -->
+
+<div class="planner-container">
+
+
+
+<!-- Header -->
+
+<header class="header">
+
+
+<div class="logo">
+
+<h1>📅 Daywise</h1>
+
+<p>Your Academic Daily Planner</p>
+
+</div>
+
+
+
+
+<div class="date-box">
+
+<p id="date">
+Monday, 3 August 2026
+</p>
+
+
+<p id="clock">
+12:00:00
+</p>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+
+
+
+<!-- Welcome -->
+
+
+<section class="welcome">
+
+
+<h2>
+Welcome Back 👋
+</h2>
+
+
+
+<p>
+Plan your day, complete your goals and stay productive.
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Task Section -->
+
+
+<section class="task-section">
+
+
+<h2>
+Today's Tasks
+</h2>
+
+
+
+
+
+<!-- Advanced Task Form -->
+
+
+<div class="task-form">
+<input
+
+type="text"
+
+id="taskTitle"
+
+placeholder="Enter task name...">
+
+<select id="subject">
+
+
+<option value="">
+Select Subject
+</option>
+
+
+
+<option value="Computer Science">
+💻 Computer Science
+</option>
+
+
+
+<option value="Mathematics">
+📐 Mathematics
+</option>
+
+
+
+<option value="English">
+📖 English
+</option>
+
+
+
+<option value="Chemistry">
+🧪 Chemistry
+</option>
+
+
+</select>
+<select id="priority">
+
+
+<option value="">
+Select Priority
+</option>
+
+
+<option value="High">
+🔴 High
+</option>
+
+
+<option value="Medium">
+🟡 Medium
+</option>
+
+
+<option value="Low">
+🟢 Low
+</option>
+
+
+</select>
+<input
+
+type="time"
+
+id="startTime">
+
+
+
+
+
+
+<input
+
+type="time"
+
+id="endTime">
+
+<input
+
+type="date"
+
+id="deadline">
+
+<button id="addTask">
+
+➕ Add Task
+
+</button>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Active Task Display -->
+
+
+<div class="task-list" id="taskList">
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- History -->
+
+
+<div class="history-section">
+
+
+<h2>
+📚 Task History
+</h2>
+
+
+
+<div class="history-list" id="historyList">
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Progress -->
+
+
+<section class="progress-section">
+
+
+<h2>
+Daily Progress
+</h2>
+
+
+
+<div class="progress-bar">
+
+
+<div 
+class="progress"
+id="progress">
+
+</div>
+
+
+</div>
+
+
+
+
+<p>
+
+<span id="progressText">
+
+0%
+
+</span>
+
+Completed
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+
+
+<footer>
+
+
+<p>
+
+© 2026 Daywise | Academic Planner
+
+</p>
+
+
+</footer>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<script src="java.js"></script></body>
+
+</html>
