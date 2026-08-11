@@ -3,66 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> login in form for the projectwork </title>
-    <!-- linking to css -->
-    <!-- CSS File -->
+
+    <meta
+        name="description"
+        content="Sign in to your account or create a new account."
+    >
+
+    <title>Login and Registration</title>
+
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="form.css">
 
-    <!-- Boxicons CDN -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- Boxicons -->
+    <link
+        rel="stylesheet"
+        href="[unpkg.com](https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css)"
+    >
 </head>
 
 <body>
-       <!-- creating a container using div class -->
-
-    <div class="container">
-        <!-- especially for login form -->
-
-        <!-- Login Form -->
-        <div class="form-box login">
-            <form action="#">
-                <h2>Login</h2>
+    <main class="container">
+        <!-- Login form -->
+        <section class="form-box login" aria-labelledby="login-title">
+            <form id="login-form" action="#" method="post">
+                <h1 id="login-title">Login</h1>
 
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required>
-                    <i class="bx bxs-user"></i>
+                    <label class="sr-only" for="login-username">
+                        Username
+                    </label>
+
+                    <input
+                        id="login-username"
+                        name="username"
+                        type="text"
+                        placeholder="Username"
+                        autocomplete="username"
+                        required
+                    >
+
+                    <i class="bx bxs-user" aria-hidden="true"></i>
                 </div>
 
                 <div class="input-box">
-                    <input type="password" placeholder=" Enter your valid Password" required>
-                    <i class="bx bxs-lock-alt"></i>
+                    <label class="sr-only" for="login-password">
+                        Password
+                    </label>
+
+                    <input
+                        id="login-password"
+                        name="password"
+                        type="password"
+                        placeholder="Password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <i class="bx bxs-lock-alt" aria-hidden="true"></i>
                 </div>
 
                 <button type="submit" class="btn">Login</button>
 
                 <div class="logreg-link">
-                    <!-- signup option for new users -->
                     <p>
                         Don't have an account?
-                        <a href="#" class="register-link">Signup</a>
+                        <button type="button" class="link-button register-link">
+                            Sign up
+                        </button>
                     </p>
                 </div>
             </form>
-        </div>
+        </section>
 
-        <!-- Register Form -->
-        <div class="form-box register">
-            <form action="#">
-                <h2>Register</h2>
+        <!-- Registration form -->
+        <section class="form-box register" aria-labelledby="register-title">
+            <form id="register-form" action="#" method="post">
+                <h2 id="register-title">Create an account</h2>
 
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required>
-                    <i class="bx bxs-user"></i>
+                    <label class="sr-only" for="register-username">
+                        Username
+                    </label>
+
+                    <input
+                        id="register-username"
+                        name="username"
+                        type="text"
+                        placeholder="Username"
+                        autocomplete="username"
+                        minlength="3"
+                        required
+                    >
+
+                    <i class="bx bxs-user" aria-hidden="true"></i>
                 </div>
 
                 <div class="input-box">
-                    <input type="email" placeholder="Email" required>
-                    <i class="bx bxs-envelope"></i>
+                    <label class="sr-only" for="register-email">
+                        Email address
+                    </label>
+
+                    <input
+                        id="register-email"
+                        name="email"
+                        type="email"
+                        placeholder="Email address"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <i class="bx bxs-envelope" aria-hidden="true"></i>
                 </div>
 
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
-                    <i class="bx bxs-lock-alt"></i>
+                    <label class="sr-only" for="register-password">
+                        Password
+                    </label>
+
+                    <input
+                        id="register-password"
+                        name="password"
+                        type="password"
+                        placeholder="Password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                    <i class="bx bxs-lock-alt" aria-hidden="true"></i>
                 </div>
 
                 <button type="submit" class="btn">Register</button>
@@ -70,32 +138,31 @@
                 <div class="logreg-link">
                     <p>
                         Already have an account?
-                        <a href="#" class="login-link">Sign In</a>
+                        <button type="button" class="link-button login-link">
+                            Sign in
+                        </button>
                     </p>
                 </div>
             </form>
-        </div>
+        </section>
 
-        <!-- Login Info -->
-        <div class="info-text login">
-            <h2>WELCOME BACK!</h2>
+        <!-- Login information -->
+        <section class="info-text login" aria-hidden="true">
+            <h2>Welcome back!</h2>
             <p>Enter your credentials to access your account.</p>
-        </div>
+        </section>
 
-        <!-- Register Info -->
-        <div class="info-text register">
-            <h2>WELCOME!</h2>
-            <p>Enhance your days to achieve your success.</p>
-        </div>
+        <!-- Registration information -->
+        <section class="info-text register" aria-hidden="true">
+            <h2>Welcome!</h2>
+            <p>Create an account and take the next step toward your goals.</p>
+        </section>
 
-        <!-- Animated Background -->
-        <div class="bg-animate"></div>
-        <div class="bg-animate2"></div>
+        <!-- Decorative animated backgrounds -->
+        <div class="bg-animate" aria-hidden="true"></div>
+        <div class="bg-animate2" aria-hidden="true"></div>
+    </main>
 
-    </div>
-
-    <!-- JavaScript -->
-    <script src="form.js"></script>
-
+    <script src="form.js" defer></script>
 </body>
 </html>
