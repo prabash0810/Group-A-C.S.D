@@ -1,6 +1,6 @@
 /* ================================
    DayWise Settings Page
-   ================================ */
+================================ */
 
 * {
     margin: 0;
@@ -199,17 +199,11 @@ body {
     transform: translateY(-2px);
 }
 
-/* =================================
-   About Us expandable section
-   ================================= */
-
-/* Hidden by default */
+/* About Us expandable section */
 
 .about-us-content {
     display: none;
 }
-
-/* Shown when JavaScript adds "active" */
 
 .about-us-content.active {
     display: block;
