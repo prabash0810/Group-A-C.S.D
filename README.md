@@ -1,594 +1,1398 @@
-# DayWise – Work & Study Planner
+DayWise
 
-## Project Overview
+Client-Side Life Management Web Application
 
-**DayWise** is a client-side web application designed to help users organise their university classes, work shifts, working hours, and reminders in one place.
+DayWise is a browser-based client-side web application designed to help users organise and manage different areas of their daily life from one place.
 
-The **Work & Study Planner** allows users to add, view, and delete university classes and work shifts. The dashboard automatically updates when information is added or deleted.
+The project brings together:
 
-The application demonstrates important client-side web development concepts, including:
+User registration and sign-in
 
-* HTML5
-* CSS3
-* JavaScript
-* DOM manipulation
-* Form handling
-* Browser Local Storage
-* Data processing
-* Responsive web design
-* Dynamic user interface updates
+A central dashboard
 
----
+Daily task planning
 
-# Main Features
+Work and university scheduling
 
-## 1. Dashboard
+Events and achievements
 
-The dashboard provides users with a quick overview of their current university and work schedule.
+Progress tracking
 
-It displays:
+Settings and appearance preferences
 
-* Number of university classes
-* Number of work shifts
-* Total working hours
-* University reminder
+Browser-based data persistence
 
-The dashboard is automatically updated whenever a university class or work shift is added or deleted.
+Notifications and motivational feedback
 
-### Example
+The project is implemented as a front-end application using HTML, CSS and JavaScript. It does not contain a server-side backend or external database.
 
-| Dashboard Item |   Example |
-| -------------- | --------: |
-| University     | 3 Classes |
-| Work           |  2 Shifts |
-| Hours          |    16 hrs |
-| Reminder       |    Monday |
+Project Purpose
 
----
+DayWise is designed around the idea of keeping important daily activities in one organised system.
 
-## 2. University Class Planner
+Instead of managing university work, employment shifts, tasks, events and achievements separately, the application provides dedicated sections that can be accessed from a central dashboard.
 
-The **Add University Class** form allows users to record their university timetable.
+The main goals of the project are to:
 
-The form collects:
+Provide a clear and simple daily management interface.
 
-* Module Name
-* Lecturer
-* Day
-* Start Time
-* End Time
-* Room Number
+Allow users to record and manage university and work schedules.
 
-After the form is submitted, the class is added to the university schedule and saved in the browser's Local Storage.
+Help users create and track daily tasks.
 
-### Example University Schedule
+Allow events and achievements to be recorded and completed.
 
-| Module                  | Day       | Time          |
-| ----------------------- | --------- | ------------- |
-| Client Side Development | Monday    | 10:00 - 12:00 |
-| Database Systems        | Wednesday | 13:00 - 15:00 |
+Present progress information through the dashboard.
 
-Users can also delete a university class when it is no longer required.
+Store relevant information directly in the browser.
 
----
+Provide a responsive interface suitable for different screen sizes.
 
-## 3. Work Shift Planner
+Main Features
 
-The **Add Work Shift** form allows users to record their work schedule.
+1. User Authentication and Welcome Page
 
-The form collects:
+The webpage section provides the main DayWise sign-in and account interface.
 
-* Company Name
-* Job Role
-* Work Day
-* Start Time
-* End Time
-* Location
+It includes:
 
-The application automatically calculates the number of hours worked using the start and end times.
+Sign-in form
 
-### Example
+Account creation
 
-```text
-Start Time: 09:00
-End Time:   13:30
-Total:      4.5 hours
-```
+Password confirmation during registration
 
-The calculated working hours are stored together with the work-shift information.
+Password reset interface
 
----
+Remember-me preference
 
-## 4. Work Hours Calculation
+Login validation
 
-JavaScript is used to automatically calculate the duration of each work shift.
+Session creation
 
-The `calculateHours()` function converts the start and end times into minutes and calculates the difference.
+Logout functionality
 
-This means that users do not need to manually enter the number of hours worked.
+User welcome information
 
-```javascript
-function calculateHours(start, end) {
+Interactive slideshow introducing DayWise features
 
-    let s = start.split(":");
-    let e = end.split(":");
+Animated visual elements
 
-    let startMinutes = Number(s[0]) * 60 + Number(s[1]);
-    let endMinutes = Number(e[0]) * 60 + Number(e[1]);
+Toast and validation messages
 
-    return (endMinutes - startMinutes) / 60;
-}
-```
+For this client-side coursework project, user information and session information are handled in browser storage. This is a front-end demonstration rather than production-grade authentication.
 
-For example, a shift from **09:00 to 13:30** produces:
+Passwords are processed with the browser's SHA-256 Web Crypto functionality before being stored by the front-end authentication demonstration.
 
-```text
-4.5 hours
-```
+2. Dashboard
 
----
+The dashboard acts as the main navigation and overview area of DayWise.
 
-# Data Storage
+It provides access to the main sections of the application:
 
-DayWise currently uses the browser's **Local Storage** to persist university and work data.
+Daily Planner
 
-The application stores two main datasets:
+Work & Study
 
-```javascript
-university
-work
-```
+Money Manager area
 
-The following Local Storage methods are used:
+Events & Achievements
 
-```javascript
-localStorage.setItem()
-localStorage.getItem()
-```
+Goals and progress information
 
-JavaScript objects are converted into JSON before being stored:
+The dashboard also includes:
 
-```javascript
-JSON.stringify()
-```
+Welcome greeting
 
-When the data is retrieved, JSON is converted back into JavaScript objects using:
+Current day, date and time
 
-```javascript
-JSON.parse()
-```
+Quick-action navigation
 
-This allows university classes and work shifts to remain available after refreshing or reopening the webpage in the same browser.
+Progress information
 
----
+Event and achievement summaries
 
-# DayWise System & Data Storage Architecture
+Dashboard counters
 
-The following diagram represents the wider DayWise system architecture, including the storage technologies planned for different parts of the application.
+Theme handling
 
-```mermaid
-graph TD
+Cookie consent handling
 
-    A[User] --> B[DayWise Website]
+Notifications
 
-    B --> C[Login]
-    B --> D[Dashboard]
+Motivational messages
 
-    D --> E[Daily Planner]
-    D --> F[Work and Study]
-    D --> G[Income Tracker]
-    D --> H[Events and Achievements]
+Logout
 
-    E --> J[Local Storage]
-    F --> J
-    G --> J
-    H --> J
+The dashboard uses stored dashboard data to populate its overview values.
 
-    J --> J1[University Class Data]
-    J --> J2[Work Shift Data]
-    J --> J3[Income Data]
-    J --> J4[Achievement Progress]
-    J --> J5[Event Data]
+Dashboard Data
 
-    C --> K[Session Storage]
+The current dashboard JavaScript contains stored overview values for:
 
-    K --> K1[Current Login Session]
-    K --> K2[Temporary User State]
-    K --> K3[Current Dashboard State]
+Planner activity
 
-    C --> L[Cookies]
+Completed tasks
 
-    L --> L1[Remember Me]
-    L --> L2[Theme Preference]
-    L --> L3[Language Preference]
-    L --> L4[Session Identifier]
-```
+Achievements
 
-## Storage Explanation
+Events
 
-### Local Storage
+Savings
 
-Local Storage is **currently implemented** in the Work & Study module.
+Previous-week progress
 
-It is used to store:
+Current-week progress
 
-* University classes
-* Work shifts
-* Calculated work hours
+The dashboard also calculates a weekly progress percentage from the available dashboard values.
 
-The data remains available after the page is refreshed or reopened in the same browser.
+3. Daily Planner
 
-### Session Storage
+The Daily Planner is located inside the dayplanner folder.
 
-Session Storage is included in the **overall DayWise architecture** for temporary session-related information.
+It allows users to create and manage daily tasks.
+
+Each task can contain:
+
+Task title
+
+Subject
+
+Priority
+
+Start time
+
+End time
+
+Deadline
+
+Completion status
+
+Task Management
+
+The planner supports:
+
+Adding tasks
+
+Displaying active tasks
+
+Completing tasks
+
+Deleting tasks
+
+Moving completed tasks into history
+
+Displaying completion history
+
+Calculating daily progress
+
+Saving tasks in browser Local Storage
+
+Loading saved tasks when the page opens
+
+Progress Tracking
+
+The planner calculates progress from active and completed tasks.
+
+Completed tasks are moved to the task history and the progress indicator is updated automatically.
+
+4. Work & Study Planner
+
+The Work & Study section combines university scheduling and employment scheduling.
+
+It contains two main areas:
+
+University Classes
+
+Users can add:
+
+Module name
+
+Lecturer
+
+Day
+
+Start time
+
+End time
+
+Room number
+
+University classes are displayed in the university schedule.
+
+Work Shifts
+
+Users can add:
+
+Company name
+
+Job role
+
+Work day
+
+Start time
+
+End time
+
+Location
+
+The application calculates the duration of a work shift from its start and end times.
+
+Work & Study Dashboard
+
+The section displays:
+
+Number of university classes
+
+Number of work shifts
+
+Total working hours
+
+A reminder based on the stored university schedule
+
+Data Management
+
+The Work & Study module supports:
+
+Creating university records
+
+Viewing university records
+
+Deleting university records
+
+Creating work-shift records
+
+Viewing work-shift records
+
+Deleting work-shift records
+
+Automatic dashboard updates
+
+Browser Local Storage persistence
+
+Delete confirmation messages
+
+Editing existing records is not implemented in the current files.
+
+5. Events
+
+The Events section allows users to create and manage personal events.
+
+Each event contains:
+
+Event title
+
+Event date
+
+Completion status
+
+Unique identifier
+
+The current implementation supports:
+
+Adding events
+
+Displaying events
+
+Completing events
+
+Deleting events
+
+Saving events to Local Storage
+
+Updating event statistics
+
+The overview page can display the total number of events and the number of completed events.
+
+6. Achievements
+
+The Achievements section allows users to record achievements and track their completion.
+
+Each achievement contains:
+
+Achievement title
+
+Description
+
+Completion status
+
+Unique identifier
+
+The current implementation supports:
+
+Adding achievements
+
+Displaying achievements
+
+Completing achievements
+
+Deleting achievements
+
+Saving achievements to Local Storage
+
+Calculating achievement completion percentage
+
+The overview section uses achievement information to display total achievements and completion progress.
+
+7. Events & Achievements Overview
+
+The project includes a dedicated overview page for events and achievements.
+
+It provides summary information including:
+
+Total events
+
+Completed events
+
+Total achievements
+
+Achievement completion rate
+
+This creates a simple progress overview without requiring a separate database.
+
+8. Settings
+
+The Settings page provides user interface preferences and project information.
+
+Current settings include:
+
+Animations
+
+Users can enable or disable interface animations.
+
+The selected animation preference is stored in Local Storage so the preference can be retained in the browser.
+
+About Us
+
+The Settings page also contains an expandable About Us section that can be shown or hidden by the user.
+
+9. Theme and Appearance
+
+DayWise contains theme-related functionality.
+
+The dashboard JavaScript supports:
+
+Light theme state
+
+Dark theme state
+
+Saving the selected theme in Local Storage
+
+Loading the saved theme when the dashboard starts
+
+The project also contains dedicated theme-related CSS files.
+
+The Settings page additionally provides animation preferences.
+
+10. Notifications and Feedback
+
+Several areas of the application provide user feedback.
 
 Examples include:
 
-* Current login session
-* Temporary user state
-* Current dashboard state
+Form validation messages
 
-Session Storage is **not currently implemented in the Work & Study JavaScript**.
+Event and achievement confirmation messages
 
-### Cookies
+Delete notifications
 
-Cookies are included in the overall architecture for potential features such as:
+Dashboard notifications
 
-* Remember Me
-* Theme preference
-* Language preference
-* Session identifier
+Motivational messages
 
-Cookies are **not currently implemented in the Work & Study module**.
+Login and account messages
 
-### Implementation Note
+Toast notifications
 
-The current Work & Study implementation specifically uses **Local Storage**.
+The dashboard also displays an automatically generated motivational message after the page loads.
 
-Session Storage and Cookies are represented in the wider DayWise architecture as planned storage technologies for other parts of the system.
+11. Browser Data Storage
 
----
+DayWise is a client-side application, so browser storage is used instead of a server-side database.
 
-# Data Structure
+The project uses:
 
-University classes and work shifts are stored as JavaScript objects inside arrays.
+Local Storage
 
-## University Class Object
+Local Storage is used for several parts of the application, including:
 
-```javascript
-{
-    module: "Client Side Development",
-    lecturer: "Dr. Smith",
-    day: "Monday",
-    start: "10:00",
-    end: "12:00",
-    room: "B201"
-}
-```
+User information in the front-end authentication demonstration
 
-## Work Shift Object
+Persistent login session when the user chooses to remember the session
 
-```javascript
-{
-    company: "Tesco",
-    role: "Customer Assistant",
-    day: "Tuesday",
-    start: "09:00",
-    end: "13:30",
-    location: "London",
-    hours: 4.5
-}
-```
+Daily planner tasks
 
-The objects are stored inside arrays:
+Daily planner history
 
-```javascript
-let university = [];
-let work = [];
-```
+University classes
 
-The arrays are then converted to JSON and saved to Local Storage.
+Work shifts
 
----
+Events
 
-# Delete Functionality
+Achievements
 
-The application provides delete buttons for both university classes and work shifts.
+Dashboard data
 
-When the user deletes a record, the application:
+Theme preference
 
-1. Removes the record from the relevant array.
-2. Saves the updated data to Local Storage.
-3. Refreshes the relevant schedule table.
-4. Updates the dashboard.
-5. Displays a confirmation message.
+Animation preference
 
-## Delete University Class
+Session Storage
 
-```javascript
-university.splice(index, 1);
+Session Storage is used by the authentication flow for a non-persistent login session.
 
-saveData();
+The dashboard also clears session storage during logout.
 
-displayUniversity();
+Cookies
 
-updateDashboard();
-```
+The dashboard contains cookie-consent functionality.
 
-## Delete Work Shift
+A cookie is used to remember that cookie consent has been accepted for a defined period.
 
-```javascript
-work.splice(index, 1);
+System Architecture
 
-saveData();
+The following architecture represents the actual organisation of the DayWise project in the uploaded project files.
 
-displayWork();
+flowchart TD
 
-updateDashboard();
-```
+    U[User]
 
-The `splice()` method removes the selected item from the relevant array.
+    U --> AUTH[Authentication / Welcome Page]
 
----
+    AUTH --> DASH[DayWise Dashboard]
 
-# User Feedback
+    DASH --> PLANNER[Daily Planner]
+    DASH --> WORK[Work & Study]
+    DASH --> EVENTS[Events & Achievements]
+    DASH --> SETTINGS[Settings]
+    DASH --> MONEY[Money Manager Area]
+    DASH --> GOALS[Goals & Progress]
 
-DayWise provides temporary notification messages when a user deletes a university class or work shift.
+    PLANNER --> TASKS[Tasks]
+    PLANNER --> HISTORY[Completed Task History]
 
-Examples:
+    WORK --> UNI[University Classes]
+    WORK --> SHIFTS[Work Shifts]
 
-```text
-University class deleted.
-```
+    EVENTS --> EVENTDATA[Events]
+    EVENTS --> ACHIEVE[Achievements]
 
-```text
-Work shift deleted.
-```
+    SETTINGS --> APPEARANCE[Theme / Animation Preferences]
 
-The notification is displayed for approximately three seconds and then automatically disappears.
+    TASKS --> LS[Browser Storage]
+    HISTORY --> LS
+    UNI --> LS
+    SHIFTS --> LS
+    EVENTDATA --> LS
+    ACHIEVE --> LS
+    APPEARANCE --> LS
+    DASH --> LS
 
-This functionality is implemented using JavaScript's `setTimeout()` function.
+    AUTH --> LS
+    AUTH --> SS[Session Storage]
 
----
+    DASH --> COOKIE[Browser Cookie]
 
-# Responsive Design
+Application Flow
 
-The application is designed to work across different screen sizes.
+flowchart TD
 
-CSS media queries are used to adapt the layout for smaller screens.
+    START[Open DayWise] --> LOGIN[Sign In / Create Account]
 
-### Desktop
+    LOGIN --> SESSION{Valid Session?}
 
-* Dashboard cards use a responsive grid.
-* University and work forms can appear side by side.
-* University and work schedules can appear side by side.
+    SESSION -->|No| LOGIN
+    SESSION -->|Yes| DASHBOARD[Dashboard]
 
-### Smaller Screens
+    DASHBOARD --> CHOICE{Choose Section}
 
-* Forms become a single-column layout.
-* Schedule sections are displayed one below another.
-* Navigation and headings adjust to fit smaller screens.
+    CHOICE --> PLANNER[Daily Planner]
+    CHOICE --> WORK[Work & Study]
+    CHOICE --> EVENTS[Events & Achievements]
+    CHOICE --> SETTINGS[Settings]
+    CHOICE --> OVERVIEW[Dashboard Overview]
 
-Example:
+    PLANNER --> TASK[Create / Complete / Delete Tasks]
+    TASK --> STORAGE[Browser Storage]
 
-```css
-@media(max-width:768px) {
+    WORK --> SCHEDULE[Manage University and Work Schedules]
+    SCHEDULE --> STORAGE
 
-    .forms,
-    .lists {
-        grid-template-columns: 1fr;
-    }
+    EVENTS --> EVENTACH[Manage Events and Achievements]
+    EVENTACH --> STORAGE
 
-}
-```
+    SETTINGS --> PREFERENCES[Save User Interface Preferences]
+    PREFERENCES --> STORAGE
 
----
+    OVERVIEW --> DASHBOARD
 
-# User Interface Design
+    STORAGE --> DASHBOARD
 
-The application uses a modern dark-themed interface.
+    DASHBOARD --> LOGOUT[Logout]
+    LOGOUT --> LOGIN
 
-Main design features include:
+Data Architecture
 
-* Dark navy background
-* Card-based dashboard
-* Rounded containers
-* Responsive grid layouts
-* Yellow accent colour
-* Hover animations
-* Clear form labels
-* Structured tables
-* Consistent spacing
-* Modern typography
+flowchart LR
 
-The **Inter** font is used to provide a clean and modern appearance.
+    APP[DayWise Front End]
 
----
+    APP --> AUTH[Authentication Data]
+    APP --> TASKS[Planner Data]
+    APP --> SCHEDULE[Work & Study Data]
+    APP --> EVENTS[Events Data]
+    APP --> ACHIEVEMENTS[Achievement Data]
+    APP --> DASHDATA[Dashboard Data]
+    APP --> PREFS[Preferences]
 
-# Technologies Used
+    AUTH --> LOCAL[Local Storage]
+    AUTH --> SESSION[Session Storage]
 
-## HTML5
+    TASKS --> LOCAL
+    SCHEDULE --> LOCAL
+    EVENTS --> LOCAL
+    ACHIEVEMENTS --> LOCAL
+    DASHDATA --> LOCAL
+    PREFS --> LOCAL
 
-HTML is used to create the structure of the application, including:
+    SESSION --> ACTIVE[Active Session]
 
-* Header and navigation
-* Dashboard cards
-* University form
-* Work form
-* Input fields
-* Select menus
-* Schedule tables
-* Buttons
-* Notification area
+    COOKIE[Cookie Consent] --> BROWSER[Browser Cookie]
 
-## CSS3
+Module Relationship
 
-CSS is used for:
+graph TD
 
-* Page layout
-* Colours
-* Typography
-* Cards
-* Buttons
-* Tables
-* Hover effects
-* Responsive design
-* Media queries
-* Animations
+    LOGIN[Authentication] --> DASHBOARD[Dashboard]
 
-## JavaScript
+    DASHBOARD --> DAY[Daily Planner]
+    DASHBOARD --> WS[Work & Study]
+    DASHBOARD --> EA[Events & Achievements]
+    DASHBOARD --> SETTINGS[Settings]
 
-JavaScript provides the main functionality of the Work & Study Planner, including:
+    DAY --> TASKDATA[Tasks & History]
+    WS --> UNIDATA[University Classes]
+    WS --> WORKDATA[Work Shifts]
+    EA --> EVENTDATA[Events]
+    EA --> ACHDATA[Achievements]
+    SETTINGS --> PREFDATA[Preferences]
 
-* Form submission
-* DOM manipulation
-* Data storage
-* Data retrieval
-* Work-hour calculation
-* Dashboard updates
-* Dynamic table generation
-* Delete functionality
-* User notifications
+    TASKDATA --> STORAGE[Browser Storage]
+    UNIDATA --> STORAGE
+    WORKDATA --> STORAGE
+    EVENTDATA --> STORAGE
+    ACHDATA --> STORAGE
+    PREFDATA --> STORAGE
 
-## Browser Local Storage
+Technology Stack
 
-Browser Local Storage is used to persist university and work schedule data.
+HTML5
 
-This allows the data to remain available after the webpage is refreshed or reopened in the same browser.
+HTML provides the structure for the DayWise pages and forms.
 
----
+It is used for:
 
-# Project Structure
+Navigation
 
-```text
-DayWise/
+Forms
+
+Dashboard cards
+
+Tables
+
+Task cards
+
+Event and achievement cards
+
+Buttons
+
+Settings controls
+
+Authentication interfaces
+
+CSS3
+
+CSS provides the visual presentation of the application.
+
+It is used for:
+
+Layouts
+
+Responsive grids
+
+Cards
+
+Forms
+
+Tables
+
+Buttons
+
+Typography
+
+Themes
+
+Transitions
+
+Animations
+
+Mobile layouts
+
+JavaScript
+
+JavaScript provides the application behaviour.
+
+It is used for:
+
+Form handling
+
+DOM manipulation
+
+Dynamic content
+
+Browser storage
+
+Authentication flow
+
+Session management
+
+Task management
+
+Work-hour calculations
+
+Event management
+
+Achievement management
+
+Dashboard calculations
+
+Notifications
+
+Preferences
+
+Theme handling
+
+Web Storage APIs
+
+The application uses:
+
+Local Storage
+
+Session Storage
+
+These provide client-side persistence without a server-side database.
+
+Browser Cookies
+
+Cookies are used for the dashboard's cookie-consent functionality.
+
+Web Crypto API
+
+The authentication demonstration uses the browser's Web Crypto API to create SHA-256 password hashes before storage.
+
+Project Structure
+
+Group-A-C.S.D-dev/
+│
+├── .vscode/
+│   ├── launch.json
+│   └── settings.json
+│
+├── webpage/
+│   ├── webpage.html
+│   ├── webpage.css
+│   └── webpage.js
+│
+├── dayplanner/
+│   ├── dayplanner.html
+│   ├── dayplanner.css
+│   └── dayplanner.js
+│
+├── js/
+│   ├── achievements.js
+│   └── dashboard-clock.js
+│
+├── dashboard.html
+├── dashboard.css
+├── dashbaord.js
 │
 ├── workstudy.html
 ├── workstudy.css
 ├── workstudy.js
+│
+├── events.html
+├── events and achievements.js
+│
+├── achievements.html
+│
+├── 1stpage of events and achievements.html
+├── 1stpage of events and achievements.css
+│
+├── settings.html
+├── settings.css
+├── settings.js
+│
+├── form.css
+├── form.js
+├── them.css
+│
 └── README.md
-```
 
-## workstudy.html
+The filename dashbaord.js is retained exactly as it appears in the project.
 
-Contains the structure and content of the Work & Study Planner, including:
+File Responsibilities
 
-* Dashboard
-* University form
-* Work form
-* University schedule
-* Work schedule
-* Notification area
+Authentication / Welcome
 
-## workstudy.css
+webpage/webpage.html
 
-Contains the visual styling, layout, responsive design, animations, colours, and typography.
+Contains the DayWise sign-in interface, account creation interface, password reset interface and introductory slideshow.
 
-## workstudy.js
+webpage/webpage.css
 
-Contains the application functionality, including:
+Provides the visual styling for the authentication and welcome experience.
 
-* Data management
-* Form handling
-* Work-hour calculations
-* Dashboard updates
-* Table generation
-* Delete functionality
-* Local Storage
+webpage/webpage.js
 
-## README.md
+Controls:
 
-Contains the project documentation, architecture, features, technologies, data storage, and implementation details.
+User registration
 
----
+Sign-in
 
-# Application Workflow
+Password hashing
 
-The basic workflow of the Work & Study Planner is:
+Session management
 
-```mermaid
+Remember-me behaviour
+
+Password reset interface
+
+Slideshow behaviour
+
+Interactive visual effects
+
+Validation messages
+
+Toast notifications
+
+Logout state
+
+Dashboard
+
+dashboard.html
+
+Contains the main DayWise dashboard interface and navigation to the application's main sections.
+
+dashboard.css
+
+Contains dashboard layout, visual styling and responsive presentation.
+
+dashbaord.js
+
+Controls dashboard behaviour, including:
+
+Session checking
+
+Dashboard data
+
+Quick navigation
+
+Greeting
+
+Animated counters
+
+Weekly progress
+
+Theme handling
+
+Cookie consent
+
+Notifications
+
+Motivational messages
+
+Dashboard storage
+
+Reset behaviour
+
+Logout
+
+Daily Planner
+
+dayplanner/dayplanner.html
+
+Provides the task creation form, active task area, task history and progress display.
+
+dayplanner/dayplanner.css
+
+Styles the Daily Planner interface, task cards, history and responsive layout.
+
+dayplanner/dayplanner.js
+
+Controls:
+
+Task creation
+
+Task display
+
+Task completion
+
+Task deletion
+
+Task history
+
+Progress calculation
+
+Local Storage
+
+Work & Study
+
+workstudy.html
+
+Provides the Work & University Planner interface.
+
+workstudy.css
+
+Styles the Work & Study page, including:
+
+Summary cards
+
+Forms
+
+Tables
+
+Buttons
+
+Responsive layouts
+
+workstudy.js
+
+Controls:
+
+University class creation
+
+Work shift creation
+
+Work-hour calculation
+
+Schedule display
+
+Record deletion
+
+Dashboard summaries
+
+Local Storage
+
+User feedback
+
+Events & Achievements
+
+events.html
+
+Provides the Events page and event creation interface.
+
+achievements.html
+
+Provides the Achievements page and achievement creation interface.
+
+events and achievements.js
+
+Controls both event and achievement functionality, including:
+
+Adding records
+
+Displaying records
+
+Completing records
+
+Deleting records
+
+Local Storage
+
+Overview statistics
+
+1stpage of events and achievements.html
+
+Provides an events and achievements overview page.
+
+1stpage of events and achievements.css
+
+Provides styling for the events and achievements overview page.
+
+js/achievements.js
+
+Contains achievement-specific functionality for displaying, adding, completing and deleting achievements.
+
+js/dashboard-clock.js
+
+Updates the displayed day, date and time on the relevant dashboard interface.
+
+Settings
+
+settings.html
+
+Provides the Settings interface, including appearance preferences, animation settings and About Us information.
+
+settings.css
+
+Provides the visual styling for Settings.
+
+settings.js
+
+Controls:
+
+Animation preference storage
+
+Enabling/disabling animations
+
+About Us expansion and collapse
+
+Supporting Files
+
+form.css
+
+Provides styling associated with the form interface.
+
+form.js
+
+Contains navigation behaviour between the form-related interface elements.
+
+them.css
+
+A theme stylesheet included in the repository. The current file is empty.
+
+.vscode/launch.json
+
+Contains the Visual Studio Code launch configuration included with the project.
+
+.vscode/settings.json
+
+Contains the Visual Studio Code project settings included with the project.
+
+Storage Summary
+
+Application Area
+
+Storage Used
+
+Main Purpose
+
+Authentication
+
+Local Storage
+
+User and persistent session information
+
+Authentication
+
+Session Storage
+
+Non-persistent active session
+
+Daily Planner
+
+Local Storage
+
+Tasks and completed-task history
+
+Work & Study
+
+Local Storage
+
+University classes and work shifts
+
+Events
+
+Local Storage
+
+Event records
+
+Achievements
+
+Local Storage
+
+Achievement records
+
+Dashboard
+
+Local Storage
+
+Dashboard overview data
+
+Theme
+
+Local Storage
+
+Theme preference
+
+Settings
+
+Local Storage
+
+Animation preference
+
+Cookie Consent
+
+Browser Cookie
+
+Consent state
+
+Functional Summary
+
+Feature
+
+Current Implementation
+
+User registration
+
+Implemented
+
+User sign-in
+
+Implemented
+
+Password validation
+
+Implemented
+
+Password hashing
+
+Implemented
+
+Remember-me session
+
+Implemented
+
+Session handling
+
+Implemented
+
+Logout
+
+Implemented
+
+Dashboard
+
+Implemented
+
+Dashboard navigation
+
+Implemented
+
+Daily Planner
+
+Implemented
+
+Task creation
+
+Implemented
+
+Task completion
+
+Implemented
+
+Task deletion
+
+Implemented
+
+Task history
+
+Implemented
+
+Task progress
+
+Implemented
+
+University class creation
+
+Implemented
+
+University schedule display
+
+Implemented
+
+University class deletion
+
+Implemented
+
+Work shift creation
+
+Implemented
+
+Work schedule display
+
+Implemented
+
+Work-hour calculation
+
+Implemented
+
+Work shift deletion
+
+Implemented
+
+Events
+
+Implemented
+
+Event completion
+
+Implemented
+
+Event deletion
+
+Implemented
+
+Achievements
+
+Implemented
+
+Achievement completion
+
+Implemented
+
+Achievement deletion
+
+Implemented
+
+Event/achievement overview
+
+Implemented
+
+Theme storage
+
+Implemented
+
+Animation preference
+
+Implemented
+
+About Us section
+
+Implemented
+
+Cookie consent
+
+Implemented
+
+Dashboard notifications
+
+Implemented
+
+Motivational messages
+
+Implemented
+
+Server-side database
+
+Not included
+
+Server-side authentication
+
+Not included
+
+Editing existing Work & Study records
+
+Not implemented
+
+Responsive Design
+
+The project includes responsive CSS across its major pages.
+
+The layouts adapt to smaller screen sizes by changing:
+
+Grid structures
+
+Form layouts
+
+Navigation arrangements
+
+Card widths
+
+Heading sizes
+
+Content spacing
+
+The Work & Study page, for example, changes its form and schedule layouts to a single-column arrangement on smaller screens.
+
+Application Workflow
+
+A typical DayWise workflow is:
+
+The user opens the DayWise welcome page.
+
+The user signs in or creates an account.
+
+A browser-based session is created.
+
+The user enters the DayWise dashboard.
+
+The dashboard provides access to the application's main modules.
+
+The user can create tasks, schedules, events and achievements.
+
+Relevant information is saved in browser storage.
+
+Dashboard and module displays are updated dynamically.
+
+The user can complete or delete supported records.
+
+The user can change available preferences through Settings.
+
+The user can log out and return to the authentication page.
+
+Data Flow
+
 flowchart TD
 
-    A[User Opens DayWise] --> B[Dashboard Loads]
+    USER[User Input]
 
-    B --> C{Choose Action}
+    USER --> FORM[HTML Forms / Controls]
+    FORM --> JS[JavaScript Logic]
 
-    C --> D[Add University Class]
-    C --> E[Add Work Shift]
+    JS --> VALIDATE[Validation]
+    VALIDATE --> PROCESS[Process Data]
 
-    D --> F[Validate University Form]
-    E --> G[Calculate Work Hours]
+    PROCESS --> STORE[Browser Storage]
+    STORE --> LOAD[Load Stored Data]
 
-    F --> H[Add University Data]
-    G --> I[Add Work Data]
+    LOAD --> DOM[Update Web Page]
+    DOM --> USER
 
-    H --> J[Save to Local Storage]
-    I --> J
+    PROCESS --> CALC[Calculations / Progress]
+    CALC --> DOM
 
-    J --> K[Update Schedule]
-    K --> L[Update Dashboard]
+    USER --> ACTION[Complete / Delete / Preference Action]
+    ACTION --> JS
 
-    L --> M{Delete Required?}
+Client-Side Architecture
 
-    M -->|Yes| N[Delete Record]
-    M -->|No| O[Continue Using Planner]
+graph TB
 
-    N --> P[Update Local Storage]
-    P --> K
-```
+    subgraph Presentation Layer
+        HTML[HTML Pages]
+        CSS[CSS Stylesheets]
+    end
 
----
+    subgraph Application Layer
+        AUTHJS[Authentication JavaScript]
+        DASHJS[Dashboard JavaScript]
+        PLANJS[Planner JavaScript]
+        WORKJS[Work & Study JavaScript]
+        EVENTJS[Events & Achievements JavaScript]
+        SETJS[Settings JavaScript]
+    end
 
-# Current CRUD Functionality
+    subgraph Browser Layer
+        LOCAL[Local Storage]
+        SESSION[Session Storage]
+        COOKIES[Cookies]
+        CRYPTO[Web Crypto API]
+    end
 
-The Work & Study module currently provides the following data management operations:
+    HTML --> AUTHJS
+    HTML --> DASHJS
+    HTML --> PLANJS
+    HTML --> WORKJS
+    HTML --> EVENTJS
+    HTML --> SETJS
 
-| Operation | University    | Work          |
-| --------- | ------------- | ------------- |
-| Create    | Yes           | Yes           |
-| Read      | Yes           | Yes           |
-| Update    | Planned       | Planned       |
-| Delete    | Yes           | Yes           |
-| Storage   | Local Storage | Local Storage |
+    CSS --> HTML
 
-The current implementation supports:
+    AUTHJS --> LOCAL
+    AUTHJS --> SESSION
+    AUTHJS --> CRYPTO
 
-* Adding records
-* Viewing records
-* Deleting records
-* Persistent browser storage
+    DASHJS --> LOCAL
+    DASHJS --> SESSION
+    DASHJS --> COOKIES
 
-Editing existing records is planned as a future improvement.
+    PLANJS --> LOCAL
+    WORKJS --> LOCAL
+    EVENTJS --> LOCAL
+    SETJS --> LOCAL
 
----
+Running the Project
 
-# Current Implementation Status
+Because DayWise is a client-side web project, it does not require a backend server or database.
 
-| Feature                     | Status      |
-| --------------------------- | ----------- |
-| University Class Creation   | Implemented |
-| Work Shift Creation         | Implemented |
-| University Schedule Display | Implemented |
-| Work Schedule Display       | Implemented |
-| Work-Hour Calculation       | Implemented |
-| Dashboard Updates           | Implemented |
-| Delete University Class     | Implemented |
-| Delete Work Shift           | Implemented |
-| Local Storage               | Implemented |
-| Responsive Design           | Implemented |
-| User Notifications          | Implemented |
-| Edit/Update Records         | Planned     |
-| Session Storage             | Planned     |
-| Cookies                     | Planned     |
+For development:
 
----
+Download or clone the repository.
 
-# Conclusion
+Open the project folder in Visual Studio Code.
 
-DayWise provides a centralised solution for managing university and work schedules in one client-side web application.
+Open the DayWise welcome page located at webpage/webpage.html.
 
-The Work & Study Planner demonstrates practical use of **HTML, CSS, JavaScript, DOM manipulation, form handling, Local Storage, data processing, responsive design, and dynamic user interface updates**.
+Use a browser or a local development server to run the application.
 
-The current implementation provides the core functionality required to create, view, calculate, store, and delete university and work schedule information.
+Create an account or sign in.
 
-The wider DayWise architecture can be extended in the future with additional features such as **Session Storage, Cookies, record editing, authentication, income tracking, events, achievements, and daily planning**.
+Navigate through the dashboard and available modules.
+
+Using a local development server is recommended when working with browser APIs such as Web Crypto and storage.
+
+Important Implementation Notes
+
+The project is entirely client-side.
+
+Data is stored in the user's browser rather than a central database.
+
+Clearing browser storage can remove locally saved application data.
+
+The authentication system is suitable for a front-end coursework demonstration, not for production security.
+
+The dashboard contains a Money Manager area and goals/progress presentation, but the uploaded project does not contain a separate Money Manager HTML/JavaScript module.
+
+The Work & Study module currently supports creation, viewing and deletion, but not editing existing records.
+
+The repository contains both a combined Events & Achievements JavaScript file and a separate achievement JavaScript file.
+
+them.css is present but currently empty.
+
+The filename dashbaord.js is retained as provided by the project.
+
+Project Scope
+
+DayWise demonstrates how a complete client-side application can be divided into independent modules while sharing browser-based storage and a common dashboard.
+
+The project brings together:
+
+Authentication → Dashboard → Daily Planning → Work & Study → Events & Achievements → Settings
+
+This structure makes it possible to extend the application later without changing the basic organisation of the existing modules.
+
+Conclusion
+
+DayWise is a modular client-side life-management application that combines planning, scheduling, progress tracking and personal organisation into a single web interface.
+
+The current project demonstrates practical use of:
+
+HTML5
+
+CSS3
+
+JavaScript
+
+DOM manipulation
+
+Form handling
+
+Local Storage
+
+Session Storage
+
+Cookies
+
+Web Crypto API
+
+Responsive design
+
+Dynamic user interfaces
+
+Client-side data management
+
+The uploaded project contains working functionality across authentication, dashboard navigation, daily planning, work and university scheduling, events, achievements and settings, while remaining entirely browser-based.
+
