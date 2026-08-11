@@ -2459,3 +2459,42 @@ body {
 
 
 }
+
+.logout-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px 18px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: linear-gradient(135deg, #ef4444, #b91c1c);
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    text-align: left;
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 0 #7f1d1d,
+        0 10px 20px rgba(127, 29, 29, 0.25);
+
+    transition: all 0.25s ease;
+}
+
+.logout-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 0 #7f1d1d,
+        0 15px 25px rgba(220, 38, 38, 0.35);
+}
+
+.logout-btn:active {
+    transform: translateY(2px);
+
+    box-shadow:
+        0 2px 0 #7f1d1d;
+}
