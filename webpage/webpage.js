@@ -859,19 +859,13 @@ byId("loginCard")
         }
 
         passwordInput.value =
-          "";
+  "";
 
-        setMessage(
-          message
-        );
+setMessage(
+  message
+);
 
-        renderSession();
-
-        showToast(
-          `Signed in as ${
-            user.email
-          }`
-        );
+window.location.replace("../dashboard.html");
 
       } catch (error) {
 
@@ -912,9 +906,7 @@ byId("createAccountBtn")
           byId("email").value
         );
 
-      if (
-        currentEmail
-      ) {
+      if (renderSession()) {
 
         byId(
           "signupEmail"
@@ -1406,10 +1398,13 @@ byId("logoutBtn")
 
       renderSession();
 
-      byId(
-        "password"
-      ).value =
-        "";
+showToast(
+  `Signed in as ${user.email}`
+);
+
+setTimeout(function () {
+  window.location.href = "../dashboard.html";
+}, 500);
 
       showToast(
         "You have been signed out."
@@ -1446,3 +1441,4 @@ document
 ================================ */
 
 renderSession();
+window.location.href = "../dashboard.html";
