@@ -1,0 +1,79 @@
+[33m3c313ed[m[33m ([m[1;35mrefs/stash[m[33m)[m WIP on dev: 3266b19 Merge webpage into dev
+[33m13358df[m untracked files on dev: 3266b19 Merge webpage into dev
+A	dashboard.js
+[33mcb6ee7e[m clear
+M	dashboard.html
+[33m3266b19[m[33m ([m[1;32mbackup-before-cleanup[m[33m)[m Merge webpage into dev
+[33me669a7d[m two pane flex layout
+M	dashboard.css
+[33m4838867[m dashboard
+M	dashboard.css
+[33m9dc395b[m update
+M	dashboard.css
+[33m484bed0[m ccs update of dashboard
+M	dashboard.css
+[33mf7d4738[m update of ccs
+M	dashboard.css
+[33mf51eb36[m simple structure of settings
+M	dashboard.css
+M	dashboard.html
+[33m1c59241[m[33m ([m[1;32mfeature/loginpage[m[33m)[m xyz
+M	dashboard.html
+[33m771a160[m css for events and achievements
+M	dashboard.css
+[33m6993e19[m removed unnessary parts from dashboard
+M	dashboard.html
+[33m30b2516[m linked all gtthe stuff prespective to the achievements and events
+M	dashboard.html
+[33m62d5ae2[m work on quick action
+M	dashboard.html
+[33me3cf85f[m code of js are extracted
+M	dashboard.html
+[33m4ceb5f5[m added footer
+M	dashboard.html
+[33m500ea90[m[33m ([m[1;31morigin/feature/loginpage[m[33m)[m lOGIN PAGE
+M	dashboard.html
+[33me442b62[m Designed goals and targets tracking section
+M	dashboard.css
+[33mf4b4c04[m Designed events and achievements preview cards
+M	dashboard.css
+[33m95571de[m Designed weekly progress tracking section
+M	dashboard.css
+[33m164a4f1[m Designed dashboard overview cards with module themes
+M	dashboard.css
+[33m87591ba[m Designed quick action cards with hover animations
+M	dashboard.css
+[33m4653051[m Designed DayWise date and time widget card
+M	dashboard.css
+[33mbe1da1e[m Designed welcome section and user profile card
+M	dashboard.css
+[33m53e4287[m Designed DayWise sidebar navigation with animations
+M	dashboard.css
+[33m65c671b[m Created DayWise CSS design system and background theme
+M	dashboard.css
+[33mc6c1322[m Fixed dashboard HTML structure
+M	dashboard.html
+[33mf0290a2[m Added Goals and Targets preview section
+M	dashboard.html
+[33m8718798[m Added Money Manager summary preview section
+M	dashboard.html
+[33mb2c5166[m Added Events and Achievements preview section
+M	dashboard.html
+[33m3d905c7[m Added Events and Achievements preview section
+M	dashboard.html
+[33mf3f7156[m Added DayWise weekly progress section
+M	dashboard.html
+[33md02333d[m Added DayWise dashboard overview feature cards
+M	dashboard.html
+[33ma9b61d9[m Added DayWise quick action buttons section
+M	dashboard.html
+[33m4cf5df6[m Added DayWise date and time widget structure
+M	dashboard.html
+[33m596f5ce[m Added DayWise welcome header and profile section
+M	dashboard.html
+[33m1bfb928[m Added DayWise sidebar navigation modules
+M	dashboard.html
+[33m7ee316e[m Created DayWise dashboard base HTML structure
+A	dashboard.html
+[33meb25cf8[m Add files via upload
+A	dashboard.css

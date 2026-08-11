@@ -2407,6 +2407,38 @@ body {
 
 
 }
+/* Logout Button */
+
+.logout-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 13px 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #fee2e2;
+    color: #b91c1c;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition: all 0.25s ease;
+}
+
+.logout-btn:hover {
+    background: #fecaca;
+    color: #991b1b;
+    transform: translateY(-2px);
+}
+
+.logout-btn:active {
+    transform: translateY(0);
+}
 
 
 
