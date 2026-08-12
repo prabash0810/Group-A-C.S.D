@@ -483,7 +483,7 @@ flowchart TD
 
     SETTINGS --> APPEARANCE[Theme / Animation Preferences]
 
-    TASKS --> LS[Browser Storage]
+    TASKS --> LS[Local Storage]
     HISTORY --> LS
     UNI --> LS
     SHIFTS --> LS
@@ -497,6 +497,7 @@ flowchart TD
 
     DASH --> COOKIE[Browser Cookie]
 ```
+
 ## Application Flow
 
 ```mermaid
@@ -518,7 +519,7 @@ flowchart TD
     CHOICE --> OVERVIEW[Dashboard Overview]
 
     PLANNER --> TASK[Create / Complete / Delete Tasks]
-    TASK --> STORAGE[Browser Storage]
+    TASK --> STORAGE[Local Storage]
 
     WORK --> SCHEDULE[Manage University and Work Schedules]
     SCHEDULE --> STORAGE
@@ -566,6 +567,7 @@ flowchart LR
 
     COOKIE[Cookie Consent] --> BROWSER[Browser Cookie]
 ```
+
 ## Module Relationship
 
 ```mermaid
@@ -585,14 +587,13 @@ graph TD
     EA --> ACHDATA[Achievements]
     SETTINGS --> PREFDATA[Preferences]
 
-    TASKDATA --> STORAGE[Browser Storage]
+    TASKDATA --> STORAGE[Local Storage]
     UNIDATA --> STORAGE
     WORKDATA --> STORAGE
     EVENTDATA --> STORAGE
     ACHDATA --> STORAGE
     PREFDATA --> STORAGE
 ```
-
 Technology Stack
 
 HTML5
