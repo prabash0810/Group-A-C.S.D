@@ -1,0 +1,72 @@
+:root {
+  --daywise-ink: #10121b;
+  --daywise-surface: #171a26;
+  --daywise-surface-2: #1e2231;
+  --daywise-surface-3: #252a3c;
+  --daywise-line: rgba(241, 238, 229, 0.12);
+  --daywise-text: #f1eee5;
+  --daywise-muted: #9aa0b4;
+  --daywise-amber: #f4a93b;
+  --daywise-blue: #8aa0ff;
+  --daywise-mint: #52d68a;
+}
+
+/* Login-inspired global dark appearance. */
+html.daywise-dark body {
+  color: var(--daywise-text) !important;
+  background:
+    radial-gradient(620px 480px at 15% -10%, rgba(244,169,59,.16), transparent 60%),
+    radial-gradient(560px 460px at 100% 30%, rgba(138,160,255,.12), transparent 60%),
+    radial-gradient(620px 520px at 30% 120%, rgba(201,166,255,.10), transparent 60%),
+    var(--daywise-ink) !important;
+  background-attachment: fixed !important;
+}
+
+html.daywise-dark :is(.sidebar, .topbar, header, .settings-header) {
+  background: rgba(23,26,38,.94) !important;
+  color: var(--daywise-text) !important;
+  border-color: var(--daywise-line) !important;
+}
+
+html.daywise-dark :is(.dashboard-card, .action-card, .welcome-section, .quick-actions, .weekly-progress, .statistics-section, .goals-section, .header, .welcome, .calendar-section, .task-section, .progress-section, .history-section, .task-card, .history-card, .card, .form-box, .table-box, .settings-card, .panel, .stat-card, .hero) {
+  background: var(--daywise-surface) !important;
+  color: var(--daywise-text) !important;
+  border-color: var(--daywise-line) !important;
+  box-shadow: 0 20px 44px rgba(0,0,0,.3) !important;
+}
+
+html.daywise-dark :is(h1, h2, h3, h4, th, label, .calendar-controls strong, .calendar-day-number) { color: var(--daywise-text) !important; }
+html.daywise-dark :is(p, td, .calendar-header p, .calendar-selection, .hero p, .card p, .settings-card p) { color: var(--daywise-muted) !important; }
+html.daywise-dark :is(input, select, textarea, .calendar-day) {
+  background: var(--daywise-surface-2) !important;
+  color: var(--daywise-text) !important;
+  border-color: var(--daywise-line) !important;
+}
+html.daywise-dark :is(input, textarea)::placeholder { color: #777e94 !important; }
+html.daywise-dark :is(.navigation a, .topbar a, .nav-links a, .back-btn) { color: var(--daywise-muted) !important; }
+html.daywise-dark :is(.navigation a:hover, .navigation a.active, .topbar a:hover, .topbar a.active, .nav-links a:hover) { color: var(--daywise-amber) !important; }
+html.daywise-dark :is(.calendar-controls button, .submit-btn, .btn) { background: var(--daywise-surface-3) !important; color: var(--daywise-amber) !important; }
+html.daywise-dark .calendar-day.selected { border-color: var(--daywise-blue) !important; background: rgba(138,160,255,.14) !important; }
+html.daywise-dark .calendar-day.today { box-shadow: inset 0 0 0 2px var(--daywise-mint) !important; }
+html.daywise-dark table { color: var(--daywise-text) !important; }
+html.daywise-dark footer { color: var(--daywise-muted) !important; }
+
+/* Dashboard-style light appearance for Work & Study when dark mode is off. */
+html:not(.daywise-dark) body.workstudy-page {
+  color: #1e293b;
+  background:
+    radial-gradient(circle at top left, rgba(37,99,235,.25), transparent 35%),
+    radial-gradient(circle at top right, rgba(13,148,136,.25), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(22,163,74,.25), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(245,158,11,.20), transparent 35%),
+    #f8fafc;
+}
+html:not(.daywise-dark) body.workstudy-page .topbar { background: rgba(255,255,255,.88); border-color: rgba(15,23,42,.08); }
+html:not(.daywise-dark) body.workstudy-page .topbar h1 { color: #0f172a; }
+html:not(.daywise-dark) body.workstudy-page .topbar nav a { color: #64748b; }
+html:not(.daywise-dark) body.workstudy-page .topbar nav a:hover,
+html:not(.daywise-dark) body.workstudy-page .topbar nav a.active { color: #2563eb; }
+html:not(.daywise-dark) body.workstudy-page :is(.card, .form-box, .table-box) { background: rgba(255,255,255,.84); color: #1e293b; box-shadow: 0 10px 30px rgba(15,23,42,.08); }
+html:not(.daywise-dark) body.workstudy-page :is(.card h3, .form-box h2, .table-box h2, label, th, td, .hero h2) { color: #1e293b; }
+html:not(.daywise-dark) body.workstudy-page :is(.card p, .hero p) { color: #64748b; }
+html:not(.daywise-dark) body.workstudy-page :is(input, select) { background: #fff; color: #1e293b; border-color: #e2e8f0; }

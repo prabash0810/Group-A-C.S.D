@@ -1,8 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const animationToggle = document.getElementById("animationToggle");
+    const darkModeToggle = document.getElementById("darkModeToggle");
     const aboutUsBtn = document.getElementById("aboutUsBtn");
     const aboutUsContent = document.getElementById("aboutUsContent");
+
+    if (darkModeToggle) {
+        darkModeToggle.checked = localStorage.getItem("daywise.theme") === "dark";
+        darkModeToggle.addEventListener("change", function () {
+            window.setDaywiseTheme(this.checked);
+        });
+    }
 
     /* Animations */
 

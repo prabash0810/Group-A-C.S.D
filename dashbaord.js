@@ -431,7 +431,6 @@ setTimeout(function () {
     motivationalMessage();
 
 }, 2000);
-
 const logoutBtn = document.getElementById("logoutBtn");
 
 if (logoutBtn) {
