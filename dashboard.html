@@ -15,7 +15,9 @@
 
 
     <!-- Dashboard stylesheet -->
-    <link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="theme.css">
+<script src="theme.js"></script>
 
 </head>
 
@@ -88,7 +90,7 @@
 
         <!-- Work and University Module -->
 
-        <a href="#">
+        <a href="workstudy.html">
 
             💼 Work & Study
 
@@ -118,7 +120,7 @@
 
         <!-- Personal Goals Module -->
 
-        <a href="#">
+        <a href="goals.html">
 
             🎯 Goals & Targets
 
@@ -128,19 +130,9 @@
 
         <!-- Notes Module -->
 
-        <a href="#">
+        <a href="notes.html">
 
             📝 Notes & Reminders
-
-        </a>
-
-
-
-        <!-- Health Tracking Module -->
-
-        <a href="#">
-
-            ❤️ Health & Habits
 
         </a>
 
@@ -319,7 +311,6 @@
                 🏆 Events & Achievements
                 🎯 Goals & Targets
                 📝 Notes & Reminders
-                ❤️ Health & Habits
             -->
              <!--
     Quick Action Section
@@ -343,7 +334,7 @@
 
         <!-- Day Planner Action -->
 
-        <button class="action-card" type="button" data-href="events.html" aria-label="Open events page">
+        <button class="action-card" type="button" data-href="dayplanner/dayplanner.html" aria-label="Open day planner page">
 
             <span class="action-icon">
                 📅
@@ -361,7 +352,7 @@
 
         <!-- Work and Study Action -->
 
-        <button class="action-card" type="button" data-href="Workandstudy.html" aria-label="Open work and study page">
+        <button class="action-card" type="button" data-href="workstudy.html" aria-label="Open work and study page">
 
 
             <span class="action-icon">
@@ -479,7 +470,7 @@
 
     <!-- Work and Study Card -->
 
-    <div class="dashboard-card work-card" data-href="Workandstudy.html" role="button" tabindex="0" aria-label="Open work and study page">
+    <div class="dashboard-card work-card" data-href="workstudy.html" role="button" tabindex="0" aria-label="Open work and study page">
 
 
         <div class="card-icon">
@@ -1031,13 +1022,13 @@
 
 
 
-    <script src="dashboard.js"></script>
+    <script src="auth-guard.js"></script>
+    <script src="dashbaord.js"></script>
     <script src="js/dashboard-clock.js"></script>
     
     <footer>
         <p>© 2026 DayWise Module</p>
     </footer>
-        <script src="dashboard.js"></script>
 </body>
 
 </html>

@@ -11,6 +11,8 @@
     <title>DayWise | Settings</title>
 
     <link rel="stylesheet" href="./settings.css">
+    <link rel="stylesheet" href="./theme.css">
+    <script src="./theme.js"></script>
 
 </head>
 
@@ -48,12 +50,13 @@
 
                     <div>
                         <h3>Theme</h3>
-                        <p>DayWise uses the default theme across the website.</p>
+                        <p>Use the login-inspired dark theme across every DayWise page.</p>
                     </div>
 
-                    <span class="default-theme-label">
-                        Default Theme
-                    </span>
+                    <label class="toggle" aria-label="Dark mode">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span></span>
+                    </label>
 
                 </div>
 
@@ -165,6 +168,7 @@
     </div>
 
 
+    <script src="./auth-guard.js"></script>
     <script src="./settings.js"></script>
 
 </body>
