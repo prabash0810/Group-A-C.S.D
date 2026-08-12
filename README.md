@@ -454,6 +454,9 @@ System Architecture
 
 The following architecture represents the actual organisation of the DayWise project in the uploaded project files.
 
+## System Architecture
+
+```mermaid
 flowchart TD
 
     U[User]
@@ -493,9 +496,10 @@ flowchart TD
     AUTH --> SS[Session Storage]
 
     DASH --> COOKIE[Browser Cookie]
+```
+## Application Flow
 
-Application Flow
-
+```mermaid
 flowchart TD
 
     START[Open DayWise] --> LOGIN[Sign In / Create Account]
@@ -531,9 +535,11 @@ flowchart TD
 
     DASHBOARD --> LOGOUT[Logout]
     LOGOUT --> LOGIN
+```
 
-Data Architecture
+## Data Architecture
 
+```mermaid
 flowchart LR
 
     APP[DayWise Front End]
@@ -559,9 +565,10 @@ flowchart LR
     SESSION --> ACTIVE[Active Session]
 
     COOKIE[Cookie Consent] --> BROWSER[Browser Cookie]
+```
+## Module Relationship
 
-Module Relationship
-
+```mermaid
 graph TD
 
     LOGIN[Authentication] --> DASHBOARD[Dashboard]
@@ -584,6 +591,7 @@ graph TD
     EVENTDATA --> STORAGE
     ACHDATA --> STORAGE
     PREFDATA --> STORAGE
+```
 
 Technology Stack
 
@@ -611,7 +619,7 @@ Settings controls
 
 Authentication interfaces
 
-CSS3
+CSS
 
 CSS provides the visual presentation of the application.
 
@@ -678,6 +686,7 @@ Web Storage APIs
 The application uses:
 
 Local Storage
+Used to store DayWise application data such as tasks, university classes, work shifts, events, achievements, dashboard data, and user preferences. Data remains available after the browser is closed.
 
 Session Storage
 
