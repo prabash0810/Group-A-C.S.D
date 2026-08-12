@@ -11,6 +11,37 @@
   --daywise-mint: #52d68a;
 }
 
+.dashboard-back-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  margin-top: 14px;
+  padding: 10px 16px !important;
+  border: 1px solid rgba(37,99,235,.2) !important;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, #2563eb, #0d9488) !important;
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700 !important;
+  line-height: 1.2;
+  box-shadow: 0 8px 18px rgba(37,99,235,.22);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease !important;
+}
+
+.dashboard-back-btn:hover,
+.dashboard-back-btn:focus-visible {
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(37,99,235,.3);
+  filter: brightness(1.08);
+  outline: none;
+}
+
+.dashboard-back-btn:active { transform: translateY(0); }
+
 /* Login-inspired global dark appearance. */
 html.daywise-dark body {
   color: var(--daywise-text) !important;
@@ -50,6 +81,18 @@ html.daywise-dark .calendar-day.selected { border-color: var(--daywise-blue) !im
 html.daywise-dark .calendar-day.today { box-shadow: inset 0 0 0 2px var(--daywise-mint) !important; }
 html.daywise-dark table { color: var(--daywise-text) !important; }
 html.daywise-dark footer { color: var(--daywise-muted) !important; }
+html.daywise-dark .dashboard-back-btn {
+  background: linear-gradient(135deg, var(--daywise-amber), #ff8266) !important;
+  border-color: rgba(244,169,59,.4) !important;
+  color: var(--daywise-ink) !important;
+  box-shadow: 0 10px 24px rgba(244,169,59,.2);
+}
+html.daywise-dark .dashboard-back-btn:hover,
+html.daywise-dark .dashboard-back-btn:focus-visible { color: var(--daywise-ink) !important; }
+
+@media (max-width: 600px) {
+  .dashboard-back-btn { width: 100%; margin-top: 10px; }
+}
 
 /* Dashboard-style light appearance for Work & Study when dark mode is off. */
 html:not(.daywise-dark) body.workstudy-page {
