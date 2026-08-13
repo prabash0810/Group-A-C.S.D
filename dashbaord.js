@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function initQuickActions() {
 
-    const navigableItems = document.querySelectorAll(".action-card[data-href], .dashboard-card[data-href]");
+    const navigableItems = document.querySelectorAll(".action-card[data-href], .dashboard-card[data-href], .finance-preview[data-href]");
 
     navigableItems.forEach(function (item) {
 
