@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Track DayWise income, expenses, savings and budgets.">
+  <title>DayWise - Money Manager</title>
+  <link rel="stylesheet" href="moneymanager.css">
+  <link rel="stylesheet" href="theme.css">
+  <script src="theme.js"></script>
+</head>
+<body class="money-page">
+  <div class="background-shapes" aria-hidden="true">
+    <span class="shape shape1"></span>
+    <span class="shape shape2"></span>
+    <span class="shape shape3"></span>
+  </div>
+
+  <div class="money-container">
+    <header class="header">
+      <div class="logo">
+        <h1>Money Manager</h1>
+        <p>Understand your money and build better habits.</p>
+        <a href="dashboard.html" class="dashboard-back-btn" aria-label="Back to Dashboard">
+          <span aria-hidden="true">&#8592;</span> Back to Dashboard
+        </a>
+      </div>
+      <nav class="module-nav" aria-label="DayWise modules">
+        <a href="dayplanner/dayplanner.html">Day Planner</a>
+        <a href="workstudy.html">Work & Study</a>
+        <a href="1stpage%20of%20events%20and%20achievements.html">Events</a>
+        <a href="goals.html">Goals</a>
+        <a href="notes.html">Notes</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+    </header>
+
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">Financial overview</p>
+        <h2>Your money at a glance</h2>
+        <p>Record transactions, stay within budget and watch your savings grow.</p>
+      </div>
+      <div class="month-label" id="currentMonth" aria-live="polite"></div>
+    </section>
+
+    <section class="summary-grid" aria-label="Money summary">
+      <article class="summary-card balance-card">
+        <span class="summary-icon" aria-hidden="true">&#128176;</span>
+        <div><p>Current Balance</p><strong id="balanceTotal">£0.00</strong></div>
+      </article>
+      <article class="summary-card income-card">
+        <span class="summary-icon" aria-hidden="true">&#8593;</span>
+        <div><p>Total Income</p><strong id="incomeTotal">£0.00</strong></div>
+      </article>
+      <article class="summary-card expense-card">
+        <span class="summary-icon" aria-hidden="true">&#8595;</span>
+        <div><p>Total Expenses</p><strong id="expenseTotal">£0.00</strong></div>
+      </article>
+      <article class="summary-card savings-card">
+        <span class="summary-icon" aria-hidden="true">&#127974;</span>
+        <div><p>Savings Rate</p><strong id="savingsRate">0%</strong></div>
+      </article>
+    </section>
+  </div>
+
+  <script src="auth-guard.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="moneymanager.js"></script>
+</body>
+</html>
