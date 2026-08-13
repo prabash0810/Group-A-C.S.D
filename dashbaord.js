@@ -1,21 +1,5 @@
 "use strict";
 
-/* Check for an active DayWise session */
-function clearSession() {
-    localStorage.removeItem("daywise.session.v1");
-    sessionStorage.removeItem("daywise.session.v1");
-}
-
-const daywiseSession =
-    localStorage.getItem("daywise.session.v1") ||
-    sessionStorage.getItem("daywise.session.v1");
-
-if (!daywiseSession) {
-    window.location.replace("webpage/webpage.html");
-}
-
-"use strict";
-
 /*
    Wait until the page is fully loaded
 */
@@ -129,8 +113,21 @@ function loadDashboard() {
 
 function updateDashboardCards() {
 
-    const dashboardData =
-        JSON.parse(localStorage.getItem("dashboardData"));
+    let dashboardData;
+
+    try {
+        dashboardData = JSON.parse(localStorage.getItem("dashboardData") || "null");
+    } catch (error) {
+        console.warn("Invalid dashboard data was reset.", error);
+        localStorage.removeItem("dashboardData");
+        loadDashboard();
+        return;
+    }
+
+    if (!dashboardData) {
+        loadDashboard();
+        return;
+    }
 
     setText("plannerCount", dashboardData.planner);
     setText("taskCount", dashboardData.completedTasks);
@@ -242,8 +239,18 @@ function animateNumbers() {
 
 function calculateWeeklyProgress() {
 
-    const dashboardData =
-        JSON.parse(localStorage.getItem("dashboardData"));
+    let dashboardData;
+
+    try {
+        dashboardData = JSON.parse(localStorage.getItem("dashboardData") || "null");
+    } catch (error) {
+        console.warn("Weekly progress could not use stored dashboard data.", error);
+        return;
+    }
+
+    if (!dashboardData || !dashboardData.previousWeek || !dashboardData.currentWeek) {
+        return;
+    }
 
     const oldScore =
         dashboardData.previousWeek.tasks +
@@ -438,9 +445,11 @@ setTimeout(function () {
     motivationalMessage();
 
 }, 2000);
-const logoutBtn = document.getElementById("logoutBtn");
+document.addEventListener("DOMContentLoaded", function () {
+  const logoutBtn = document.getElementById("logoutBtn");
 
-if (logoutBtn) {
+  if (!logoutBtn) return;
+
   logoutBtn.addEventListener("click", function () {
 
     if (!confirm("Are you sure you want to logout?")) return;
@@ -452,4 +461,4 @@ if (logoutBtn) {
     // Go back to login page
     window.location.replace("webpage/webpage.html");
   });
-}
+});
