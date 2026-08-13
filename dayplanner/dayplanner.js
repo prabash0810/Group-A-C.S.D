@@ -12,6 +12,11 @@ const taskList = document.getElementById("taskList");
 const historyList = document.getElementById("historyList");
 const progressBar = document.getElementById("progress");
 const progressText = document.getElementById("progressText");
+const calendarGrid = document.getElementById("calendarGrid");
+const calendarMonth = document.getElementById("calendarMonth");
+const calendarSelection = document.getElementById("calendarSelection");
+let visibleMonth = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
+let selectedDate = "";
 
 /* ================================
    TASK DATA
@@ -27,7 +32,25 @@ let completedTasks = [];
 window.onload = function () {
     loadTasks();
     updateProgress();
+    updateDateAndClock();
+    setInterval(updateDateAndClock, 1000);
 };
+
+document.getElementById("previousMonth").addEventListener("click", function () {
+    visibleMonth.setMonth(visibleMonth.getMonth() - 1);
+    renderCalendar();
+});
+
+document.getElementById("nextMonth").addEventListener("click", function () {
+    visibleMonth.setMonth(visibleMonth.getMonth() + 1);
+    renderCalendar();
+});
+
+document.getElementById("todayButton").addEventListener("click", function () {
+    const today = new Date();
+    visibleMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+    selectCalendarDate(toDateKey(today));
+});
 
 /* ================================
    ADD TASK
@@ -62,6 +85,7 @@ addTaskBtn.addEventListener("click", function () {
     displayTasks();
     clearForm();
     updateProgress();
+    renderCalendar();
 });
 
 /* ================================
@@ -145,6 +169,7 @@ function completeTask(id) {
         displayTasks();
         displayHistory();
         updateProgress();
+        renderCalendar();
     }
 }
 
@@ -160,6 +185,7 @@ function deleteTask(id) {
     saveTasks();
     displayTasks();
     updateProgress();
+    renderCalendar();
 }
 
 /* ================================
@@ -221,6 +247,84 @@ function loadTasks() {
 
     displayTasks();
     displayHistory();
+    renderCalendar();
+}
+
+/* ================================
+   INTERACTIVE MONTHLY CALENDAR
+================================ */
+
+function toDateKey(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+}
+
+function selectCalendarDate(dateKey) {
+    selectedDate = dateKey;
+    document.getElementById("deadline").value = dateKey;
+    const date = new Date(`${dateKey}T00:00:00`);
+    calendarSelection.textContent = `Selected: ${date.toLocaleDateString(undefined, { weekday: "long", day: "numeric", month: "long", year: "numeric" })}`;
+    renderCalendar();
+}
+
+function renderCalendar() {
+    if (!calendarGrid) return;
+    calendarMonth.textContent = visibleMonth.toLocaleDateString(undefined, { month: "long", year: "numeric" });
+    calendarGrid.innerHTML = "";
+
+    const firstDay = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth(), 1);
+    const mondayOffset = (firstDay.getDay() + 6) % 7;
+    const gridStart = new Date(firstDay);
+    gridStart.setDate(firstDay.getDate() - mondayOffset);
+    const todayKey = toDateKey(new Date());
+
+    for (let index = 0; index < 42; index += 1) {
+        const date = new Date(gridStart);
+        date.setDate(gridStart.getDate() + index);
+        const dateKey = toDateKey(date);
+        const dayTasks = tasks.filter(function (task) { return task.deadline === dateKey; });
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "calendar-day";
+        button.setAttribute("role", "gridcell");
+        button.setAttribute("aria-label", `${date.toDateString()}, ${dayTasks.length} tasks`);
+        if (date.getMonth() !== visibleMonth.getMonth()) button.classList.add("outside-month");
+        if (dateKey === todayKey) button.classList.add("today");
+        if (dateKey === selectedDate) button.classList.add("selected");
+
+        const number = document.createElement("span");
+        number.className = "calendar-day-number";
+        number.textContent = date.getDate();
+        button.appendChild(number);
+
+        dayTasks.slice(0, 2).forEach(function (task) {
+            const item = document.createElement("span");
+            item.className = "calendar-task";
+            item.textContent = task.title;
+            button.appendChild(item);
+        });
+
+        if (dayTasks.length > 2) {
+            const more = document.createElement("span");
+            more.className = "calendar-more";
+            more.textContent = `+${dayTasks.length - 2} more`;
+            button.appendChild(more);
+        }
+
+        button.addEventListener("click", function () {
+            if (date.getMonth() !== visibleMonth.getMonth()) visibleMonth = new Date(date.getFullYear(), date.getMonth(), 1);
+            selectCalendarDate(dateKey);
+        });
+        calendarGrid.appendChild(button);
+    }
+}
+
+function updateDateAndClock() {
+    const now = new Date();
+    document.getElementById("date").textContent = now.toLocaleDateString(undefined, { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+    document.getElementById("clock").textContent = now.toLocaleTimeString();
 }
 
 /* ================================

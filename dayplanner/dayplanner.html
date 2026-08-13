@@ -10,6 +10,8 @@
 <title>Daywise - Daily Planner</title>
 
 <link rel="stylesheet" href="dayplanner.css">
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js"></script>
 
 </head>
 
@@ -49,6 +51,10 @@
 <h1>📅 Daywise</h1>
 
 <p>Your Academic Daily Planner</p>
+
+<a href="../dashboard.html" class="dashboard-back-btn" aria-label="Back to Dashboard">
+    <span aria-hidden="true">&#8592;</span> Back to Dashboard
+</a>
 
 </div>
 
@@ -105,6 +111,27 @@ Plan your day, complete your goals and stay productive.
 
 
 
+
+<!-- Interactive Calendar -->
+<section class="calendar-section" aria-labelledby="calendarTitle">
+    <div class="calendar-header">
+        <div>
+            <h2 id="calendarTitle">Calendar</h2>
+            <p>Select a day to use it as the task deadline.</p>
+        </div>
+        <div class="calendar-controls">
+            <button type="button" id="previousMonth" aria-label="Previous month">&#8249;</button>
+            <strong id="calendarMonth" aria-live="polite"></strong>
+            <button type="button" id="nextMonth" aria-label="Next month">&#8250;</button>
+            <button type="button" id="todayButton">Today</button>
+        </div>
+    </div>
+    <div class="calendar-weekdays" aria-hidden="true">
+        <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+    </div>
+    <div class="calendar-grid" id="calendarGrid" role="grid" aria-label="Monthly calendar"></div>
+    <p class="calendar-selection" id="calendarSelection" aria-live="polite"></p>
+</section>
 
 <!-- Task Section -->
 
@@ -359,6 +386,7 @@ Completed
 
 
 
+<script src="../auth-guard.js"></script>
 <script src="dayplanner.js"></script></body>
 
 </html>

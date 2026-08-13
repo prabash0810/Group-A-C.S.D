@@ -438,33 +438,58 @@ setTimeout(function () {
     motivationalMessage();
 
 }, 2000);
-/* Logout */
-
 document.addEventListener("DOMContentLoaded", function () {
 
     const logoutBtn = document.getElementById("logoutBtn");
 
-    if (!logoutBtn) {
-        return;
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", function () {
+
+            const confirmLogout = confirm(
+                "Are you sure you want to logout?"
+            );
+
+            if (!confirmLogout) {
+                return;
+            }
+
+            // Remove login/session information
+            localStorage.removeItem("loggedIn");
+            localStorage.removeItem("isLoggedIn");
+            localStorage.removeItem("currentUser");
+            sessionStorage.clear();
+
+            // Go back to login page
+            window.location.href = "login.html";
+        });
     }
 
-    logoutBtn.addEventListener("click", function () {
+});
+// Logout
+document.addEventListener("DOMContentLoaded", function () {
 
-        const confirmLogout = confirm(
-            "Are you sure you want to logout?"
-        );
+    const logoutBtn = document.getElementById("logoutBtn");
 
-        if (!confirmLogout) {
-            return;
-        }
+    if (logoutBtn) {
 
-        // Only remove the active login session
-        localStorage.removeItem("daywise.session.v1");
-        sessionStorage.removeItem("daywise.session.v1");
+        logoutBtn.addEventListener("click", function () {
 
-        // Go back to the login page and load it fresh
-        window.location.replace("webpage/webpage.html");
+            const confirmLogout = confirm(
+                "Are you sure you want to logout?"
+            );
 
-    });
+            if (confirmLogout) {
+
+                localStorage.removeItem("isLoggedIn");
+                localStorage.removeItem("loggedIn");
+
+                sessionStorage.clear();
+
+                window.location.href = "login.html";
+            }
+
+        });
+
+    }
 
 });
