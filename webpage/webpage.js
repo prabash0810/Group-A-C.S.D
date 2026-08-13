@@ -1429,3 +1429,39 @@ document
   );
 
   renderSession();
+
+/* ===============================
+   JQUERY PROGRESSIVE ENHANCEMENTS
+   Authentication continues to use the existing JavaScript above.
+================================ */
+
+(function initialiseLoginJQuery($) {
+  if (!$) return;
+
+  $(function () {
+    // Add accessible focus state hooks without changing form validation.
+    $(document).on("focusin.daywiseJquery", ".field input", function () {
+      $(this).closest(".field").addClass("field-focused");
+    });
+
+    $(document).on("focusout.daywiseJquery", ".field input", function () {
+      $(this).closest(".field").removeClass("field-focused");
+    });
+
+    // Provide subtle press feedback for login and modal buttons.
+    $(document).on("mousedown.daywiseJquery", "button", function () {
+      $(this).css("transform", "scale(0.98)");
+    });
+
+    $(document).on("mouseup.daywiseJquery mouseleave.daywiseJquery", "button", function () {
+      $(this).css("transform", "");
+    });
+
+    // Preserve the existing modal controls and focus the first field smoothly.
+    $(document).on("click.daywiseJquery", "#createAccountBtn, #forgotPasswordBtn", function () {
+      window.setTimeout(function () {
+        $(".modal-backdrop:not([hidden]) input:first").trigger("focus");
+      }, 0);
+    });
+  });
+})(window.jQuery);
