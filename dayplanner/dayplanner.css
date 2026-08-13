@@ -132,6 +132,40 @@ body {
     color: var(--text-light);
 }
 
+.module-nav {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 620px;
+}
+
+.module-nav a {
+    padding: 9px 12px;
+    border-radius: 10px;
+    color: var(--text-light);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.module-nav a:hover,
+.module-nav a:focus-visible {
+    color: var(--blue);
+    background: #eff6ff;
+    transform: translateY(-2px);
+    outline: none;
+}
+
+html.daywise-dark .module-nav a { color: var(--daywise-muted); }
+html.daywise-dark .module-nav a:hover,
+html.daywise-dark .module-nav a:focus-visible {
+    color: var(--daywise-amber);
+    background: var(--daywise-surface-3);
+}
+
 .date-box {
     text-align: right;
     padding: 18px 22px;
@@ -489,6 +523,11 @@ footer {
         text-align: left;
     }
 
+    .module-nav {
+        max-width: none;
+        justify-content: flex-start;
+    }
+
     .task-form {
         grid-template-columns: 1fr;
     }
@@ -518,6 +557,17 @@ footer {
 
     .logo h1 {
         font-size: 28px;
+    }
+
+    .module-nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+    }
+
+    .module-nav a {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.65);
     }
 
     .welcome h2 {
