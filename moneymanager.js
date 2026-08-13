@@ -76,9 +76,50 @@
     elements.budgetStatus.textContent = monthlyBudget === 0 ? "Set a budget to track monthly spending." : spent > monthlyBudget ? `You are ${formatMoney(spent - monthlyBudget)} over budget.` : `${formatMoney(monthlyBudget - spent)} remaining this month.`;
   }
 
+  function filteredTransactions() {
+    const type = elements.filter.value;
+    const query = elements.search.value.trim().toLowerCase();
+    return transactions.filter((item) => (type === "all" || item.type === type) && (!query || item.description.toLowerCase().includes(query) || item.category.toLowerCase().includes(query)));
+  }
+
+  function renderTransactions() {
+    const visible = filteredTransactions().sort((a, b) => b.date.localeCompare(a.date) || b.createdAt - a.createdAt);
+    elements.list.replaceChildren();
+    visible.forEach((item) => {
+      const article = document.createElement("article"); article.className = `transaction-item ${item.type}`;
+      const marker = document.createElement("span"); marker.className = "transaction-marker"; marker.textContent = item.type === "income" ? "+" : "−";
+      const info = document.createElement("div"); info.className = "transaction-info";
+      const title = document.createElement("h3"); title.textContent = item.description;
+      const meta = document.createElement("p"); meta.textContent = `${item.category} · ${new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", year: "numeric" }).format(new Date(`${item.date}T00:00:00`))}`;
+      info.append(title, meta);
+      const amount = document.createElement("strong"); amount.className = "transaction-amount"; amount.textContent = `${item.type === "income" ? "+" : "−"}${formatMoney(item.amount)}`;
+      const remove = document.createElement("button"); remove.className = "delete-transaction"; remove.type = "button"; remove.dataset.id = item.id; remove.setAttribute("aria-label", `Delete ${item.description}`); remove.textContent = "Delete";
+      article.append(marker, info, amount, remove); elements.list.appendChild(article);
+    });
+    elements.empty.hidden = visible.length > 0;
+    elements.count.textContent = `${visible.length} ${visible.length === 1 ? "record" : "records"}`;
+  }
+
+  function renderAll() { renderTransactions(); renderSummary(); renderBudget(); }
+
+  elements.form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const amount = Number(elements.amount.value);
+    if (!elements.description.value.trim() || !Number.isFinite(amount) || amount <= 0 || !elements.date.value) {
+      elements.message.textContent = "Please enter a description, positive amount and date."; elements.message.classList.add("error"); return;
+    }
+    transactions.push({ id: `${Date.now()}-${Math.random().toString(16).slice(2)}`, description: elements.description.value.trim(), amount: Math.round(amount * 100) / 100, type: elements.type.value, category: elements.category.value, date: elements.date.value, createdAt: Date.now() });
+    saveTransactions(); elements.form.reset(); elements.date.value = new Date().toISOString().slice(0, 10);
+    elements.message.textContent = "Transaction added."; elements.message.classList.remove("error"); renderAll(); elements.description.focus();
+  });
+
+  elements.list.addEventListener("click", function (event) {
+    const button = event.target.closest(".delete-transaction"); if (!button) return;
+    transactions = transactions.filter((item) => item.id !== button.dataset.id); saveTransactions(); renderAll();
+  });
+
   elements.date.value = new Date().toISOString().slice(0, 10);
   elements.currentMonth.textContent = new Intl.DateTimeFormat("en-GB", { month: "long", year: "numeric" }).format(new Date());
   elements.budgetInput.value = monthlyBudget || "";
-  renderSummary();
-  renderBudget();
+  renderAll();
 })();
