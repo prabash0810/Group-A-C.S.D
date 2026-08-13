@@ -865,7 +865,7 @@ byId("loginCard")
           message
         );
 
-        window.location.replace("../dashboard.html");
+        window.location.replace("dashboard.html");
 
       } catch (error) {
 
@@ -1402,7 +1402,7 @@ if (logoutBtn) {
         showToast("You have been signed out.");
 
         setTimeout(() => {
-            window.location.href = "webpage/webpage.html";
+            window.location.href = "webpage.html";
         }, 500);
 
     });

@@ -709,17 +709,17 @@ Group-A-C.S.D-dev/
 │   ├── launch.json
 │   └── settings.json
 │
-├── webpage/
+├── Html/
 │   ├── webpage.html
 │   ├── webpage.css
 │   └── webpage.js
 │
-├── dayplanner/
+├── Css/
 │   ├── dayplanner.html
 │   ├── dayplanner.css
 │   └── dayplanner.js
 │
-├── js/
+├── Javascript/
 │   ├── achievements.js
 │   └── dashboard-clock.js
 │
@@ -755,15 +755,15 @@ File Responsibilities
 
 Authentication / Welcome
 
-webpage/webpage.html
+Html/webpage.html
 
 Contains the DayWise sign-in interface, account creation interface, password reset interface and introductory slideshow.
 
-webpage/webpage.css
+Css/webpage.css
 
 Provides the visual styling for the authentication and welcome experience.
 
-webpage/webpage.js
+Javascript/webpage.js
 
 Controls:
 
@@ -831,15 +831,15 @@ Logout
 
 Daily Planner
 
-dayplanner/dayplanner.html
+Html/dayplanner.html
 
 Provides the task creation form, active task area, task history and progress display.
 
-dayplanner/dayplanner.css
+Css/dayplanner.css
 
 Styles the Daily Planner interface, task cards, history and responsive layout.
 
-dayplanner/dayplanner.js
+Javascript/dayplanner.js
 
 Controls:
 
@@ -931,11 +931,11 @@ Provides an events and achievements overview page.
 
 Provides styling for the events and achievements overview page.
 
-js/achievements.js
+Javascript/achievements.js
 
 Contains achievement-specific functionality for displaying, adding, completing and deleting achievements.
 
-js/dashboard-clock.js
+Javascript/dashboard-clock.js
 
 Updates the displayed day, date and time on the relevant dashboard interface.
 
@@ -1334,7 +1334,7 @@ Download or clone the repository.
 
 Open the project folder in Visual Studio Code.
 
-Open the DayWise welcome page located at webpage/webpage.html.
+Open the DayWise welcome page located at Html/webpage.html.
 
 Use a browser or a local development server to run the application.
 

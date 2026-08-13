@@ -461,7 +461,7 @@ document.addEventListener("DOMContentLoaded", function () {
     sessionStorage.removeItem("daywise.session.v1");
 
     // Go back to login page
-    window.location.replace("webpage/webpage.html");
+    window.location.replace("webpage.html");
   });
 });
 

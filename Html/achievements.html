@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DayWise - Events</title>
-    <link rel="stylesheet" href="1stpage of events and achievements.css">
-    <link rel="stylesheet" href="theme.css">
-    <script src="theme.js"></script>
+    <title>DayWise - Achievements</title>
+    <link rel="stylesheet" href="../Css/1stpage of events and achievements.css">
+    <link rel="stylesheet" href="../Css/theme.css">
+    <script src="../Javascript/theme.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -30,34 +30,34 @@
 
         <main>
             <section class="hero hero-animated">
-                <h1>Events</h1>
-                <p>Plan and manage your upcoming events with a clear and calm workspace.</p>
+                <h1>Achievements</h1>
+                <p>Celebrate your wins, milestones, and completed goals in a dedicated space.</p>
             </section>
 
             <section class="combined-layout">
                 <div class="panel page-card">
                     <div class="panel-header">
-                        <h2><i class="fa-solid fa-calendar-days"></i> Events</h2>
-                        <p>Keep your upcoming plans in one place.</p>
+                        <h2><i class="fa-solid fa-trophy"></i> Achievements</h2>
+                        <p>Record your wins and important milestones.</p>
                     </div>
 
-                    <form id="eventForm" class="panel-form">
-                        <input type="text" id="eventName" placeholder="Event name" required>
-                        <input type="date" id="eventDate" required>
-                        <button type="submit" class="submit-btn">Add Event</button>
+                    <form id="achievementForm" class="panel-form">
+                        <input type="text" id="achievementTitle" placeholder="Achievement title" required>
+                        <input type="text" id="achievementDescription" placeholder="Short description" required>
+                        <button type="submit" class="submit-btn">Add Achievement</button>
                     </form>
 
-                    <div id="eventList" class="item-list"></div>
+                    <div id="achievementList" class="item-list"></div>
                 </div>
             </section>
         </main>
 
         <footer>
-            <p>© 2026 DayWise | Events Module</p>
+            <p>© 2026 DayWise | Achievements Module</p>
         </footer>
     </div>
 
-    <script src="auth-guard.js"></script>
-    <script src="events and achievements.js"></script>
+    <script src="../Javascript/auth-guard.js"></script>
+    <script src="../Javascript/events and achievements.js"></script>
 </body>
 </html>

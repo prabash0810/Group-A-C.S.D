@@ -17,7 +17,7 @@
   }
 
   if (!session || !session.email || !session.userId) {
-    const loginUrl = new URL("webpage/webpage.html", document.currentScript.src);
+    const loginUrl = new URL("../Html/webpage.html", document.currentScript.src);
     window.location.replace(loginUrl.href);
   }
 })();
