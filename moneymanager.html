@@ -62,6 +62,59 @@
         <div><p>Savings Rate</p><strong id="savingsRate">0%</strong></div>
       </article>
     </section>
+
+    <div class="money-layout">
+      <section class="panel transaction-panel" aria-labelledby="transactionTitle">
+        <div class="section-heading">
+          <div><p class="eyebrow">Add a record</p><h2 id="transactionTitle">New Transaction</h2></div>
+        </div>
+        <form id="transactionForm" class="transaction-form">
+          <div class="field full-field">
+            <label for="transactionDescription">Description</label>
+            <input id="transactionDescription" name="description" type="text" maxlength="80" placeholder="e.g. Weekly groceries" required>
+          </div>
+          <div class="field">
+            <label for="transactionAmount">Amount (£)</label>
+            <input id="transactionAmount" name="amount" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="0.00" required>
+          </div>
+          <div class="field">
+            <label for="transactionType">Type</label>
+            <select id="transactionType" name="type" required>
+              <option value="expense">Expense</option>
+              <option value="income">Income</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="transactionCategory">Category</label>
+            <select id="transactionCategory" name="category" required>
+              <option value="Food">Food</option><option value="Transport">Transport</option>
+              <option value="Study">Study</option><option value="Bills">Bills</option>
+              <option value="Entertainment">Entertainment</option><option value="Salary">Salary</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="transactionDate">Date</label>
+            <input id="transactionDate" name="date" type="date" required>
+          </div>
+          <button class="primary-btn full-field" type="submit">Add Transaction</button>
+          <p class="form-message full-field" id="formMessage" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="panel history-panel" aria-labelledby="historyTitle">
+        <div class="section-heading">
+          <div><p class="eyebrow">Recent activity</p><h2 id="historyTitle">Transactions</h2></div>
+          <span id="transactionCount">0 records</span>
+        </div>
+        <div class="transaction-list" id="transactionList"></div>
+        <div class="empty-state" id="emptyState">
+          <span aria-hidden="true">&#128202;</span>
+          <h3>No transactions yet</h3>
+          <p>Add your first income or expense to begin.</p>
+        </div>
+      </section>
+    </div>
   </div>
 
   <script src="auth-guard.js"></script>
