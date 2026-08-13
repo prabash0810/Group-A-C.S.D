@@ -118,6 +118,29 @@
     transactions = transactions.filter((item) => item.id !== button.dataset.id); saveTransactions(); renderAll();
   });
 
+  elements.budgetForm.addEventListener("submit", function (event) {
+    event.preventDefault(); const value = Number(elements.budgetInput.value);
+    if (!Number.isFinite(value) || value < 0) { elements.budgetStatus.textContent = "Enter a valid budget amount."; return; }
+    monthlyBudget = Math.round(value * 100) / 100; localStorage.setItem(BUDGET_KEY, String(monthlyBudget)); renderBudget();
+  });
+
+  elements.filter.addEventListener("change", renderTransactions);
+  elements.search.addEventListener("input", renderTransactions);
+
+  elements.exportButton.addEventListener("click", function () {
+    if (!transactions.length) { elements.message.textContent = "Add a transaction before exporting."; elements.message.classList.add("error"); return; }
+    const escapeCsv = (value) => `"${String(value).replace(/"/g, '""')}"`;
+    const rows = [["Date", "Description", "Category", "Type", "Amount"], ...transactions.map((item) => [item.date, item.description, item.category, item.type, item.amount])];
+    const csv = rows.map((row) => row.map(escapeCsv).join(",")).join("\r\n");
+    const url = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
+    const link = document.createElement("a"); link.href = url; link.download = `daywise-money-${new Date().toISOString().slice(0, 10)}.csv`; document.body.appendChild(link); link.click(); link.remove(); URL.revokeObjectURL(url);
+  });
+
+  elements.clearButton.addEventListener("click", function () {
+    if (!transactions.length || !window.confirm("Delete every Money Manager transaction?")) return;
+    transactions = []; saveTransactions(); renderAll(); elements.message.textContent = "All transactions cleared."; elements.message.classList.remove("error");
+  });
+
   elements.date.value = new Date().toISOString().slice(0, 10);
   elements.currentMonth.textContent = new Intl.DateTimeFormat("en-GB", { month: "long", year: "numeric" }).format(new Date());
   elements.budgetInput.value = monthlyBudget || "";
