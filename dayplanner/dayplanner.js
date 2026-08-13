@@ -347,3 +347,36 @@ function updateProgress() {
         progressText.textContent = percent + "%";
     }
 }
+
+/* ================================
+   JQUERY PROGRESSIVE ENHANCEMENTS
+   Existing planner behavior remains unchanged.
+================================ */
+
+(function initialisePlannerJQuery($) {
+    if (!$) return;
+
+    $(function () {
+        // Give keyboard and mouse users subtle button feedback.
+        $(document).on("mousedown", "button, .dashboard-back-btn", function () {
+            $(this).css("transform", "scale(0.98)");
+        });
+
+        $(document).on("mouseup mouseleave", "button, .dashboard-back-btn", function () {
+            $(this).css("transform", "");
+        });
+
+        // Smoothly reveal newly rendered tasks without changing task logic.
+        $("#addTask").on("click.daywiseJquery", function () {
+            window.setTimeout(function () {
+                $("#taskList .task-card").last().hide().fadeIn(280);
+            }, 0);
+        });
+
+        // Keep the selected calendar date visible on smaller screens.
+        $(document).on("click.daywiseJquery", ".calendar-day", function () {
+            $(".calendar-day").attr("aria-selected", "false");
+            $(this).attr("aria-selected", "true");
+        });
+    });
+})(window.jQuery);
