@@ -1,11 +1,18 @@
-const daywiseSession =
-  localStorage.getItem("daywise.session.v1") ||
-  sessionStorage.getItem("daywise.session.v1");
+"use strict";
 
-if (!daywiseSession) {
-  window.location.replace("webpage/webpage.html");
+/* Check for an active DayWise session */
+function clearSession() {
+    localStorage.removeItem("daywise.session.v1");
+    sessionStorage.removeItem("daywise.session.v1");
 }
 
+const daywiseSession =
+    localStorage.getItem("daywise.session.v1") ||
+    sessionStorage.getItem("daywise.session.v1");
+
+if (!daywiseSession) {
+    window.location.replace("webpage/webpage.html");
+}
 
 "use strict";
 
@@ -431,6 +438,8 @@ setTimeout(function () {
     motivationalMessage();
 
 }, 2000);
+/* Logout */
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const logoutBtn = document.getElementById("logoutBtn");
@@ -441,18 +450,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     logoutBtn.addEventListener("click", function () {
 
-        const confirmLogout = confirm("Are you sure you want to logout?");
+        const confirmLogout = confirm(
+            "Are you sure you want to logout?"
+        );
 
         if (!confirmLogout) {
             return;
         }
 
-        // Clear login/session information
-        localStorage.removeItem("isLoggedIn");
-        sessionStorage.clear();
+        // Only remove the active login session
+        localStorage.removeItem("daywise.session.v1");
+        sessionStorage.removeItem("daywise.session.v1");
 
-        // Return to login page
-        window.location.href = "login.html";
+        // Go back to the login page and load it fresh
+        window.location.replace("webpage/webpage.html");
+
     });
 
 });

@@ -1402,7 +1402,7 @@ if (logoutBtn) {
         showToast("You have been signed out.");
 
         setTimeout(() => {
-            window.location.href = "login.html";
+            window.location.href = "webpage/webpage.html";
         }, 500);
 
     });
