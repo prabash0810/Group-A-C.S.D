@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     initQuickActions();
 
+    loadMoneySummary();
+
 });
 
 
@@ -462,3 +464,35 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.replace("webpage/webpage.html");
   });
 });
+
+function loadMoneySummary() {
+    const currency = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" });
+    let transactions = [];
+
+    try {
+        const saved = JSON.parse(localStorage.getItem("daywise.money.transactions.v1") || "[]");
+        transactions = Array.isArray(saved) ? saved : [];
+    } catch (error) {
+        console.warn("Dashboard could not read Money Manager data.", error);
+    }
+
+    const totals = transactions.reduce(function (result, item) {
+        const amount = Number(item.amount) || 0;
+        if (item.type === "income") result.income += amount;
+        if (item.type === "expense") result.expenses += amount;
+        return result;
+    }, { income: 0, expenses: 0 });
+
+    const balance = totals.income - totals.expenses;
+    const budget = Number(localStorage.getItem("daywise.money.budget.v1")) || 0;
+    const set = function (id, value) {
+        const node = document.getElementById(id);
+        if (node) node.textContent = value;
+    };
+
+    set("moneyCardBalance", `${currency.format(balance)} Balance`);
+    set("dashboardMoneyBalance", currency.format(balance));
+    set("dashboardMoneyExpenses", currency.format(totals.expenses));
+    set("dashboardMoneySavings", `${currency.format(Math.max(0, balance))} Saved`);
+    set("dashboardMoneyBudget", budget > 0 ? `${currency.format(budget)} Budget` : "Not Started");
+}
