@@ -63,6 +63,37 @@
       </article>
     </section>
 
+    <section class="panel budget-panel" aria-labelledby="budgetTitle">
+      <div class="budget-copy">
+        <p class="eyebrow">Monthly goal</p>
+        <h2 id="budgetTitle">Expense Budget</h2>
+        <p><strong id="budgetSpent">£0.00</strong> spent of <strong id="budgetLimitLabel">£0.00</strong></p>
+      </div>
+      <form id="budgetForm" class="budget-form">
+        <label for="budgetLimit">Set monthly budget (£)</label>
+        <div><input id="budgetLimit" type="number" min="0" step="0.01" inputmode="decimal" placeholder="500.00"><button type="submit">Save Budget</button></div>
+      </form>
+      <div class="budget-progress" role="progressbar" aria-label="Monthly budget used" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span id="budgetBar"></span>
+      </div>
+      <p class="budget-status" id="budgetStatus">Set a budget to track monthly spending.</p>
+    </section>
+
+    <section class="panel controls-panel" aria-label="Transaction controls">
+      <div class="filter-group">
+        <label for="transactionFilter">Show</label>
+        <select id="transactionFilter"><option value="all">All transactions</option><option value="income">Income only</option><option value="expense">Expenses only</option></select>
+      </div>
+      <div class="filter-group search-group">
+        <label for="transactionSearch">Search</label>
+        <input id="transactionSearch" type="search" placeholder="Description or category">
+      </div>
+      <div class="control-actions">
+        <button id="exportTransactions" class="secondary-btn" type="button">Export CSV</button>
+        <button id="clearTransactions" class="danger-btn" type="button">Clear All</button>
+      </div>
+    </section>
+
     <div class="money-layout">
       <section class="panel transaction-panel" aria-labelledby="transactionTitle">
         <div class="section-heading">
@@ -115,6 +146,8 @@
         </div>
       </section>
     </div>
+
+    <footer><p>&copy; 2026 DayWise | Money Manager Module</p></footer>
   </div>
 
   <script src="auth-guard.js"></script>
