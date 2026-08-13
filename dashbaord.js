@@ -1,11 +1,18 @@
-const daywiseSession =
-  localStorage.getItem("daywise.session.v1") ||
-  sessionStorage.getItem("daywise.session.v1");
+"use strict";
 
-if (!daywiseSession) {
-  window.location.replace("webpage/webpage.html");
+/* Check for an active DayWise session */
+function clearSession() {
+    localStorage.removeItem("daywise.session.v1");
+    sessionStorage.removeItem("daywise.session.v1");
 }
 
+const daywiseSession =
+    localStorage.getItem("daywise.session.v1") ||
+    sessionStorage.getItem("daywise.session.v1");
+
+if (!daywiseSession) {
+    window.location.replace("webpage/webpage.html");
+}
 
 "use strict";
 
