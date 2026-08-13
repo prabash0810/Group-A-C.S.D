@@ -701,54 +701,60 @@ Web Crypto API
 
 The authentication demonstration uses the browser's Web Crypto API to create SHA-256 password hashes before storage.
 
-Project Structure
+## Project Structure
 
-Group-A-C.S.D-dev/
-│
-├── .vscode/
-│   ├── launch.json
-│   └── settings.json
-│
-├── webpage/
-│   ├── webpage.html
-│   ├── webpage.css
-│   └── webpage.js
-│
-├── dayplanner/
-│   ├── dayplanner.html
-│   ├── dayplanner.css
-│   └── dayplanner.js
-│
-├── js/
-│   ├── achievements.js
-│   └── dashboard-clock.js
-│
-├── dashboard.html
-├── dashboard.css
-├── dashbaord.js
-│
-├── workstudy.html
-├── workstudy.css
-├── workstudy.js
-│
-├── events.html
-├── events and achievements.js
-│
-├── achievements.html
-│
-├── 1stpage of events and achievements.html
-├── 1stpage of events and achievements.css
-│
-├── settings.html
-├── settings.css
-├── settings.js
-│
-├── form.css
-├── form.js
-├── them.css
-│
-└── README.md
+```mermaid
+graph TD
 
+    A[Group-A-C.S.D-dev] --> B[.vscode]
+    B --> B1[launch.json]
+    B --> B2[settings.json]
+
+    A --> C[webpage]
+    C --> C1[webpage.html]
+    C --> C2[webpage.css]
+    C --> C3[webpage.js]
+
+    A --> D[dayplanner]
+    D --> D1[dayplanner.html]
+    D --> D2[dayplanner.css]
+    D --> D3[dayplanner.js]
+
+    A --> E[js]
+    E --> E1[achievements.js]
+    E --> E2[dashboard-clock.js]
+
+    A --> F[Dashboard]
+    F --> F1[dashboard.html]
+    F --> F2[dashboard.css]
+    F --> F3[dashbaord.js]
+
+    A --> G[Work & Study]
+    G --> G1[workstudy.html]
+    G --> G2[workstudy.css]
+    G --> G3[workstudy.js]
+
+    A --> H[Events]
+    H --> H1[events.html]
+    H --> H2[events and achievements.js]
+
+    A --> I[Achievements]
+    I --> I1[achievements.html]
+    I --> I2[1stpage of events and achievements.html]
+    I --> I3[1stpage of events and achievements.css]
+
+    A --> J[Settings]
+    J --> J1[settings.html]
+    J --> J2[settings.css]
+    J --> J3[settings.js]
+
+    A --> K[Shared Files]
+    K --> K1[form.css]
+    K --> K2[form.js]
+    K --> K3[them.css]
+
+    A --> L[README.md]
+```
 The filename dashbaord.js is retained exactly as it appears in the project.
 
 File Responsibilities
@@ -1253,19 +1259,18 @@ The user can change available preferences through Settings.
 
 The user can log out and return to the authentication page.
 
-Data Flow
+## Data Flow
 
+```mermaid
 flowchart TD
 
-    USER[User Input]
-
-    USER --> FORM[HTML Forms / Controls]
+    USER[User Input] --> FORM[HTML Forms / Controls]
     FORM --> JS[JavaScript Logic]
 
     JS --> VALIDATE[Validation]
     VALIDATE --> PROCESS[Process Data]
 
-    PROCESS --> STORE[Browser Storage]
+    PROCESS --> STORE[Browser Local Storage]
     STORE --> LOAD[Load Stored Data]
 
     LOAD --> DOM[Update Web Page]
@@ -1276,9 +1281,11 @@ flowchart TD
 
     USER --> ACTION[Complete / Delete / Preference Action]
     ACTION --> JS
+```
 
-Client-Side Architecture
+## Client-Side Architecture
 
+```mermaid
 graph TB
 
     subgraph Presentation Layer
@@ -1323,8 +1330,7 @@ graph TB
     WORKJS --> LOCAL
     EVENTJS --> LOCAL
     SETJS --> LOCAL
-
-Running the Project
+```
 
 Because DayWise is a client-side web project, it does not require a backend server or database.
 
@@ -1405,4 +1411,3 @@ Dynamic user interfaces
 Client-side data management
 
 The uploaded project contains working functionality across authentication, dashboard navigation, daily planning, work and university scheduling, events, achievements and settings, while remaining entirely browser-based.
-
