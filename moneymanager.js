@@ -35,7 +35,9 @@
   }
 
   function isValidTransaction(item) {
-    return item && typeof item.id === "string" && ["income", "expense"].includes(item.type) && Number.isFinite(Number(item.amount));
+    return item && typeof item.id === "string" && typeof item.description === "string" &&
+      typeof item.category === "string" && /^\d{4}-\d{2}-\d{2}$/.test(item.date) &&
+      ["income", "expense"].includes(item.type) && Number.isFinite(Number(item.amount)) && Number(item.amount) > 0;
   }
 
   function loadBudget() {
